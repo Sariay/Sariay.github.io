@@ -1,0 +1,1156 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      webpack网站开发入门 | SARIAY-Blog
+    
+  </title>
+  <meta name="author" content="Sariay">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/highlight/highlight.css">
+<link rel="stylesheet" href="/css/style.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="/img/random/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo4.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《webpack网站开发入门》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
+	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
+	<div class="article-title">
+		
+	<a href="/2019/04/12/webpack网站开发入门/" itemprop="url">
+		webpack网站开发入门
+	</a>
+
+	</div>
+
+	<div class="article-meta">
+		<span>
+			<i class="fa fa-calendar"></i>
+			
+	发布于
+
+	<a href="/2019/04/12/webpack网站开发入门/" itemprop="url">
+		<time datetime="2019-04-12T14:30:58.000Z" itemprop="datePublished">
+	  		2019-04-12
+	  </time>
+	</a> 
+
+
+
+
+
+			
+
+
+	更新于
+
+	<a href="/2019/04/12/webpack网站开发入门/" itemprop="url">
+		<time datetime="2019-04-12T14:30:58.000Z" itemprop="dateUpdated">
+	  		2019-04-25
+	  </time>
+	</a> 
+
+
+
+		</span>
+		<span>
+			<i class="fa fa-tags"></i>
+			
+	
+		<a href="/tags/开发实践/" class=" ">
+			开发实践
+		</a>
+	
+		<a href="/tags/webpack/" class=" ">
+			webpack
+		</a>
+	
+		
+		</span>
+		
+		
+
+	
+    <span class="leancloud_visitors" id="/2019/04/12/webpack网站开发入门/_visitors" data-url="/2019/04/12/webpack网站开发入门/" data-title="webpack网站开发入门">
+       	<i class="fa fa-eye"></i>
+       	热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+
+
+
+	
+    <span class="leancloud_likes" id="/2019/04/12/webpack网站开发入门/_likes" data-url="/2019/04/12/webpack网站开发入门/" data-title="webpack网站开发入门" rel="unlike">
+        <i class="fa fa-heart"></i>
+        喜欢
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+
+	</div>
+
+	<div class="article-content" id="article-content">
+		<h1 id="预先准备"><a href="#预先准备" class="headerlink" title="预先准备"></a>预先准备</h1><p><strong>安装node.js：</strong>项目开始之前，确保安装了<a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs</a>工具。原则上，你应使用最新的稳定版本（LTS），点击<u>LTS的下载按钮</u>即可。</p>
+<p><strong>开发工具：</strong>Sublime Text 3，Visual Studio Code， Atom，Hbuilder。选择任意一款工具即可，你也可以使用普通的文本编辑器。</p>
+<p><strong>实验环境：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">操作系统</td>
+<td style="text-align:left">Window 10</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left">nodejs版本</td>
+<td style="text-align:left">10.15.3 LTS</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left">开发工具</td>
+<td style="text-align:left">Hbuilder</td>
+</tr>
+</tbody>
+</table>
+<h1 id="概念简析"><a href="#概念简析" class="headerlink" title="概念简析"></a>概念简析</h1><p>webpack是一个JavaScript应用程序的静态模块打包工具，其工作时，html、js、css、image、font等文件被视为资源，每个资源文件被视为一个模块，webpack根据各模块之间的直接或间接依赖关系构建出一个<u>依赖图</u>，最后根据依赖图进行项目文件的打包。</p>
+<p>webpack的核心概念有entry、output、loader、plugin、mode等，这些概念的简要说明如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">解释</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">entry</td>
+<td style="text-align:left">入口</td>
+<td style="text-align:left"><strong>入口起点(entry point)</strong>指示 webpack 应该使用哪个模块，来作为构建其内部<u>依赖图</u>的开始。进入入口起点后，webpack 会找出与入口起点有直接或间接依赖关系的所有模块（库）。</td>
+</tr>
+<tr>
+<td style="text-align:left">output</td>
+<td style="text-align:left">输出</td>
+<td style="text-align:left"><strong>output</strong> 属性告诉 webpack 在哪里输出它所创建的 <em>bundle</em>，以及如何命名这些文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">loader</td>
+<td style="text-align:left">加载器</td>
+<td style="text-align:left">webpack 只能理解 JavaScript 和 JSON 文件。<strong>loader</strong> 让 webpack 能够处理其他类型的文件，并将它们转换为有效模块，以供应用程序使用。</td>
+</tr>
+<tr>
+<td style="text-align:left">plugin</td>
+<td style="text-align:left">插件</td>
+<td style="text-align:left">loader 用于转换某些类型的模块，而<strong>plugin</strong>可以用于执行范围更广的任务，包括：打包优化，资源管理，注入环境变量。</td>
+</tr>
+<tr>
+<td style="text-align:left">mode</td>
+<td style="text-align:left">模式</td>
+<td style="text-align:left">设置<strong>mode</strong>参数，以启用webpack在相应环境下的优化处理。其中，参数值为development、production或none。</td>
+</tr>
+</tbody>
+</table>
+<p>你可以通过配置文件webpack.config.js来配置所有的参数。配置文件实例：</p>
+<figure class="highlight js"><figcaption><span>webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"><span class="keyword">const</span> cleanWebpackPlugin = <span class="built_in">require</span>(<span class="string">'clean-webpack-plugin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义文件夹路径</span></span><br><span class="line"><span class="keyword">const</span> ROOT_PATH = path.resolve(__dirname);</span><br><span class="line"><span class="keyword">const</span> SRC_PATH = path.resolve(ROOT_PATH, <span class="string">'src'</span>);</span><br><span class="line"><span class="keyword">const</span> DIST_PATH = path.resolve(ROOT_PATH, <span class="string">'dist'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    optimization: &#123;</span><br><span class="line">		<span class="comment">//初始化  </span></span><br><span class="line">    &#125;,</span><br><span class="line">    entry: &#123;</span><br><span class="line">    	<span class="comment">//入口</span></span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">		<span class="comment">//输出</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">'development'</span>,<span class="comment">//模式</span></span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">		<span class="comment">//加载器</span></span><br><span class="line">    &#125;,  </span><br><span class="line">    plugins: [</span><br><span class="line">		<span class="comment">//插件</span></span><br><span class="line">    ],</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: DIST_PATH,</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">        hot: <span class="literal">true</span>,</span><br><span class="line">        inline: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h1><p>新建一个项目目录，进入该目录，初始化npm。在本地安装webpack（即在该目录下安装，删除该目录后，安装的webpack便不再存在），安装webpack-cli：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir webpack-demo  </span><br><span class="line"><span class="built_in">cd</span> webpack-demo</span><br><span class="line">npm init -y</span><br><span class="line">npm install webpack webpack-cli --save-dev</span><br></pre></td></tr></table></figure>
+<h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><p>安装生产环境依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jquery --save</span><br></pre></td></tr></table></figure>
+<p>安装开发环境依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack-dev-server --save-dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装一个 package时，若此 package 要打包到生产环境 bundle 中，你应该使用 <code>npm install --save</code>。若此 package 只用于开发环境中时（例如linter、 测试等开发过程），你应该使用 <code>npm install --save-dev</code>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">依赖</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">jquery</td>
+<td style="text-align:left">提供jquery函数库</td>
+</tr>
+<tr>
+<td style="text-align:left">webpack-dev-server</td>
+<td style="text-align:left">提供web server，提供 live reloading(实时重新加载) 功能，包括自动刷新浏览器页面。</td>
+</tr>
+</tbody>
+</table>
+<p>此时的package.json，及各依赖的版本</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"webpack-demo"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"webpack --config webpack.config.js"</span>,</span><br><span class="line">	<span class="attr">"dev"</span>: <span class="string">"webpack-dev-server"</span>,</span><br><span class="line">	<span class="attr">"build"</span>: <span class="string">"webpack"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"keywords"</span>: [],</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span>,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"webpack"</span>: <span class="string">"^4.30.0"</span>,</span><br><span class="line">    <span class="attr">"webpack-cli"</span>: <span class="string">"^3.3.0"</span>,</span><br><span class="line">    <span class="attr">"webpack-dev-server"</span>: <span class="string">"^3.3.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"jquery"</span>: <span class="string">"^3.4.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="完善项目目录"><a href="#完善项目目录" class="headerlink" title="完善项目目录"></a>完善项目目录</h1><p>在webpack-demo 目录下新建dist、src目录，webpack.config.js等文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">webpack-demo</span><br><span class="line">	dist</span><br><span class="line">    	index.html</span><br><span class="line">	src</span><br><span class="line">		index.js</span><br><span class="line">	webpack.config.js</span><br></pre></td></tr></table></figure>
+<p><strong>新建文件index.html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>webpack-demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"app.bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>新建文件index.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span>;</span><br><span class="line">$(<span class="string">'body'</span>).append(<span class="string">'Hello webpack-demo!'</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>新建文件webpack.config.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//定义文件夹路径</span></span><br><span class="line"><span class="keyword">const</span> ROOT_PATH = path.resolve(__dirname);</span><br><span class="line"><span class="keyword">const</span> SRC_PATH = path.resolve(ROOT_PATH, <span class="string">'src'</span>);</span><br><span class="line"><span class="keyword">const</span> DIST_PATH = path.resolve(ROOT_PATH, <span class="string">'dist'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    optimization: &#123;</span><br><span class="line">        concatenateModules: <span class="literal">false</span>     </span><br><span class="line">    &#125;,</span><br><span class="line">    entry: &#123;</span><br><span class="line">        app: SRC_PATH + <span class="string">'/index.js'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: DIST_PATH,</span><br><span class="line">        filename: <span class="string">'[name].bundle.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mode: <span class="string">'development'</span>,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: DIST_PATH,</span><br><span class="line">        port: <span class="number">9800</span>,</span><br><span class="line">        host: <span class="string">"localhost"</span>,</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">        hot: <span class="literal">true</span>,</span><br><span class="line">        inline: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>添加npm自定义命令</strong></p>
+<p>打开package.json文件，修改scripts部分</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> "scripts": &#123;</span><br><span class="line">   "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",</span><br><span class="line">   "start": "webpack --config webpack.config.js",</span><br><span class="line">"dev": "webpack-dev-server",</span><br><span class="line">"build": "webpack"</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+<p>之后，你可以使用以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm run <span class="built_in">test</span></span><br><span class="line">npm run start</span><br><span class="line">npm run dev</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<h1 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h1><p><strong>启动实时服务器dev-server</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>此时命令行窗口的输出应该如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br><span class="line"></span><br><span class="line">&gt; webpack-demo@1.0.0 dev C:\Users\水煮鱼肠面\Desktop\webpack-demo</span><br><span class="line">&gt; webpack-dev-server</span><br><span class="line"></span><br><span class="line">i ｢wds｣: Project is running at http://localhost:9800/</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">Built at: 2019-04-13 23:14:57</span><br><span class="line">        Asset     Size  Chunks             Chunk Names</span><br><span class="line">app.bundle.js  687 KiB     app  [emitted]  app</span><br><span class="line">Entrypoint app = app.bundle.js</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">    + 14 hidden modules</span><br><span class="line">i ｢wdm｣: Compiled successfully.</span><br></pre></td></tr></table></figure>
+<p>你应该关注此条输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i ｢wds｣: Project is running at http://localhost:9800/</span><br></pre></td></tr></table></figure>
+<p>在浏览器中打开<u>localhost:9800</u>，你应该看到<u>Hello webpack-demo!</u></p>
+<p><strong>测试实时服务器dev-server</strong></p>
+<p>修改index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span>;</span><br><span class="line">$(<span class="string">'body'</span>).append(<span class="string">'Hello webpack-demo!'</span>);</span><br><span class="line">$(<span class="string">'body'</span>).append(<span class="string">'&lt;br/&gt;'</span>);</span><br><span class="line">$(<span class="string">'body'</span>).append(<span class="string">'Test dev-server!'</span>);</span><br></pre></td></tr></table></figure>
+<p>保存后，浏览器内的页面将自动刷新！</p>
+<h1 id="打包项目文件"><a href="#打包项目文件" class="headerlink" title="打包项目文件"></a>打包项目文件</h1><p>此时打开dist目录，你将发现index.html中引用的<strong>app.bundle.js</strong>并不存在！其实未编译打包项目前，app.bundle.js只存在于dev-server的内存中。</p>
+<p><strong>运行命令，打包项目</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>此时命令行窗口的输出应该如下，dist目录下将生成app.bundle.js文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ npm run build</span><br><span class="line"></span><br><span class="line">&gt; webpack-demo@1.0.0 build C:\Users\水煮鱼肠面\Desktop\webpack-demo</span><br><span class="line">&gt; webpack</span><br><span class="line"></span><br><span class="line">Hash: a2dd1fb50e1fd723cb1c</span><br><span class="line">Version: webpack 4.30.0</span><br><span class="line">Time: 986ms</span><br><span class="line">Built at: 2019-04-13 23:57:05</span><br><span class="line">        Asset     Size  Chunks             Chunk Names</span><br><span class="line">app.bundle.js  314 KiB     app  [emitted]  app</span><br><span class="line">Entrypoint app = app.bundle.js</span><br><span class="line">[./src/index.js] 132 bytes &#123;app&#125; [built]</span><br><span class="line">    + 1 hidden module</span><br></pre></td></tr></table></figure>
+<h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:left">问题</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">启动实时服务器dev-server，并打开localhost:9800/页面，浏览器页面空白。再打开浏览器console，将发现错误提示： <code>Uncaught TypeError: Cannot read property &#39;call&#39; of undefined</code></td>
+<td>安装最新版本的webpack(&gt;=4.30.0）</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left">安装依赖的过程中报错</td>
+<td>检查网络状况、检查命令是否正确……</td>
+</tr>
+</tbody>
+</table>
+<p>问题1的<a href="https://github.com/webpack/webpack/issues/8996" target="_blank" rel="noopener">项目issue8996</a></p>
+	
+	</div>
+	
+	<div id="current-post-cover" data-scr="/img/post-cover/76.jpg"></div>
+
+	<!-- relate post, comment...-->
+	<div class="investment-container">
+		<div class="investment-header">
+			<div class="investment-title-1">
+				<div class="on">相关文章</div>
+				<div>评论</div>
+				<div>分享</div>
+			</div>
+			<div class="investment-title-2">	            
+				
+	<span>
+		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		
+		
+			<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍" rel="next">
+				下一篇&raquo;
+			</a>
+			
+	</span>
+
+
+      		
+			</div>	
+		</div>
+		
+		<div class="investment-content">
+			<div class="investment-content-list">
+				
+
+<div class="relate-post">
+	
+		<ul>
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/08/02/Github入门术语/" title="Github入门术语">
+								Github入门术语
+							</a>
+							<p class="relate-post-content">
+								什么是Git 
+Git是一个版本控制系统（Version Control System），版本控制即记录一个或若干文件内容变化的情况。Git属于分布式版本控制系统，客户端提取文件时总是镜像的完整仓库。
+Repository  
+仓库，...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/08/02/Github入门术语/" title="Github入门术语">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">
+								Annie主题更新日志
+							</a>
+							<p class="relate-post-content">
+								
+ 2019-4-14 主题优化
+
+
+
+
+类型
+模块
+说明
+
+
+
+
+优化
+文章Markdown
+优化表格、代码块样式
+
+
+新增
+文章分享
+addThis、baiduShare、shareThis、socialShare
+
+
+新增
+站点...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题更新日志">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">
+								相册主题Dream介绍
+							</a>
+							<p class="relate-post-content">
+								新的HEXO主题，主要用于建立相册博客。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：PREVIEW
+
+
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">
+								《人间失格》抄录1
+							</a>
+							<p class="relate-post-content">
+								
+手记之三 1
+
+竹一的两大预言，兑现了一个，落空了一个。“被女人迷恋上“这一并不光彩的预言化作了现实，而”肯定会成为一个伟大的画家“的这一祝福性的预言却归于泡影。
+我仅仅当上了给粗俗杂志投稿的无名的蹩脚漫画家而已。
+由于镰仓的殉情自...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">
+								银字笙调，奈何初冬
+							</a>
+							<p class="relate-post-content">
+								文章段落荏苒岁月覆盖了过往，有很多人已经沉沦在琼壶歌月之中，也有很多人长歌倚楼。
+但在那滚滚红尘中，那座断桥，那场雪;那个秋，那个染火枫林都是昙花一现。而那座桥上，那个愀然的女子更是不入年华。
+瑞雪初霁，那一刻有多少凝视?立于红褐色的...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">
+								Annie主题使用Gitalk
+							</a>
+							<p class="relate-post-content">
+								应请求，特意写了这篇文章。文章涉及到了Github仓库的创建、OAuth应用的申请、Gitalk评论插件的使用，请读者按需取用。（文章不叙述具体概念及原理）
+Gitalk使用方法一新建仓库
+点击你的用户名，定位到github用户主页，...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">
+								山鬼情书之零
+							</a>
+							<p class="relate-post-content">
+								匹夫说我生来骄傲，
+I’m proud of my husband.
+
+不肯半分折腰，
+Unwilling to half split up.
+
+亦不能半分低头。
+You can not half bow.
+
+我将送喜欢的人远走,
+I...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/21/toc标题测试/" title="toc标题测试">
+								toc标题测试
+							</a>
+							<p class="relate-post-content">
+								h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2标题h3标题h4标题h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/21/toc标题测试/" title="toc标题测试">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="toc标题测试">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/08/起风了/" title="起风了">
+								起风了
+							</a>
+							<p class="relate-post-content">
+								起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
+词：米果 
+曲：高桥优 
+这一路上走走停停 
+顺着少年漂流的痕迹 
+迈出车站的前一刻 
+竟有些犹豫 
+不禁笑这近乡情怯 
+仍无可避免 
+而长野的天 
+依旧那么暖 
+风吹起...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/08/起风了/" title="起风了">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg" alt="起风了">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">
+								Annie主题使用说明
+							</a>
+							<p class="relate-post-content">
+								12+this is add!-this is quer.
+一、LOGO和FAVICON编辑主题目录下的_config.yml文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。
+二、...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/65.jpg" alt="Annie主题使用说明">
+						</a>
+					</li>											
+			
+			
+		</ul>
+	
+</div>	
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-comment">
+
+	
+
+		
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		
+		
+	
+
+</div>
+			</div>
+			<div class="investment-content-list">
+				<div class="layout-share">
+	
+	
+
+		
+
+			<!-- addThis share -->
+			<!-- www.addthis.com/dashboard -->
+
+	<div class="addthis_inline_share_toolbox">
+	</div>
+
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e" async="async"></script>
+
+
+		
+		
+	
+</div>
+
+
+			</div>
+		</div>	
+	</div>
+	</div>
+</div>
+
+
+
+	<!-- leancloud -->
+	<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+
+
+
+	<script>
+		var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
+            appkey = 'wzGaywJpxGEhEclcl87rdtHG';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
+	
+
+
+<!-- show math formula -->
+
+	<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config(
+			{ 
+				tex2jax: {
+					inlineMath: [['$','$'], ['\\(','\\)']]
+				} 
+			}
+		);
+	</script>
+
+
+
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
+
+	            $(this).wrap('<div id="post-code"></div>');
+
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
+
+
+<!-- TODO: There seems to be a bug when you close the post gallery! -->
+<link rel="stylesheet" href="/plugin/lightgallery/css/lightgallery.css">
+<script src="/plugin/lightgallery/js/jquery-1.11.0.min.js"></script>
+<script src="/plugin/lightgallery/js/lightgallery-all.min.js"></script>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Sariay. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup">
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">
+				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+
+   
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
+	
+    <script>
+        var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
+            appkey = 'wzGaywJpxGEhEclcl87rdtHG',
+            limitCount = 10;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>

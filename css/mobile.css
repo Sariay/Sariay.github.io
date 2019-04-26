@@ -157,9 +157,6 @@
 		width: 70%;
 		height: auto;
 	}
-	.layout-poem {
-		width: 80%;
-	}
 	/*归档页*/
 	.layout-archive {
 		width: 80%;
@@ -193,10 +190,10 @@
 		width: 90%;
 		margin: 4em auto 3em;
 	}
-	header #logo-S {
+	header #logo {
 		margin: auto calc((100% - 4em)/2);
 	}
-	header #navigation-S {
+	header #navigation-show {
 		clear: both;
 		text-align: center;
 		float: none;
@@ -251,7 +248,7 @@
 		display: none;
 	}
 	/*其他*/
-	#navigation-H p {
+	#navigation-hide p {
 		text-align: left;
 		margin-left: .9em;
 		width: 80%;
@@ -267,9 +264,6 @@
 @media screen and (max-width: 500px) {
 	.layout-pure .post .post-text .post-meta .right {
 		float: none;
-		display: none;
-	}
-	header .h-footer li:first-child {
 		display: none;
 	}
 	header .motto {

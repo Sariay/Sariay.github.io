@@ -3,9 +3,8 @@
 	时间：2018-09-25
 	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
 -->
-
-	<!DOCTYPE html>
-	<html class="scrollbar">
+<!DOCTYPE html>
+<html class="html-loading">
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
@@ -24,28 +23,26 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
 
   <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/highlight/highlight.css">
+<link rel="stylesheet" href="/css/style.css">
   
-
-    <!-- jquery -->
-	<script src="/js/jquery-2.1.1.min.js"></script>
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
 
   <!-- leancloud -->
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
 <script src="/js/leancloud.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 	<body>
 		<!-- Preloader -->
 
 	<div id="preloader">
 		<div class="pre-container">
 			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
 				</div>
 						
 		</div>
@@ -53,115 +50,87 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/">
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="/img/random/">
 	<div class="mask">
+		<!-- Logo and navigation -->
 		<div class="h-header">
-			<div id="logo-S">
-				
-					<a href="/">
-						<img src="/img/logo5.png" alt="Logo">
-					</a>
-				
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo4.png" alt="Logo">
+					
+				</a>
 			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
+			
+			<div id="navigation-show">
 				<ul>
-					
-						<li class="menu-home">
-							<a href="/" class="menu-item-home">主页</a>
-						</li>
-					
-						<li class="menu-archive">
-							<a href="/archives" class="menu-item-archive">归档</a>
-						</li>
-					
-						<li class="menu-categories">
-							<a href="/categories" class="menu-item-categories">分类</a>
-						</li>
-					
-						<li class="menu-tags">
-							<a href="/tags" class="menu-item-tags">标签</a>
-						</li>
-					
-						<li class="menu-about">
-							<a href="/about" class="menu-item-about">关于</a>
-						</li>
-					
-						<li class="menu-gallery">
-							<a href="http://gallery.sariay.me/" class="menu-item-gallery">相册</a>
-						</li>
-					
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
 
-					
-						<li class="menu-search">
-							<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
-						</li>
-					
-				</ul>			
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
 			</div>				
 		</div>
 
+		<!-- motto -->
 		<div class="h-body">	
-			<!-- motto -->
 			
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
+				<p class="motto"></p>
 			
-
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					
-						当前文章&nbsp;:&nbsp;《Annie主题更新日志》
-					
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
-
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<ul>
-				<li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li>
-				<li>
-					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li>
-			</ul>
-		</div>
-		
-		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
 <style type="text/css">
 	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
 		position: absolute;
-		left: 40px;
-		bottom: 30px;
+		bottom: 5px;
+		right: 1rem;
 		writing-mode: tb-rl;
-		font-size: 36px;
 	}	
+	
 	.header-date a {
 		border-bottom: none;
 	}
+
 	@media only screen and (max-width: 768 ) {
 		.header-date {
-			position: absolute;
-			left: 40px;
-			bottom: 30px;
-			writing-mode: tb-rl;
-			font-size: 20px;
+			font-size: 1rem;
 		}			
 	}
 </style>
@@ -178,13 +147,32 @@
 		}
 	});
 </script>
-</div></header>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《Annie主题更新日志》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
 
 <!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
-
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<h3>Navigation</h3>
@@ -192,90 +180,96 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-			
-				<li class="menu-home">
-					<a href="/" class="menu-item-home">主页</a>
-				</li>
-			
-				<li class="menu-archive">
-					<a href="/archives" class="menu-item-archive">归档</a>
-				</li>
-			
-				<li class="menu-categories">
-					<a href="/categories" class="menu-item-categories">分类</a>
-				</li>
-			
-				<li class="menu-tags">
-					<a href="/tags" class="menu-item-tags">标签</a>
-				</li>
-			
-				<li class="menu-about">
-					<a href="/about" class="menu-item-about">关于</a>
-				</li>
-			
-				<li class="menu-gallery">
-					<a href="http://gallery.sariay.me/" class="menu-item-gallery">相册</a>
-				</li>
-			
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
 
-			
-				<li class="menu-search">
-					<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
-				</li>
-			
-		</ul>
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
 	</div>
-
 	<div class="nav-footer">
 		<ul>
 	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
 </ul>
+
 	</div>
 </nav>
-
-		
+			
 		<!--main-->
 		<main>
-			<div class="layout-post">
-	
-	
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
 	<div class="article-title">
 		
 	<a href="/2018/09/25/Annie主题更新日志/" itemprop="url">
@@ -286,27 +280,41 @@
 
 	<div class="article-meta">
 		<span>
+			<i class="fa fa-calendar"></i>
 			
 	发布于
+
 	<a href="/2018/09/25/Annie主题更新日志/" itemprop="url">
 		<time datetime="2018-09-25T12:16:32.000Z" itemprop="datePublished">
 	  		2018-09-25
 	  </time>
 	</a> 
 
-	/
+
+
+
+
+			
+
+
 	更新于
+
 	<a href="/2018/09/25/Annie主题更新日志/" itemprop="url">
 		<time datetime="2018-09-25T12:16:32.000Z" itemprop="dateUpdated">
-	  		2018-12-29
+	  		2019-04-26
 	  </time>
-	</a> 	
+	</a> 
+
+
 
 		</span>
-		/
 		<span>
 			<i class="fa fa-tags"></i>
 			
+	
+		<a href="/tags/说明/" class=" ">
+			说明
+		</a>
 	
 		<a href="/tags/开发实践/" class=" ">
 			开发实践
@@ -314,21 +322,23 @@
 	
 		
 		</span>
-		/
+		
 		
 
+	
     <span class="leancloud_visitors" id="/2018/09/25/Annie主题更新日志/_visitors" data-url="/2018/09/25/Annie主题更新日志/" data-title="Annie主题更新日志">
-        热度
+       	<i class="fa fa-eye"></i>
+       	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
     
-    /
 
 
 
+	
     <span class="leancloud_likes" id="/2018/09/25/Annie主题更新日志/_likes" data-url="/2018/09/25/Annie主题更新日志/" data-title="Annie主题更新日志" rel="unlike">
-        喜欢
         <i class="fa fa-heart"></i>
+        喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
     </span>
 
@@ -336,6 +346,70 @@
 
 	<div class="article-content" id="article-content">
 		<ul>
+<li style="list-style: none"><input type="checkbox" checked> 2019-4-14 主题优化</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:left">模块</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">文章Markdown</td>
+<td style="text-align:left">优化表格、代码块样式</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left">文章分享</td>
+<td style="text-align:left">addThis、baiduShare、shareThis、socialShare</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left">站点分析</td>
+<td style="text-align:left">百度分析、google分析等</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">toc目录</td>
+<td style="text-align:left">增加开关（控制展示与否）</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">social.ejs</td>
+<td style="text-align:left">代码重构</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">代码块</td>
+<td style="text-align:left">弃用hexo-plugin-prism，使用next主题的highlight.styl</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left">滚动条</td>
+<td style="text-align:left">使用jquery.nicescroll.js美化滚动条</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">图片缩放比例</td>
+<td style="text-align:left">优化主页文章缩略图、文章页相关文章缩略图的<strong>缩放比例</strong>（按原始比例裁剪）。插件<a href="https://github.com/levymetal/jquery-resize-image-to-parent" target="_blank" rel="noopener">jquery-resize-image-to-parent</a></td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">搜索页</td>
+<td style="text-align:left">优化样式，增加搜索结果提示</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li style="list-style: none"><input type="checkbox" checked> 2018-12-27 主题重构</li>
 </ul>
 <table>
@@ -343,7 +417,7 @@
 <tr>
 <th style="text-align:center">类型</th>
 <th style="text-align:left">模块</th>
-<th style="text-align:left"><strong>描述</strong></th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -432,18 +506,17 @@
 <tr>
 <th style="text-align:center">类型</th>
 <th style="text-align:left">模块</th>
-<th>描述</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">优化</td>
 <td style="text-align:left">Annie主题</td>
-<td>主题重构（css、js、ejs）</td>
+<td style="text-align:left">主题重构（css、js、ejs）</td>
 </tr>
 </tbody>
 </table>
-<hr>
 <ul>
 <li style="list-style: none"><input type="checkbox" checked> 2018-9-25 主题完善</li>
 </ul>
@@ -452,39 +525,39 @@
 <tr>
 <th style="text-align:center">类型</th>
 <th style="text-align:left">模块</th>
-<th>描述</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">新增</td>
 <td style="text-align:left">相册模块</td>
-<td>使用画廊插件</td>
+<td style="text-align:left">使用画廊插件</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
 <td style="text-align:left">评论模块</td>
-<td>gitalk、valine</td>
+<td style="text-align:left">gitalk、valine</td>
 </tr>
 <tr>
 <td style="text-align:center">修复</td>
 <td style="text-align:left">代码高亮</td>
-<td>使用高亮插件</td>
+<td style="text-align:left">使用高亮插件</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
 <td style="text-align:left">文章TOC</td>
-<td>参照其他主题</td>
+<td style="text-align:left">参照其他主题</td>
 </tr>
 <tr>
 <td style="text-align:center">优化</td>
 <td style="text-align:left">页头背景</td>
-<td>使用随机图片或固定图片</td>
+<td style="text-align:left">使用随机图片或固定图片</td>
 </tr>
 <tr>
 <td style="text-align:center">修复</td>
 <td style="text-align:left">页脚高度</td>
-<td>height、min-height</td>
+<td style="text-align:left">height、min-height</td>
 </tr>
 </tbody>
 </table>
@@ -523,6 +596,8 @@
 			</a>
 			
 	</span>
+
+
       		
 			</div>	
 		</div>
@@ -532,123 +607,132 @@
 				
 
 <div class="relate-post">
-	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">
-							相册主题Dream介绍
+	
+		<ul>
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">
+								相册主题Dream介绍
+							</a>
+							<p class="relate-post-content">
+								新的HEXO主题，主要用于建立相册博客。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：PREVIEW
+
+
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
 						</a>
-						<p>
-							新的HEXO主题，主要用于建立相册博客。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：PREVIEW
-
-
-						</p>
-					</div>
-
-					<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
-						<img src="/img/a5.jpg" class="relateImg" alt="相册主题Dream介绍">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">
-							Annie主题使用Gitalk
-						</a>
-						<p>
-							应请求，特意写了这篇文章。文章涉及到了Github仓库的创建、OAuth应用的申请、Gitalk评论插件的使用，请读者按需取用。（文章不叙述具体概念及原理）
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">
+								Annie主题使用Gitalk
+							</a>
+							<p class="relate-post-content">
+								应请求，特意写了这篇文章。文章涉及到了Github仓库的创建、OAuth应用的申请、Gitalk评论插件的使用，请读者按需取用。（文章不叙述具体概念及原理）
 Gitalk使用方法一新建仓库
 点击你的用户名，定位到github用户主页，...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
-						<img src="/img/post-cover/72.jpg" class="relateImg" alt="Annie主题使用Gitalk">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/09/21/toc标题测试/" title="toc标题测试">
-							toc标题测试
-						</a>
-						<p>
-							h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2标题h3标题h4标题h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的...
-						</p>
-					</div>
-
-					<a href="/2018/09/21/toc标题测试/" title="toc标题测试">				
-						<img src="/img/post-cover/72.jpg" class="relateImg" alt="toc标题测试">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">
-							Annie主题使用说明
-						</a>
-						<p>
-							一、LOGO和FAVICON编辑主题目录下的_config.yml文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。
-二、页头背景图片页头背景可以使用随机图片或固定图片，原则上，使用...
-						</p>
-					</div>
-
-					<a href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">				
-						<img src="/img/Annie.png" class="relateImg" alt="Annie主题使用说明">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">
-							《人间失格》抄录1
-						</a>
-						<p>
+						<a class="relate-post-cover" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
 							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">
+								Annie主题使用说明
+							</a>
+							<p class="relate-post-content">
+								12+this is add!-this is quer.
+一、LOGO和FAVICON编辑主题目录下的_config.yml文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。
+二、...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/65.jpg" alt="Annie主题使用说明">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/04/12/webpack网站开发入门/" title="webpack网站开发入门">
+								webpack网站开发入门
+							</a>
+							<p class="relate-post-content">
+								预先准备安装node.js：项目开始之前，确保安装了nodejs工具。原则上，你应使用最新的稳定版本（LTS），点击LTS的下载按钮即可。
+开发工具：Sublime Text 3，Visual Studio Code， Atom，Hb...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/04/12/webpack网站开发入门/" title="webpack网站开发入门">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/76.jpg" alt="webpack网站开发入门">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">
+								《人间失格》抄录1
+							</a>
+							<p class="relate-post-content">
+								
 手记之三 1
 
 竹一的两大预言，兑现了一个，落空了一个。“被女人迷恋上“这一并不光彩的预言化作了现实，而”肯定会成为一个伟大的画家“的这一祝福性的预言却归于泡影。
 我仅仅当上了给粗俗杂志投稿的无名的蹩脚漫画家而已。
 由于镰仓的殉情自...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
-						<img src="/img/post-cover/31.jpg" class="relateImg" alt="《人间失格》抄录1">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">
-							银字笙调，奈何初冬
+						<a class="relate-post-cover" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
 						</a>
-						<p>
-							文章段落荏苒岁月覆盖了过往，有很多人已经沉沦在琼壶歌月之中，也有很多人长歌倚楼。
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">
+								银字笙调，奈何初冬
+							</a>
+							<p class="relate-post-content">
+								文章段落荏苒岁月覆盖了过往，有很多人已经沉沦在琼壶歌月之中，也有很多人长歌倚楼。
 但在那滚滚红尘中，那座断桥，那场雪;那个秋，那个染火枫林都是昙花一现。而那座桥上，那个愀然的女子更是不入年华。
 瑞雪初霁，那一刻有多少凝视?立于红褐色的...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
-						<img src="/img/post-cover/74.jpg" class="relateImg" alt="银字笙调，奈何初冬">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">
-							山鬼情书之零
+						<a class="relate-post-cover" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
 						</a>
-						<p>
-							匹夫说我生来骄傲，
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">
+								山鬼情书之零
+							</a>
+							<p class="relate-post-content">
+								匹夫说我生来骄傲，
 I’m proud of my husband.
 
 不肯半分折腰，
@@ -659,22 +743,40 @@ You can not half bow.
 
 我将送喜欢的人远走,
 I...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
-						<img src="/img/post-cover/34.jpg" class="relateImg" alt="山鬼情书之零">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/09/08/起风了/" title="起风了">
-							起风了
+						<a class="relate-post-cover" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
 						</a>
-						<p>
-							起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/21/toc标题测试/" title="toc标题测试">
+								toc标题测试
+							</a>
+							<p class="relate-post-content">
+								h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2标题h3标题h4标题h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/21/toc标题测试/" title="toc标题测试">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="toc标题测试">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/08/起风了/" title="起风了">
+								起风了
+							</a>
+							<p class="relate-post-content">
+								起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
 词：米果 
 曲：高桥优 
 这一路上走走停停 
@@ -686,52 +788,38 @@ I...
 而长野的天 
 依旧那么暖 
 风吹起...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/09/08/起风了/" title="起风了">				
-						<img src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg" class="relateImg" alt="起风了">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/08/02/Github入门术语/" title="Github入门术语">
-							Github入门术语
+						<a class="relate-post-cover" href="/2018/09/08/起风了/" title="起风了">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg" alt="起风了">
 						</a>
-						<p>
-							什么是Git 
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/08/02/Github入门术语/" title="Github入门术语">
+								Github入门术语
+							</a>
+							<p class="relate-post-content">
+								什么是Git 
 Git是一个版本控制系统（Version Control System），版本控制即记录一个或若干文件内容变化的情况。Git属于分布式版本控制系统，客户端提取文件时总是镜像的完整仓库。
 Repository  
 仓库，...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/08/02/Github入门术语/" title="Github入门术语">				
-						<img src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" class="relateImg" alt="Github入门术语">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/07/25/秦时明月/" title="秦时明月">
-							秦时明月
+						<a class="relate-post-cover" href="/2018/08/02/Github入门术语/" title="Github入门术语">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
 						</a>
-						<p>
-							空页测试
-
-						</p>
-					</div>
-
-					<a href="/2018/07/25/秦时明月/" title="秦时明月">				
-						<img src="/img/post-cover/45.jpg" class="relateImg" alt="秦时明月">
-					</a>
-				</li>											
-		
-		
-	</ul>
+					</li>											
+			
+			
+		</ul>
+	
 </div>	
 			</div>
 			<div class="investment-content-list">
@@ -741,73 +829,9 @@ Repository
 
 		
 
-			<!-- comment gitalk -->
-			<!-- show gitalk comment -->
-<div id="gitalk-container"></div>
-
-<!-- gitalk`s css & js -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<link rel="stylesheet" href="/css/comment.css">
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<script type="text/javascript">
-	//Thanks O-R
-	//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
-	//去除尾部匹配正则数组的字符串  
-	//Remove redundant characters
-	String.prototype.trimEnd = function(regStr) {
-		var result = this;
-		if(regStr == undefined || regStr == null || regStr == "") {
-			return result;
-		}
-		var array = regStr.split(',');
-
-		if(array.length > 0) {
-
-			var c = array.shift();
-			var str = this;
-			var i = str.length;
-			var rg = new RegExp(c);
-			var matchArr = str.match(rg);
-
-			if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
-				var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
-					.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
-					.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
-					.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
-					.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
-					.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
-					.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
-					.replace(/\./g, "\\.").replace(/\&/g, "\\&");
-				matchStr = matchStr + '$';
-				result = str.replace(new RegExp(matchStr), "");
-			}
-
-			if(array.length > 0) {
-				return result.trimEnd(array.join())
-			} else {
-				return result;
-			}
-		}
-	};
-
-	//Create gitalk
-	var gitalk = new Gitalk({
-		clientID: 'bf19f33d43d567dce87e',
-		clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
-		//id: window.location.pathname,
-		//id: decodeURI(window.location.pathname),
-		//id: (window.location.pathname).split("/").pop().substring(0, 49),
-		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
-		repo: 'annie-gitalk',
-		owner: 'Sariay',
-		admin: 'Sariay',
-		distractionFreeMode: 'true',
-	})
-	gitalk.render('gitalk-container');
-</script>
-
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
 		
 		
 	
@@ -815,23 +839,30 @@ Repository
 </div>
 			</div>
 			<div class="investment-content-list">
-				
-<style type="text/css">
-	.layout-share{
-		margin-top: 3em;
-		text-align: center;
-	}
-</style>
+				<div class="layout-share">
+	
+	
 
-<div class="layout-share">
- 	<div class="addthis_inline_share_toolbox">
- 	</div>
+		
+
+			<!-- addThis share -->
+			<!-- www.addthis.com/dashboard -->
+
+	<div class="addthis_inline_share_toolbox">
+	</div>
+
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e" async="async"></script>
+
+
+		
+		
+	
 </div>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e"></script>
+
 			</div>
 		</div>	
+	</div>
 	</div>
 </div>
 
@@ -865,65 +896,91 @@ Repository
 	</script>
     
 
+	
 
- 
 
 <!-- show math formula -->
 
 
 
-<script>
-	//Refer to https://xinyo.org/archives/66226, thanks xinyo!
-	function codeCopy() {
-		var copyContainerId = 'copy-nav';
-						
-		$("pre").before(" <nav class=' " + copyContainerId + " '><i class='code-language'></i></nav> ");
-		
-		$('.' + copyContainerId).append("<i class='fa fa-clipboard copy-btn' aria-hidden='true'></i>");
-		
-		$('#article-content').find('pre').each( function () {
-			var language = $(this).children('code').attr('class').substr(9);//why 9? Need to check language?
-			$(this).prev().find('.code-language').text( language );	
-		});
-				
-		//为复制按钮添加click事件
-		$('.copy-btn').on("click", function() {
-			//初始化
-			$("textarea").remove("#targetId");
-			
-			//获取对应的代码
-			var codePre = $(this).parent().next(),
-				codeText = codePre[0].textContent,
-				target = document.createElement("textarea");
-			target.style.position = "absolute";
-			target.style.left = "-9999px";
-			target.style.top = "0";
-			target.id = "targetId";
-			codePre.append(target);
-			target.textContent = codeText;
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
 
-			//选中textarea内的代码
-			target.focus();
-			target.setSelectionRange(0, target.value.length);
+	            $(this).wrap('<div id="post-code"></div>');
 
-			// 复制选中的内容
-			document.execCommand("copy");
-			
-			//删除添加的节点
-			$("textarea").remove("#targetId");
-			
-			var thisCopied = $(this);
-			thisCopied.addClass('copy-status');	
-			setTimeout( function() {
-				thisCopied.removeClass('copy-status');
-			}, 2000)
-		});	
-	}
-	
-	if( $('.layout-post').length )	{
-		codeCopy();
-	}
-</script>
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
 
 
 <!-- TODO: There seems to be a bug when you close the post gallery! -->
@@ -948,60 +1005,51 @@ Repository
 	});
 	//TODO：支持video
 </script>
-
-<!--
-	时间：2018-11-17
-	描述：
-		插件名称：katelog.min.js
-		插件作者：KELEN
-		插件来源: https://github.com/KELEN/katelog
--->
-	           
 		</main>
-		
+
 		<!--footer-->
 		<footer>
 	<div class="social">
 		<ul>
 	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
 </ul>
+
 	</div>
 		
 	<div class="copyright">
@@ -1015,34 +1063,21 @@ Repository
 	<!-- busuanzi -->
 	<!-- busuanzi -->
 
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_page_pv">
-	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-		</span>
-
-	
-
-
 
 
 		</p>
 		<p>
 			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
-			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>
-			<a href="javascript:void(0);" class="fontSizePlus">A+</a>
-            <a href="javascript:void(0);" class="fontSizeReset">默认</a>           
-            <a href="javascript:void(0);" class="fontSizeMinus">A-</a>	 					
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
 		</p>
 	</div>		
 </footer>
 		
-    <!-- set '1' to show motto in all pages! -->
+	<!-- set '1' to show motto in all pages! -->
 
-	<script src="/js/motto.js"></script>
+	<script src="/plugin/motto/motto.js"></script>
+	
 	<script type="text/javascript">
 		$(".motto").html( getMingYanContent() );
 	</script>	
@@ -1050,7 +1085,7 @@ Repository
 
 
 
-    <!--
+	<!--
 	时间：2018-10-3
 	描述：
 		插件名称：hexo-generator-search-zip
@@ -1060,19 +1095,25 @@ Repository
 <div class="popup search-popup local-search-popup">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
-      ESC
-   </span>
+      		ESC
+   		</span>
 		<div class="local-search-header">
+			<div class="input-prompt">
+				
+			</div>
 			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
 		</div>
 		<div class="local-search-body">
 			<div id="local-search-output"></div>
 		</div>
 		<div class="local-search-footer">
-			
+			<div class="topN-post">				
+				
 
    
-	<div id="topN"></div>
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
 	
     <script>
         var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
@@ -1085,13 +1126,14 @@ Repository
         }
     </script>
    
-
+								
+			</div>
 		</div>
 	</div>
 </div>
 
-<script src="/js/ziploader.js"></script>
-<script src="/js/search.js"></script>
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -1110,26 +1152,37 @@ Repository
 </script>
 
 
+<!-- love effect -->
 
-    <script src="/js/love.js"></script>
+	<script src="/plugin/love/love.js"></script>
 
 
-<!--back to top-->
+<!-- back to top -->
 
-    
+	
 	<div id="totop">
   		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
 	</div>
-	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
-	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
  
 
-
- 
-
-<script src="/js/vibrant.js"></script>
-<script src="/js/chinese.js"></script>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
 <script src="/js/main.js"></script>
-	</body>
-	</html>
+	</body>	
+</html>

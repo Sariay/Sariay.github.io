@@ -13,15 +13,16 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
     // monitor main search box;
     var onPopupClose = function(e) {
         $('.popup').fadeOut(300);
+        $('body').removeClass('body-fixed')
         $('#local-search-input').val('');
         $('.search-result-list').remove();
         $('#no-result').remove();
-        $('body').css('overflow', '');
+        $('.search-result-number').remove();
     }
 
     function proceedsearch() {
         $('.popup').fadeIn(300);
-        $('body').css('overflow', 'hidden');
+        $('body').addClass('body-fixed');
         var $localSearchInput = $('#local-search-input');
         $localSearchInput.attr("autocapitalize", "none");
         $localSearchInput.attr("autocorrect", "off");
@@ -54,9 +55,37 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
             }
         })
     }
-
+    
+	function fixedInputWhenScrolling() {
+		var searchContainerId = '.local-search-popup',
+			searchInputId = '#local-search-input',
+			searchInputPromptH = $(".input-prompt").outerHeight();
+		
+		$(searchContainerId).scroll(function() {
+			var scrollTop = $(searchContainerId).scrollTop();
+		
+			if(scrollTop >= searchInputPromptH/2) {				
+				$(searchInputId).addClass('input-fixed');
+			} else {
+				$(searchInputId).removeClass('input-fixed');
+			}
+		}).trigger('scroll');
+	}
+	
+	
+	function clearScroll() {
+		var searchContainerId = '.local-search-popup',
+			scrollSpeed = 5; //shoud be small value! 
+		
+		$(searchContainerId).animate({
+			scrollTop: 0
+		}, scrollSpeed);	
+	}
+   
+	
     // search function;
     var searchFunc = function(search_id, content_id) {
+    		
         'use strict';
         isfetched = true;
         var datas = JSON.parse(localStorage.getItem('searchJson'));
@@ -64,6 +93,9 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
         var input = document.getElementById(search_id);
         var resultContent = document.getElementById(content_id);
         var inputEventFunction = function() {
+        	// TODO
+        	clearScroll(); 
+        	                   	
             var searchText = input.value.trim().toLowerCase();
             var keywords = searchText.split(/[\s\-]+/);
             if (keywords.length > 1) {
@@ -248,9 +280,9 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
                 })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-4x" /></div>'
+                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-2x" /></div>'
             } else if (resultItems.length === 0) {
-                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-4x" /></div>'
+                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-3x" /></div>'
             } else {
                 resultItems.sort(function(resultLeft, resultRight) {
                     if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
@@ -261,7 +293,7 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
                         return resultRight.id - resultLeft.id;
                     }
                 });
-                var searchResultList = '<ul class=\"search-result-list\">';
+                var searchResultList = '<div class=\"search-result-number"\>' + resultItems.length + ' results at total!</div>' + '<ul class=\"search-result-list\">';
                 resultItems.forEach(function(result) {
                     searchResultList += result.item;
                 })
@@ -281,10 +313,7 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
             });
         }
 
-        // remove loading animation
-        $('body').css('overflow', '');
-
-        proceedsearch();
+        proceedsearch(); 
     }
 
     // handle and trigger popup window;
@@ -309,4 +338,7 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
             onPopupClose();
         }
     });
+    
+    // TODO
+    fixedInputWhenScrolling();
 };

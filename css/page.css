@@ -5,7 +5,7 @@
 	margin: 0em auto;
 	padding: 4em 0;
 	border: 1px solid transparent;
-	background-color: #FFFFFF;
+	background-color: #fff;
 }
 
 .layout-page-header {
@@ -30,10 +30,11 @@
 	width: 100%;
 	overflow: overlay;
 	padding: 0;
+	text-align: center;
 }
 
 .category-list li {
-	font-size: 1em;
+	font-size: 1rem;
 	display: inline-flex;
 	padding: 6px;
 	margin-right: 10px;
@@ -45,7 +46,6 @@
 }
 
 .category-list a {
-	display: inline-block;
 	padding-bottom: 0.2em;
 }
 
@@ -55,8 +55,8 @@
 }
 
 .category-list-count {
-	font-size: .9em;
-	margin-left: 1px;
+	font-size: .9rem;
+	margin-left: 2px;
 }
 
 
@@ -69,8 +69,7 @@
 
 .tags a {
 	margin-right: 10px;
-	line-height: 2em;
-	display: inline-block;
+	line-height: 2;
 }
 
 .layout-TCP-container {
@@ -117,22 +116,6 @@
 .about {
 	width: 70%;
 	min-height: 100vh;
-	margin: 0em 15%;
+	margin: 0em auto;
 	border: 1px solid transparent;
-	word-break: break-all
-}
-
-.about p {
-	font-family: Arial, 'Courier New', "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 1em;
-	line-height: 2em;
-	margin: 0.5em;
-	color: #232323;
-	text-align: justify;
-	word-spacing: 1px;
-	letter-spacing: 1px;
-	/*
-		断落首行缩进两字?
-		text-indent: 2em;
-	*/
 }

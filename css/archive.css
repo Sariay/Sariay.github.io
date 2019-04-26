@@ -5,7 +5,7 @@
 	margin: 0em auto;
 	padding: 4em 0;
 	border: 1px solid transparent;
-	background-color: #FFFFFF;
+	background-color: #fff;
 }
 
 .layout-archive i {
@@ -15,7 +15,7 @@
 }
 
 .layout-archive a {
-	border-bottom: 0px dotted lightgray;
+	border-bottom: 0px dotted #e0e0e0;
 }
 
 .layout-archive .i-container {
@@ -39,9 +39,9 @@
 
 #layout-archive-year ul li {
 	height: 44px;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1px dashed #e0e0e0;
 	line-height: 44px;
-	font-size: 1em;
+	font-size: 1rem;
 	padding-left: 0px;
 	overflow: hidden;
 	margin: 0px;
@@ -54,14 +54,14 @@
 	margin-top: 10px;
 	padding: 5px 8px;
 	background: #eaeaea;
-	color: #999999;
+	color: #999;
 }
 
 #layout-archive-year h3 {
 	cursor: pointer;
 	text-align: center;
 	background-color: grey;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	margin-top: 2rem;
 	color: white;
 	transition: all 0.5s;
@@ -89,15 +89,6 @@
 	background: #f7f9fa;
 }
 
-#layout-archive-year ul li:hover:after {
-	content: '|';
-	width: 5px;
-	background: #F44336;
-	position: absolute;
-	right: 0px;
-	color: #F44336;
-}
-
 #layout-archive-year ul li:hover em {
 	font-style: normal;
 	margin-right: 10px;
@@ -106,15 +97,6 @@
 	padding: 5px 8px;
 	background: #F44336;
 	color: #f7f9fa;
-}
-
-#layout-archive-year ul li:hover:before {
-	content: '|';
-	width: 5px;
-	background: #F44336;
-	position: absolute;
-	left: 0px;
-	color: #F44336;
 }
 
 #layout-archive-year li a {
@@ -147,9 +129,9 @@
 
 #layout-archive-month ul li {
 	height: 44px;
-	border-bottom: 1px dashed #ccc;
+	border-bottom: 1px dashed #e0e0e0;
 	line-height: 44px;
-	font-size: 1em;
+	font-size: 1rem;
 	padding-left: 0x;
 	overflow: hidden;
 	margin: 0px;
@@ -162,14 +144,14 @@
 	margin-top: 10px;
 	padding: 5px 8px;
 	background: #eaeaea;
-	color: #999999;
+	color: #999;
 }
 
 #layout-archive-month h3 {
 	cursor: auto;
 	text-align: center;
 	background-color: grey;
-	padding: 20px 0px;
+	padding: 10px 0px;
 	color: white;
 	transition: all 0.5s;
 }
@@ -207,15 +189,6 @@
 	background: #f7f9fa;
 }
 
-#layout-archive-month ul li:hover:after {
-	content: '|';
-	width: 5px;
-	background: #F44336;
-	position: absolute;
-	right: 0px;
-	color: #F44336;
-}
-
 #layout-archive-month ul li:hover em {
 	font-style: normal;
 	margin-right: 10px;
@@ -224,15 +197,6 @@
 	padding: 5px 8px;
 	background: #F44336;
 	color: #f7f9fa;
-}
-
-#layout-archive-month ul li:hover:before {
-	content: '|';
-	width: 5px;
-	background: #F44336;
-	position: absolute;
-	left: 0px;
-	color: #F44336;
 }
 
 #layout-archive-month li a {

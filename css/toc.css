@@ -1,10 +1,25 @@
 /* katelog - 目录 */
+.layout-toc{
+	position: relative;
+	width: 24%;
+}
+
+#layout-toc{
+	display: none;
+	line-height: 1;
+}
+
+.inline-flex {
+	display: inline-flex;
+}
 
 .k-catelog-list {
 	width: calc( (100% - 64%)/2);
 	height: 90vh;
-	left: 16px;
-	top: 65px;
+	width: 24%;
+	height: 100vh;
+	padding-left: 16px;	
+	top: 50px;
 	overflow: hidden;
 	border-right: 1px solid #e0e0e0;
 	display: none;
@@ -13,16 +28,18 @@
 .k-catelog-list>ul {
 	padding: 0;
 	margin: 0;
+	list-style: none;
 }
 
 .k-catelog-list li {
-	list-style: none;
 	width: 100%;
 }
 
 .k-catelog-list li ul {
 	/*Exampl: h6 对于 h5的层级边距*/
 	padding-left: 10px;
+	margin: 0;
+	list-style: none;
 }
 
 .k-catelog-link {
@@ -41,5 +58,5 @@
 
 .k-catelog-link-active {
 	color: red;
-	border-right: 1px solid red;
+	border-right: 1px solid red;	
 }

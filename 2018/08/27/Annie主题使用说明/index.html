@@ -3,9 +3,8 @@
 	时间：2018-09-25
 	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
 -->
-
-	<!DOCTYPE html>
-	<html class="scrollbar">
+<!DOCTYPE html>
+<html class="html-loading">
 		
 
 <head><meta name="generator" content="Hexo 3.8.0">
@@ -24,28 +23,26 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
 
   <!-- css -->
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/highlight/highlight.css">
+<link rel="stylesheet" href="/css/style.css">
   
-
-    <!-- jquery -->
-	<script src="/js/jquery-2.1.1.min.js"></script>
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
 
   <!-- leancloud -->
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
 <script src="/js/leancloud.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 	<body>
 		<!-- Preloader -->
 
 	<div id="preloader">
 		<div class="pre-container">
 			
-				<div class="transition">
-					<div class="three-bounce1"></div>
-					<div class="three-bounce2"></div>
-					<div class="three-bounce3"></div>
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
 				</div>
 						
 		</div>
@@ -53,115 +50,87 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/">
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="/img/random/">
 	<div class="mask">
+		<!-- Logo and navigation -->
 		<div class="h-header">
-			<div id="logo-S">
-				
-					<a href="/">
-						<img src="/img/logo5.png" alt="Logo">
-					</a>
-				
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo4.png" alt="Logo">
+					
+				</a>
 			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
+			
+			<div id="navigation-show">
 				<ul>
-					
-						<li class="menu-home">
-							<a href="/" class="menu-item-home">主页</a>
-						</li>
-					
-						<li class="menu-archive">
-							<a href="/archives" class="menu-item-archive">归档</a>
-						</li>
-					
-						<li class="menu-categories">
-							<a href="/categories" class="menu-item-categories">分类</a>
-						</li>
-					
-						<li class="menu-tags">
-							<a href="/tags" class="menu-item-tags">标签</a>
-						</li>
-					
-						<li class="menu-about">
-							<a href="/about" class="menu-item-about">关于</a>
-						</li>
-					
-						<li class="menu-gallery">
-							<a href="http://gallery.sariay.me/" class="menu-item-gallery">相册</a>
-						</li>
-					
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
 
-					
-						<li class="menu-search">
-							<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
-						</li>
-					
-				</ul>			
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
 			</div>				
 		</div>
 
+		<!-- motto -->
 		<div class="h-body">	
-			<!-- motto -->
 			
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
+				<p class="motto"></p>
 			
-
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					
-						当前文章&nbsp;:&nbsp;《Annie主题使用说明》
-					
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
-
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<ul>
-				<li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li>
-				<li>
-					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li>
-			</ul>
-		</div>
-		
-		<!-- This is only a demo, please go to "https://time.is" to set your city time! -->
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
 <style type="text/css">
 	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
 		position: absolute;
-		left: 40px;
-		bottom: 30px;
+		bottom: 5px;
+		right: 1rem;
 		writing-mode: tb-rl;
-		font-size: 36px;
 	}	
+	
 	.header-date a {
 		border-bottom: none;
 	}
+
 	@media only screen and (max-width: 768 ) {
 		.header-date {
-			position: absolute;
-			left: 40px;
-			bottom: 30px;
-			writing-mode: tb-rl;
-			font-size: 20px;
+			font-size: 1rem;
 		}			
 	}
 </style>
@@ -178,13 +147,32 @@
 		}
 	});
 </script>
-</div></header>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			当前文章&nbsp;:&nbsp;《Annie主题使用说明》
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
 
 <!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
-
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<h3>Navigation</h3>
@@ -192,90 +180,108 @@
 	</div>
 	<div class="nav-body">
 		<ul>
-			
-				<li class="menu-home">
-					<a href="/" class="menu-item-home">主页</a>
-				</li>
-			
-				<li class="menu-archive">
-					<a href="/archives" class="menu-item-archive">归档</a>
-				</li>
-			
-				<li class="menu-categories">
-					<a href="/categories" class="menu-item-categories">分类</a>
-				</li>
-			
-				<li class="menu-tags">
-					<a href="/tags" class="menu-item-tags">标签</a>
-				</li>
-			
-				<li class="menu-about">
-					<a href="/about" class="menu-item-about">关于</a>
-				</li>
-			
-				<li class="menu-gallery">
-					<a href="http://gallery.sariay.me/" class="menu-item-gallery">相册</a>
-				</li>
-			
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
 
-			
-				<li class="menu-search">
-					<a href="javascript:;" class="popup-trigger" title="Search">搜索</a>
-				</li>
-			
-		</ul>
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
 	</div>
-
 	<div class="nav-footer">
 		<ul>
 	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
 </ul>
+
 	</div>
 </nav>
-
-		
+			
 		<!--main-->
 		<main>
-			<div class="layout-post">
+			<!--
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
+-->
+
 	
-	
+		<div class="layout-toc">
+			<div id="layout-toc">
+				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+			</div>
+		</div>
+
+		
+		<script src="/plugin/toc/katelog.min.js"></script>
+
+		
+	 
+
+<div class="layout-post">
+	<div id="layout-post">
 	<div class="article-title">
 		
 	<a href="/2018/08/27/Annie主题使用说明/" itemprop="url">
@@ -286,24 +292,34 @@
 
 	<div class="article-meta">
 		<span>
+			<i class="fa fa-calendar"></i>
 			
 	发布于
+
 	<a href="/2018/08/27/Annie主题使用说明/" itemprop="url">
 		<time datetime="2018-08-27T12:16:19.000Z" itemprop="datePublished">
 	  		2018-08-27
 	  </time>
 	</a> 
 
-	/
+
+
+
+
+			
+
+
 	更新于
+
 	<a href="/2018/08/27/Annie主题使用说明/" itemprop="url">
 		<time datetime="2018-08-27T12:16:19.000Z" itemprop="dateUpdated">
-	  		2018-12-30
+	  		2019-04-23
 	  </time>
-	</a> 	
+	</a> 
+
+
 
 		</span>
-		/
 		<span>
 			<i class="fa fa-tags"></i>
 			
@@ -314,235 +330,99 @@
 	
 		
 		</span>
-		/
+		
 		
 
+	
     <span class="leancloud_visitors" id="/2018/08/27/Annie主题使用说明/_visitors" data-url="/2018/08/27/Annie主题使用说明/" data-title="Annie主题使用说明">
-        热度
+       	<i class="fa fa-eye"></i>
+       	热度
         <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
     </span>
     
-    /
 
 
 
+	
     <span class="leancloud_likes" id="/2018/08/27/Annie主题使用说明/_likes" data-url="/2018/08/27/Annie主题使用说明/" data-title="Annie主题使用说明" rel="unlike">
-        喜欢
         <i class="fa fa-heart"></i>
+        喜欢
         <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
     </span>
 
 	</div>
 
 	<div class="article-content" id="article-content">
-		<h3 id="一、LOGO和FAVICON"><a href="#一、LOGO和FAVICON" class="headerlink" title="一、LOGO和FAVICON"></a>一、LOGO和FAVICON</h3><p>编辑主题目录下的<code>_config.yml</code>文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。</p>
-<h3 id="二、页头背景图片"><a href="#二、页头背景图片" class="headerlink" title="二、页头背景图片"></a>二、页头背景图片</h3><p>页头背景可以使用随机图片或固定图片，原则上，使用固定图片时，将参数mode设为<strong>normal</strong>，然后设置normal_url的路径；使用随机图片时，将参数mode设为<strong>random</strong>，然后设置random_url的路径。（🔻注意跨域问题，尽量不使用跨域的图片url）</p>
+		<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+this is add!</span></span><br><span class="line"><span class="deletion">-this is quer.</span></span><br></pre></td></tr></table></figure>
+<h3 id="一、LOGO和FAVICON"><a href="#一、LOGO和FAVICON" class="headerlink" title="一、LOGO和FAVICON"></a>一、LOGO和FAVICON</h3><p>编辑主题目录下的<code>_config.yml</code>文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。</p>
+<h3 id="二、页头背景图片"><a href="#二、页头背景图片" class="headerlink" title="二、页头背景图片"></a>二、页头背景图片</h3><p>页头背景可以使用随机图片或固定图片，原则上，使用固定图片时，将参数mode设为<strong>normal</strong>，然后设置normal_url的路径；使用随机图片时，将参数mode设为<strong>random</strong>，然后设置random_url的路径。</p>
+<blockquote class="colorquote warning">
+注意跨域问题，尽量不使用跨域的图片url
+</blockquote>
 <ul>
 <li>使用固定图片，请确保参数mode设为<strong>normal</strong>，然后设置参数normal_url的值</li>
 </ul>
-<pre class="line-numbers language-yml"><code class="language-yml"># background_image
-# /img/01.jpg
-# https://source.unsplash.com/collection/954550/1920x1080
-# https://sariay.github.io/Random-img/
-# May be cause CROS bug!
-background_image:
-    mode: normal #normal or random
-    normal_url: /img/1.jpg
-    random_max: 110 
-    random_url: https://sariay.github.io/Random-img/
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># background_image</span></span><br><span class="line"><span class="comment"># /img/01.jpg</span></span><br><span class="line"><span class="comment"># https://source.unsplash.com/collection/954550/1920x1080</span></span><br><span class="line"><span class="comment"># https://sariay.github.io/Random-img/</span></span><br><span class="line"><span class="comment"># May be cause CROS bug!</span></span><br><span class="line"><span class="attr">background_image:</span></span><br><span class="line"><span class="attr">    mode:</span> <span class="string">normal</span> <span class="comment">#normal or random</span></span><br><span class="line"><span class="attr">    normal_url:</span> <span class="string">/img/1.jpg</span></span><br><span class="line"><span class="attr">    random_max:</span> <span class="number">110</span> </span><br><span class="line"><span class="attr">    random_url:</span> <span class="attr">https://sariay.github.io/Random-img/</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>使用unplash随机图片，请确保参数mode设为<strong>normal</strong>，然后设置参数normal_url的值</li>
 </ul>
-<pre class="line-numbers language-yml"><code class="language-yml"># background_image
-# /img/01.jpg
-# https://source.unsplash.com/collection/954550/1920x1080
-# https://sariay.github.io/Random-img/
-# May be cause CROS bug!
-background_image:
-    mode: normal #normal or random
-    normal_url: https://source.unsplash.com/collection/954550/1920x1080
-    random_max: 110 
-    random_url: https://sariay.github.io/Random-img/
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># background_image</span></span><br><span class="line"><span class="comment"># /img/01.jpg</span></span><br><span class="line"><span class="comment"># https://source.unsplash.com/collection/954550/1920x1080</span></span><br><span class="line"><span class="comment"># https://sariay.github.io/Random-img/</span></span><br><span class="line"><span class="comment"># May be cause CROS bug!</span></span><br><span class="line"><span class="attr">background_image:</span></span><br><span class="line"><span class="attr">    mode:</span> <span class="string">normal</span> <span class="comment">#normal or random</span></span><br><span class="line"><span class="attr">    normal_url:</span> <span class="attr">https://source.unsplash.com/collection/954550/1920x1080</span></span><br><span class="line"><span class="attr">    random_max:</span> <span class="number">110</span> </span><br><span class="line"><span class="attr">    random_url:</span> <span class="attr">https://sariay.github.io/Random-img/</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>使用自定义随机图片，请确保参数mode设为<strong>random</strong>，然后设置参数random_max、random_url的值 </li>
 </ul>
-<p>第一步、fork<a href="https://github.com/Sariay/Random-img" target="_blank" rel="noopener">随机图片集</a> </p>
-<p>第二步、开启你所fork的仓库的page服务</p>
-<p>第三步、获取相对地址</p>
-<p>第四步、设置random_url为获得的相对地址</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># background_image
-# /img/01.jpg
-# https://source.unsplash.com/collection/954550/1920x1080
-# https://sariay.github.io/Random-img/
-# May be cause CROS bug!
-background_image:
-    mode: random #normal or random
-    normal_url: https://source.unsplash.com/collection/954550/1920x1080
-    random_max: 110 
-    random_url: https://sariay.github.io/Random-img/
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第一步、fork<a href="https://github.com/Sariay/Random-img" target="_blank" rel="noopener">随机图片集</a> ；第二步、开启你所fork的仓库的page服务；第三步、获取相对地址；第四步、设置random_url为获得的相对地址。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># background_image</span></span><br><span class="line"><span class="comment"># /img/01.jpg</span></span><br><span class="line"><span class="comment"># https://source.unsplash.com/collection/954550/1920x1080</span></span><br><span class="line"><span class="comment"># https://sariay.github.io/Random-img/</span></span><br><span class="line"><span class="comment"># May be cause CROS bug!</span></span><br><span class="line"><span class="attr">background_image:</span></span><br><span class="line"><span class="attr">    mode:</span> <span class="string">random</span> <span class="comment">#normal or random</span></span><br><span class="line"><span class="attr">    normal_url:</span> <span class="attr">https://source.unsplash.com/collection/954550/1920x1080</span></span><br><span class="line"><span class="attr">    random_max:</span> <span class="number">110</span> </span><br><span class="line"><span class="attr">    random_url:</span> <span class="attr">https://sariay.github.io/Random-img/</span></span><br></pre></td></tr></table></figure>
 <p>你可以将<strong>随机图片集</strong>上传到图床（腾讯云、七牛云等），然后获取<code>https://....../Random-img/</code>格式的地址，最后将random_url的值设置为该地址。</p>
 <p>你也可以在主题目录下的img文件夹中新建Random-img文件夹，将<code>0.jpg</code>、<code>1.jpg</code>、<code>2.jpg</code>、<code>3.jpg</code>……<code>110.jpg</code>命名格式的图片放入其中，然后将random_url的值设置为<code>/img/Random-img/</code>。</p>
-<p>🔻图片的命名使用连续的整数，random_max的值<strong>小于等于</strong>（0、1、2、3…..110）的最大整数。（ps：如你偏爱访问速度🙃，尽可能使用<strong>固定图片</strong>）</p>
+<blockquote class="colorquote warning">
+图片的命名使用连续的整数，random_max的值小于等于（0、1、2、3.....110）的最大整数。（ps：如你偏爱访问速度🙃，尽可能使用固定图片）
+</blockquote>
 <h3 id="三、预加载遮罩"><a href="#三、预加载遮罩" class="headerlink" title="三、预加载遮罩"></a>三、预加载遮罩</h3><p>PRELOADE的作用为，确保背景图片加载完成和背景构造完成。预加载行为的超时时间默认设为10s，即10s左右后，移除预加载遮罩。你可以决定是否使用：</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># 02-PROLOADER
-# animation: spinner, transition or cyclic
-preloader:
-    enable: true
-    animation: transition
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 02-PROLOADER</span></span><br><span class="line"><span class="comment"># animation: spinner, transition or cyclic</span></span><br><span class="line"><span class="attr">preloader:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    animation:</span> <span class="string">transition</span></span><br></pre></td></tr></table></figure>
 <h3 id="四、首页的使用"><a href="#四、首页的使用" class="headerlink" title="四、首页的使用"></a>四、首页的使用</h3><p>首页文章展示有两种模式：图文模式<code>cart</code>和纯净模式<code>pure</code>。默认图文模式（<code>index-style: cart</code>），你只需编辑主题目录下的<code>_config.yml</code>，设置<code>index-style</code>的参数，即可使用或扩展相关的文章展示模式。</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># 03-INDEX
-# index-style: pure, cart or poem
-index_style: cart
-
-# index_cart_cover
-cover: /img/cart_cover.jpg
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="4-1文章封面图"><a href="#4-1文章封面图" class="headerlink" title="4.1文章封面图"></a>4.1文章封面图</h4><pre class="line-numbers language-yml"><code class="language-yml">title: Annie主题使用说明
-date: 2018-08-27 20:16:19
-cover: /img/post-cover/74.jpg
-categories: HEXO博客
-tags: 说明
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 03-INDEX</span></span><br><span class="line"><span class="comment"># index-style: pure, cart or poem</span></span><br><span class="line"><span class="attr">index_style:</span> <span class="string">cart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># index_cart_cover</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/cart_cover.jpg</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-1文章封面图"><a href="#4-1文章封面图" class="headerlink" title="4.1文章封面图"></a>4.1文章封面图</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Annie主题使用说明</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-08</span><span class="bullet">-27</span> <span class="number">20</span><span class="string">:16:19</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/post-cover/74.jpg</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">HEXO博客</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">说明</span></span><br></pre></td></tr></table></figure>
 <p><code>cover</code>参数值即为图片路径，路径可为相对路径或绝对路径。</p>
 <h4 id="4-2首页的分页"><a href="#4-2首页的分页" class="headerlink" title="4.2首页的分页"></a>4.2首页的分页</h4><p>hexo博客默认首页分页，置参数<code>index_generator.per_page</code>（站点目录下_config.yml）为1、2、3…..以达到分页目的，0则不分页。</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 5
-  order_by: -date
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="4-2文字的截断"><a href="#4-2文字的截断" class="headerlink" title="4.2文字的截断"></a>4.2文字的截断</h4><pre class="line-numbers language-yml"><code class="language-yml"># post_excerpt for index page
-excerpt_cart: 80
-excerpt_pure: 300   
-excerpt_link: true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">  order_by:</span> <span class="bullet">-date</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-2文字的截断"><a href="#4-2文字的截断" class="headerlink" title="4.2文字的截断"></a>4.2文字的截断</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_excerpt for index page</span></span><br><span class="line"><span class="attr">excerpt_cart:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">excerpt_pure:</span> <span class="number">300</span>   </span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p><code>excerpt_cart</code>为图文模式的截取字数，推荐<strong>小于等于</strong>100。<code>excerpt_pure</code>为纯净模式的截取字数，推荐字数为300。</p>
-<h3 id="五、归档页说明"><a href="#五、归档页说明" class="headerlink" title="五、归档页说明"></a>五、归档页说明</h3><p>Annie主题的归档页按年归档，不分页。当然，可以置参数<code>archive_generator.per_page</code>（站点目录下_config.yml）为1、2、3…..以达到分页目的。（🔻Annie主题中无效，分页是对该页面[主页、归档页、标签页、分类页]的文章进行分页，即每次展示指定数量的文章）</p>
-<pre class="line-numbers language-yml"><code class="language-yml">archive: 1
-category: 1
-tag: 1
-
-archive_generator:
-  per_page: 10
-
-tag_generator:
-  per_page: 0
-
-category_generator: 
-  per_page: 0
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="五、归档页说明"><a href="#五、归档页说明" class="headerlink" title="五、归档页说明"></a>五、归档页说明</h3><p>Annie主题的归档页按年归档，不分页。当然，可以置参数<code>archive_generator.per_page</code>（站点目录下_config.yml）为1、2、3…..以达到分页目的。</p>
+<blockquote class="colorquote warning">Annie主题中无效，分页是对该页面[主页、归档页、标签页、分类页]的文章进行分页，即每次展示指定数量的文章</blockquote>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">archive:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">category:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">tag:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">category_generator:</span> </span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h3 id="六、分类页的使用"><a href="#六、分类页的使用" class="headerlink" title="六、分类页的使用"></a>六、分类页的使用</h3><p>执行命令，创建分类页</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new page categories
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
 <p>然后编辑站点目录下的<code>source/categories/index.md</code>，添加如下<code>Front-matter</code></p>
-<pre class="line-numbers language-yml"><code class="language-yml">layout: categories
-type: categories
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">categories</span></span><br></pre></td></tr></table></figure>
 <h3 id="七、标签页的使用"><a href="#七、标签页的使用" class="headerlink" title="七、标签页的使用"></a>七、标签页的使用</h3><p>执行命令，创建标签页</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new page tags
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
 <p>然后编辑站点目录下的<code>source/tags/index.md</code>，添加如下<code>Front-matter</code></p>
-<pre class="line-numbers language-yml"><code class="language-yml">layout: tags
-type: tags
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
 <h3 id="八、关于页的使用"><a href="#八、关于页的使用" class="headerlink" title="八、关于页的使用"></a>八、关于页的使用</h3><p>执行命令，创建关于页</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new page about
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br></pre></td></tr></table></figure>
 <p>然后编辑站点目录下的<code>source/about/index.md</code>，添加如下<code>Front-matter</code></p>
-<pre class="line-numbers language-yml"><code class="language-yml">layout: about
-type: about
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">about</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">about</span></span><br></pre></td></tr></table></figure>
 <h3 id="九、相册页的使用"><a href="#九、相册页的使用" class="headerlink" title="九、相册页的使用"></a>九、相册页的使用</h3><p>执行命令，创建相册页</p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new page gallery
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page gallery</span><br></pre></td></tr></table></figure>
 <p>然后编辑站点目录下的<code>source/gallery/index.md</code>，添加如下<code>Front-matter</code></p>
-<pre class="line-numbers language-yml"><code class="language-yml">layout: gallery
-type: gallery
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>打开文件Annie/source/gallery/<strong>data.json</strong>, 按照格式在数组[……]中添加gallery的图片数据，请设置合适的<code>eWidth</code>、<code>eHeight</code>的值。🔻注意：下列注释在json文件中无效，使用时请去掉注释。（<u>注释仅为说明</u>）</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">[</span>
-<span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> 
-<span class="token punctuation">{</span>
-        <span class="token property">"thumbnail"</span><span class="token operator">:</span> <span class="token string">"https://img.jpg"</span><span class="token punctuation">,</span>                 //小图路径
-        <span class="token property">"enlarged"</span><span class="token operator">:</span> <span class="token string">"https://img.jpg"</span><span class="token punctuation">,</span>                 //大图路径（可与小图一致）
-        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"百里守约"</span><span class="token punctuation">,</span>                        //图片标题
-        <span class="token property">"categories"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
-                <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>                            //根据id来进行分类
-                <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"百里玄策"</span><span class="token punctuation">,</span>
-                <span class="token property">"photo_count"</span><span class="token operator">:</span> <span class="token number">41787</span><span class="token punctuation">,</span>                 //可忽略
-                <span class="token property">"links"</span><span class="token operator">:</span> <span class="token punctuation">{</span>                            //可忽略
-                    <span class="token property">"self"</span><span class="token operator">:</span> <span class="token string">"https://img.jpg"</span><span class="token punctuation">,</span>
-                    <span class="token property">"photos"</span><span class="token operator">:</span> <span class="token string">"https://img.jpg"</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"tWidth"</span><span class="token operator">:</span> <span class="token number">800.6130030959752</span><span class="token punctuation">,</span>                //小图相对宽度
-        <span class="token property">"tHeight"</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>                               //小图相对高度
-        <span class="token property">"eWidth"</span><span class="token operator">:</span> <span class="token number">3630</span><span class="token punctuation">,</span>                               //大图相对宽度
-        <span class="token property">"eHeight"</span><span class="token operator">:</span> <span class="token number">2907</span>                               //大图相对高度
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span><span class="token punctuation">}</span>
- <span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">layout:</span> <span class="string">gallery</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">gallery</span></span><br></pre></td></tr></table></figure>
+<p>打开文件Annie/source/gallery/<strong>data.json</strong>, 按照格式在数组[……]中添加gallery的图片数据，请设置合适的<code>eWidth</code>、<code>eHeight</code>的值。</p>
+<blockquote class="colorquote warning">注意：下列注释在json文件中无效，使用时请去掉注释。（注释仅为说明）</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;&#125;, </span><br><span class="line">&#123;</span><br><span class="line">        "thumbnail": "https://img.jpg",    	 		//小图路径</span><br><span class="line">        "enlarged": "https://img.jpg",			 	//大图路径（可与小图一致）</span><br><span class="line">        "title": "百里守约",						//图片标题</span><br><span class="line">        "categories": [&#123;</span><br><span class="line">                "id": 9,							//根据id来进行分类</span><br><span class="line">                "title": "百里玄策",</span><br><span class="line">                "photo_count": 41787,				 //可忽略</span><br><span class="line">                "links": &#123;							//可忽略</span><br><span class="line">                    "self": "https://img.jpg",</span><br><span class="line">                    "photos": "https://img.jpg"</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        "tWidth": 800.6130030959752,				//小图相对宽度</span><br><span class="line">        "tHeight": 500,							   //小图相对高度</span><br><span class="line">        "eWidth": 3630,							   //大图相对宽度</span><br><span class="line">        "eHeight": 2907							   //大图相对高度</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;&#125;</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
 <p>当然，你可以将该文件<strong>data.json</strong>移至其他目录，相应地修改路径<code>gallery_data</code>。</p>
-<pre class="line-numbers language-yml"><code class="language-yml">#主题目录下的_config.yml文件
-......
-# gallery 
-# format: natural or square
-gallery_format: natural
-# one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)
-gallery_limit: 0
-# data url
-gallery_data: gallery/data.json
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#主题目录下的_config.yml文件</span></span><br><span class="line"><span class="string">......</span></span><br><span class="line"><span class="comment"># gallery </span></span><br><span class="line"><span class="comment"># format: natural or square</span></span><br><span class="line"><span class="attr">gallery_format:</span> <span class="string">natural</span></span><br><span class="line"><span class="comment"># one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)</span></span><br><span class="line"><span class="attr">gallery_limit:</span> <span class="number">0</span></span><br><span class="line"><span class="comment"># data url</span></span><br><span class="line"><span class="attr">gallery_data:</span> <span class="string">gallery/data.json</span></span><br></pre></td></tr></table></figure>
 <h3 id="十、关于站内搜索"><a href="#十、关于站内搜索" class="headerlink" title="十、关于站内搜索"></a>十、关于站内搜索</h3><p>执行命令，安装插件<code>hexo-generator-search-zip</code></p>
-<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search-zip --save
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-search-zip --save</span><br></pre></td></tr></table></figure>
 <p>编辑站点目录下的<code>_config.yml</code>，添加如下语句</p>
-<pre class="line-numbers language-yml"><code class="language-yml">search:
-  path: search.json
-  zipPath: search.zip
-  versionPath: searchVersion.txt
-  field: post
-  #field: post, page or all（3个可选参数）
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.json</span></span><br><span class="line"><span class="attr">  zipPath:</span> <span class="string">search.zip</span></span><br><span class="line"><span class="attr">  versionPath:</span> <span class="string">searchVersion.txt</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br><span class="line">  <span class="comment">#field: post, page or all（3个可选参数）</span></span><br></pre></td></tr></table></figure>
 <p>编辑主题目录下的<code>_config.yml</code>，添加如下语句</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># Local search
-# Dependencies: https://github.com/flashlab/hexo-generator-search
-local_search:
-    enable: true
-    # if auto, trigger search by changing input
-    # if manual, trigger search by pressing enter key or search button
-    trigger: auto
-    # show top n results per article, show all results by setting to -1
-    top_n_per_article: 2
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/flashlab/hexo-generator-search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">    <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">    trigger:</span> <span class="string">auto</span></span><br><span class="line">    <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">    top_n_per_article:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h3 id="十一、代码块高亮"><a href="#十一、代码块高亮" class="headerlink" title="十一、代码块高亮"></a>十一、代码块高亮</h3><p>执行命令，安装插件<code>hexo-prism-plugin</code></p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -S hexo-prism-plugin</span><br></pre></td></tr></table></figure>
 <p>编辑站点目录下的<code>_config.yml</code>，关闭hexo自带的高亮插件<code>highlight.enable</code>，并添加如下语句</p>
-<pre class="line-numbers language-yml"><code class="language-yml">highlight:
-  enable: false
-......
-
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
-  line_number: true    # default false
-  custom_css: 'path/to/your/custom.css'     # optional
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="11-1代码块复制"><a href="#11-1代码块复制" class="headerlink" title="11.1代码块复制"></a>11.1代码块复制</h4><p>🔻只有<code>theme.code_copy.enable</code>为真且<code>config.highlight.enable</code>为假时，代码块的复制功能才有效。</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># post_code
-code_copy:
-    enable: true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">......</span></span><br><span class="line"></span><br><span class="line"><span class="attr">prism_plugin:</span></span><br><span class="line"><span class="attr">  mode:</span> <span class="string">'preprocess'</span>    <span class="comment"># realtime/preprocess</span></span><br><span class="line"><span class="attr">  theme:</span> <span class="string">'tomorrow'</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span>    <span class="comment"># default false</span></span><br><span class="line"><span class="attr">  custom_css:</span> <span class="string">'path/to/your/custom.css'</span>     <span class="comment"># optional</span></span><br></pre></td></tr></table></figure>
+<h4 id="11-1代码块复制"><a href="#11-1代码块复制" class="headerlink" title="11.1代码块复制"></a>11.1代码块复制</h4><p>只有<code>theme.code_copy.enable</code>为真且<code>config.highlight.enable</code>为假时，代码块的复制功能才有效。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_code</span></span><br><span class="line"><span class="attr">code_copy:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p><strong>🔻</strong>如要显示代码行号，请将<code>line_number</code>设为true，并指定<u>相应代码块</u>的<u>语言类型</u>（html、js、c++、java……）。请务必安装<code>hexo-prism-plugin</code>插件，并选择合适的代码块主题（okaidia，tomorrow，atom-dark……），以使<strong>复制模块</strong>和<strong>代码块</strong>的组合效果较为和谐。（推荐tomorrow主题）</p>
 <h3 id="十二、评论的功能"><a href="#十二、评论的功能" class="headerlink" title="十二、评论的功能"></a>十二、评论的功能</h3><p>Hexo-theme-Annie主题集成了gitalk、DesertsP版的valine、livere评论插件，你可以参考下列文档使用。</p>
 <ul>
@@ -550,102 +430,35 @@ code_copy:
 <li><strong>Valine：</strong><a href="https://panjunwen.com/diy-a-comment-system" target="_blank" rel="noopener">正式文档</a>、<a href="https://www.xxwhite.com/2017/Valine.html" target="_blank" rel="noopener">加个Valine评论系统</a></li>
 <li><strong>Livere：</strong><a href="https://juejin.im/post/5a632dfcf265da3e484be90c" target="_blank" rel="noopener">为Hexo博客添加LiveRe评论系统</a></li>
 </ul>
-<p>🔻对于gitalk，你必须设置clientID、clientSecret；对于Valine，你必须设置appid、appkey；对于livere，你必须设置livere_uid。</p>
-<h3 id="十三、文章页问题"><a href="#十三、文章页问题" class="headerlink" title="十三、文章页问题"></a>十三、文章页问题</h3><h4 id="13-1分类和标签"><a href="#13-1分类和标签" class="headerlink" title="13.1分类和标签"></a>13.1分类和标签</h4><pre class="line-numbers language-yml"><code class="language-yml">title: Annie主题使用说明
-date: 2018-08-27 20:16:19
-cover: /img/post-cover/74.jpg
-categories: HEXO博客
-tags: 
-    - 说明
-    - other tag
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote class="colorquote warning">对于gitalk，你必须设置clientID、clientSecret；对于Valine，你必须设置appid、appkey；对于livere，你必须设置livere_uid。</blockquote>
+<h3 id="十三、文章页问题"><a href="#十三、文章页问题" class="headerlink" title="十三、文章页问题"></a>十三、文章页问题</h3><h4 id="13-1分类和标签"><a href="#13-1分类和标签" class="headerlink" title="13.1分类和标签"></a>13.1分类和标签</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Annie主题使用说明</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-08</span><span class="bullet">-27</span> <span class="number">20</span><span class="string">:16:19</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/post-cover/74.jpg</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">HEXO博客</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line">	<span class="bullet">-</span> <span class="string">说明</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">other</span> <span class="string">tag</span></span><br></pre></td></tr></table></figure>
 <p>分类页的<code>HEXO博客</code>字段来源于文章Front-matter中的<code>categories</code>参数值，标签页的<code>说明</code>字段来源于文章Front-matter中的<code>tags</code>参数值。hexo博客框架只支持一个同级分类，支持多个同级标签。</p>
 <h4 id="13-2相关的文章"><a href="#13-2相关的文章" class="headerlink" title="13.2相关的文章"></a>13.2相关的文章</h4><p>你可以决定是否使用该模块，posts_limit为显示的文章篇数，posts_excerpt为每篇文章的文字截取数量。</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># 04-POST
-# post_relate
-relate:
-    enable: true
-    posts_limit: 10
-    posts_excerpt: 120
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>🔻只有全站博客文章篇数<strong>大于</strong>1且<code>relate.enable</code>为真时，该模块有效。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 04-POST</span></span><br><span class="line"><span class="comment"># post_relate</span></span><br><span class="line"><span class="attr">relate:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    posts_limit:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">    posts_excerpt:</span> <span class="number">120</span></span><br></pre></td></tr></table></figure>
+<blockquote class="colorquote [type]">只有全站博客文章篇数大于1且`relate.enable`为真时，该模块有效。</blockquote>
 <h4 id="13-3阅读量计数"><a href="#13-3阅读量计数" class="headerlink" title="13.3阅读量计数"></a>13.3阅读量计数</h4><p>对于<code>leancloud_count</code>，你必须设置appid、appkey；对于<code>busuanzi_count</code>，你只需要开启它即可。</p>
-<pre class="line-numbers language-yml"><code class="language-yml"># post_count
-leancloud_count:
-    enable: true
-    appid: 'dXz'
-    appkey: 'wzG'
-    like_post:
-        enable: true
-    visit_post:
-        enable: true
-    topN_post: 
-        enable: true #param1 for topN_post
-        limit: 10 #param2 for topN_post
-busuanzi_count:
-    enable: true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_count</span></span><br><span class="line"><span class="attr">leancloud_count:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    appid:</span> <span class="string">'dXz'</span></span><br><span class="line"><span class="attr">    appkey:</span> <span class="string">'wzG'</span></span><br><span class="line"><span class="attr">    like_post:</span></span><br><span class="line"><span class="attr">        enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    visit_post:</span></span><br><span class="line"><span class="attr">        enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    topN_post:</span> </span><br><span class="line"><span class="attr">        enable:</span> <span class="literal">true</span> <span class="comment">#param1 for topN_post</span></span><br><span class="line"><span class="attr">        limit:</span> <span class="number">10</span> <span class="comment">#param2 for topN_post</span></span><br><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>如果你使用过Valine评论插件，那么leancloud_count的使用十分简单。如果你没有使用过，请参考文章<a href="https://cuibin1991.github.io/2017/07/31/Hexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo博客next主题添加文章阅读量统计功能</a>创建leancloud应用，并获取其appid、appkey，且设置上面的appid、appkey为相应的值，最后开启<code>visit_post</code>。</p>
 <h4 id="13-4文章点赞"><a href="#13-4文章点赞" class="headerlink" title="13.4文章点赞"></a>13.4文章点赞</h4><p>如果你完成了<em><u>13.3阅读量计数</u></em>的设置，那么只需要开启<code>like_post</code>。</p>
-<h4 id="13-5文章排行"><a href="#13-5文章排行" class="headerlink" title="13.5文章排行"></a>13.5文章排行</h4><pre class="line-numbers language-yml"><code class="language-yml">topN_post: 
-   enable: true #param1 for topN_post
-   limit: 10 #param2 for topN_post
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="13-5文章排行"><a href="#13-5文章排行" class="headerlink" title="13.5文章排行"></a>13.5文章排行</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">topN_post:</span> </span><br><span class="line"><span class="attr">   enable:</span> <span class="literal">true</span> <span class="comment">#param1 for topN_post</span></span><br><span class="line"><span class="attr">   limit:</span> <span class="number">10</span> <span class="comment">#param2 for topN_post</span></span><br></pre></td></tr></table></figure>
 <p>如果你完成了<em><u>13.3阅读量计数</u></em>的设置，那么只需要开启<code>topN_post</code>。（<strong>文章阅读排行</strong>依赖于<strong>13.3阅读量计数</strong>，该模块放置于搜索页面，你可按需定制）</p>
 <h4 id="13-6卜蒜子计数"><a href="#13-6卜蒜子计数" class="headerlink" title="13.6卜蒜子计数"></a>13.6卜蒜子计数</h4><p>该模块放置于页脚，文章页面只显示<strong>文章的阅读量</strong>，其他页面只显示<strong>总访问量</strong>和<strong>访客数</strong>（等待完善）</p>
-<h4 id="13-7数学公式"><a href="#13-7数学公式" class="headerlink" title="13.7数学公式"></a>13.7数学公式</h4><pre class="line-numbers language-yml"><code class="language-yml"># post_mathJax
-mathjax:
-  enable: true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-yml"><code class="language-yml">title: Annie主题使用说明
-date: 2018-08-27 20:16:19
-cover: /img/post-cover/74.jpg
-mathjax: true
-categories: HEXO博客
-tags: 
-    - 说明
-    - other tag
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="13-7数学公式"><a href="#13-7数学公式" class="headerlink" title="13.7数学公式"></a>13.7数学公式</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_mathJax</span></span><br><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Annie主题使用说明</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-08</span><span class="bullet">-27</span> <span class="number">20</span><span class="string">:16:19</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">/img/post-cover/74.jpg</span></span><br><span class="line"><span class="attr">mathjax:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">HEXO博客</span></span><br><span class="line"><span class="attr">tags:</span> </span><br><span class="line">	<span class="bullet">-</span> <span class="string">说明</span></span><br><span class="line">	<span class="bullet">-</span> <span class="string">other</span> <span class="string">tag</span></span><br></pre></td></tr></table></figure>
 <p>请先设置主题目录下_config.yml文件的<code>mathjax</code>参数，再于文章的Front-matter中添加<code>mathjax: true</code></p>
-<h3 id="十四、其他的问题"><a href="#十四、其他的问题" class="headerlink" title="十四、其他的问题"></a>十四、其他的问题</h3><pre class="line-numbers language-yml"><code class="language-yml"># 05-FOOTER
-# social
-social:
-    enable: true
-    github: http://github.com/
-
-# copyright  
-since: 2017
-cotent_author:
-
-......
-
-#when click, emerge heart
-love:
-    enable: true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="十四、其他的问题"><a href="#十四、其他的问题" class="headerlink" title="十四、其他的问题"></a>十四、其他的问题</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 05-FOOTER</span></span><br><span class="line"><span class="comment"># social</span></span><br><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    github:</span> <span class="attr">http://github.com/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># copyright  </span></span><br><span class="line"><span class="attr">since:</span> <span class="number">2017</span></span><br><span class="line"><span class="attr">cotent_author:</span></span><br><span class="line"></span><br><span class="line"><span class="string">......</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#when click, emerge heart</span></span><br><span class="line"><span class="attr">love:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>对于social，设置相应的选项即可(你可按需扩展)。对于copyright ，since为站点建立年份，cotent_author为站点作者。对于love，若设置为true，则点击页面时，会出现随机颜色的桃心💚💛💕。</p>
 <h3 id="十五、开发定制问题"><a href="#十五、开发定制问题" class="headerlink" title="十五、开发定制问题"></a>十五、开发定制问题</h3><h4 id="15-1主题字体问题"><a href="#15-1主题字体问题" class="headerlink" title="15.1主题字体问题"></a>15.1主题字体问题</h4><p>主题整体字体，修改body标签的<code>font-family</code>属性</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">body </span><span class="token punctuation">{</span>
-    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Source Sans Pro"</span>, <span class="token string">"Segoe UI"</span><span class="token punctuation">;</span>
-    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
-    <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">"Source Sans Pro"</span>, <span class="string">"Segoe UI"</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>文章详情页字体，修改article-content类的<code>font-family</code>属性</p>
-<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.article-content</span> </span><span class="token punctuation">{</span>
-    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"Source Sans Pro"</span>, <span class="token string">"Segoe UI"</span><span class="token punctuation">;</span>
-    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
-    <span class="token property">font-weight</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.article-content</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">"Source Sans Pro"</span>, <span class="string">"Segoe UI"</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你可以检索css文件，查询相应的标签或类，进而设置相应元素的字体。</p>
 <h4 id="15-2页头菜单颜色"><a href="#15-2页头菜单颜色" class="headerlink" title="15.2页头菜单颜色"></a>15.2页头菜单颜色</h4><p>页头菜单颜色会根据背景的主题色变化<strong>非黑即白</strong>。亦即主题色为亮色时，字体为黑；主题色为暗色时，字体为白。你可以参考main.js中函数<code>Annie_ColorExtraction(img)</code>。（等待完善）</p>
 <p><br></p>
 <center>人生若只如初见，何事秋风悲画扇！</center>	
 	</div>
 	
-	<div id="current-post-cover" data-scr="/img/Annie.png"></div>
+	<div id="current-post-cover" data-scr="/img/post-cover/65.jpg"></div>
 
 	<!-- relate post, comment...-->
 	<div class="investment-container">
@@ -670,6 +483,8 @@ love:
 			</a>
 			
 	</span>
+
+
       		
 			</div>	
 		</div>
@@ -679,142 +494,154 @@ love:
 				
 
 <div class="relate-post">
-	<ul>
-		
-				<li>
-					<div>
-						<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">
-							相册主题Dream介绍
+	
+		<ul>
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">
+								相册主题Dream介绍
+							</a>
+							<p class="relate-post-content">
+								新的HEXO主题，主要用于建立相册博客。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：PREVIEW
+
+
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
 						</a>
-						<p>
-							新的HEXO主题，主要用于建立相册博客。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：PREVIEW
-
-
-						</p>
-					</div>
-
-					<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
-						<img src="/img/a5.jpg" class="relateImg" alt="相册主题Dream介绍">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">
-							Annie主题使用Gitalk
-						</a>
-						<p>
-							应请求，特意写了这篇文章。文章涉及到了Github仓库的创建、OAuth应用的申请、Gitalk评论插件的使用，请读者按需取用。（文章不叙述具体概念及原理）
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">
+								Annie主题使用Gitalk
+							</a>
+							<p class="relate-post-content">
+								应请求，特意写了这篇文章。文章涉及到了Github仓库的创建、OAuth应用的申请、Gitalk评论插件的使用，请读者按需取用。（文章不叙述具体概念及原理）
 Gitalk使用方法一新建仓库
 点击你的用户名，定位到github用户主页，...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
-						<img src="/img/post-cover/72.jpg" class="relateImg" alt="Annie主题使用Gitalk">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">
-							Annie主题更新日志
-						</a>
-						<p>
+						<a class="relate-post-cover" href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
 							
- 2018-12-27 主题重构
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">
+								Annie主题更新日志
+							</a>
+							<p class="relate-post-content">
+								
+ 2019-4-14 主题优化
 
 
 
 
 类型
 模块
-描述
+说明
 
 
 
 
 优化
-网站lOGO、FAVICON
-通过主题配置文件设置
+文章Markdown
+优化表格、代码块样式
 
 
-优化
-页头背景
-主页、归档页…的页头背景使用随机图片或固定图片，文章页的页头背景使用该篇文章的特色图（...
-						</p>
-					</div>
+新增
+文章分享
+addThis、baiduShare、shareThis、socialShare
 
-					<a href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">				
-						<img src="/img/post-cover/72.jpg" class="relateImg" alt="Annie主题更新日志">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/09/21/toc标题测试/" title="toc标题测试">
-							toc标题测试
-						</a>
-						<p>
-							h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2标题h3标题h4标题h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的...
-						</p>
-					</div>
 
-					<a href="/2018/09/21/toc标题测试/" title="toc标题测试">				
-						<img src="/img/post-cover/72.jpg" class="relateImg" alt="toc标题测试">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">
-							《人间失格》抄录1
-						</a>
-						<p>
+新增
+站点...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">				
 							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题更新日志">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/04/12/webpack网站开发入门/" title="webpack网站开发入门">
+								webpack网站开发入门
+							</a>
+							<p class="relate-post-content">
+								预先准备安装node.js：项目开始之前，确保安装了nodejs工具。原则上，你应使用最新的稳定版本（LTS），点击LTS的下载按钮即可。
+开发工具：Sublime Text 3，Visual Studio Code， Atom，Hb...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2019/04/12/webpack网站开发入门/" title="webpack网站开发入门">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/76.jpg" alt="webpack网站开发入门">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">
+								《人间失格》抄录1
+							</a>
+							<p class="relate-post-content">
+								
 手记之三 1
 
 竹一的两大预言，兑现了一个，落空了一个。“被女人迷恋上“这一并不光彩的预言化作了现实，而”肯定会成为一个伟大的画家“的这一祝福性的预言却归于泡影。
 我仅仅当上了给粗俗杂志投稿的无名的蹩脚漫画家而已。
 由于镰仓的殉情自...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
-						<img src="/img/post-cover/31.jpg" class="relateImg" alt="《人间失格》抄录1">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">
-							银字笙调，奈何初冬
+						<a class="relate-post-cover" href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
 						</a>
-						<p>
-							文章段落荏苒岁月覆盖了过往，有很多人已经沉沦在琼壶歌月之中，也有很多人长歌倚楼。
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">
+								银字笙调，奈何初冬
+							</a>
+							<p class="relate-post-content">
+								文章段落荏苒岁月覆盖了过往，有很多人已经沉沦在琼壶歌月之中，也有很多人长歌倚楼。
 但在那滚滚红尘中，那座断桥，那场雪;那个秋，那个染火枫林都是昙花一现。而那座桥上，那个愀然的女子更是不入年华。
 瑞雪初霁，那一刻有多少凝视?立于红褐色的...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
-						<img src="/img/post-cover/74.jpg" class="relateImg" alt="银字笙调，奈何初冬">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">
-							山鬼情书之零
+						<a class="relate-post-cover" href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
 						</a>
-						<p>
-							匹夫说我生来骄傲，
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">
+								山鬼情书之零
+							</a>
+							<p class="relate-post-content">
+								匹夫说我生来骄傲，
 I’m proud of my husband.
 
 不肯半分折腰，
@@ -825,22 +652,40 @@ You can not half bow.
 
 我将送喜欢的人远走,
 I...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
-						<img src="/img/post-cover/34.jpg" class="relateImg" alt="山鬼情书之零">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/09/08/起风了/" title="起风了">
-							起风了
+						<a class="relate-post-cover" href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
 						</a>
-						<p>
-							起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/21/toc标题测试/" title="toc标题测试">
+								toc标题测试
+							</a>
+							<p class="relate-post-content">
+								h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2标题h3标题h4标题h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的...
+							</p>
+						</div>
+
+						<a class="relate-post-cover" href="/2018/09/21/toc标题测试/" title="toc标题测试">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="toc标题测试">
+						</a>
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/09/08/起风了/" title="起风了">
+								起风了
+							</a>
+							<p class="relate-post-content">
+								起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
 词：米果 
 曲：高桥优 
 这一路上走走停停 
@@ -852,52 +697,38 @@ I...
 而长野的天 
 依旧那么暖 
 风吹起...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/09/08/起风了/" title="起风了">				
-						<img src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg" class="relateImg" alt="起风了">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/08/02/Github入门术语/" title="Github入门术语">
-							Github入门术语
+						<a class="relate-post-cover" href="/2018/09/08/起风了/" title="起风了">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg" alt="起风了">
 						</a>
-						<p>
-							什么是Git 
+					</li>											
+			
+			
+					<li>
+						<div>
+							<a class="relate-post-title" href="/2018/08/02/Github入门术语/" title="Github入门术语">
+								Github入门术语
+							</a>
+							<p class="relate-post-content">
+								什么是Git 
 Git是一个版本控制系统（Version Control System），版本控制即记录一个或若干文件内容变化的情况。Git属于分布式版本控制系统，客户端提取文件时总是镜像的完整仓库。
 Repository  
 仓库，...
-						</p>
-					</div>
+							</p>
+						</div>
 
-					<a href="/2018/08/02/Github入门术语/" title="Github入门术语">				
-						<img src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" class="relateImg" alt="Github入门术语">
-					</a>
-				</li>											
-		
-		
-				<li>
-					<div>
-						<a href="/2018/07/25/秦时明月/" title="秦时明月">
-							秦时明月
+						<a class="relate-post-cover" href="/2018/08/02/Github入门术语/" title="Github入门术语">				
+							
+							<img class="lazy" src="/img/placeholder.jpg" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
 						</a>
-						<p>
-							空页测试
-
-						</p>
-					</div>
-
-					<a href="/2018/07/25/秦时明月/" title="秦时明月">				
-						<img src="/img/post-cover/45.jpg" class="relateImg" alt="秦时明月">
-					</a>
-				</li>											
-		
-		
-	</ul>
+					</li>											
+			
+			
+		</ul>
+	
 </div>	
 			</div>
 			<div class="investment-content-list">
@@ -907,73 +738,9 @@ Repository
 
 		
 
-			<!-- comment gitalk -->
-			<!-- show gitalk comment -->
-<div id="gitalk-container"></div>
-
-<!-- gitalk`s css & js -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<link rel="stylesheet" href="/css/comment.css">
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<script type="text/javascript">
-	//Thanks O-R
-	//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
-	//去除尾部匹配正则数组的字符串  
-	//Remove redundant characters
-	String.prototype.trimEnd = function(regStr) {
-		var result = this;
-		if(regStr == undefined || regStr == null || regStr == "") {
-			return result;
-		}
-		var array = regStr.split(',');
-
-		if(array.length > 0) {
-
-			var c = array.shift();
-			var str = this;
-			var i = str.length;
-			var rg = new RegExp(c);
-			var matchArr = str.match(rg);
-
-			if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
-				var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
-					.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
-					.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
-					.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
-					.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
-					.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
-					.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
-					.replace(/\./g, "\\.").replace(/\&/g, "\\&");
-				matchStr = matchStr + '$';
-				result = str.replace(new RegExp(matchStr), "");
-			}
-
-			if(array.length > 0) {
-				return result.trimEnd(array.join())
-			} else {
-				return result;
-			}
-		}
-	};
-
-	//Create gitalk
-	var gitalk = new Gitalk({
-		clientID: 'bf19f33d43d567dce87e',
-		clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
-		//id: window.location.pathname,
-		//id: decodeURI(window.location.pathname),
-		//id: (window.location.pathname).split("/").pop().substring(0, 49),
-		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
-		repo: 'annie-gitalk',
-		owner: 'Sariay',
-		admin: 'Sariay',
-		distractionFreeMode: 'true',
-	})
-	gitalk.render('gitalk-container');
-</script>
-
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
 		
 		
 	
@@ -981,23 +748,30 @@ Repository
 </div>
 			</div>
 			<div class="investment-content-list">
-				
-<style type="text/css">
-	.layout-share{
-		margin-top: 3em;
-		text-align: center;
-	}
-</style>
+				<div class="layout-share">
+	
+	
 
-<div class="layout-share">
- 	<div class="addthis_inline_share_toolbox">
- 	</div>
+		
+
+			<!-- addThis share -->
+			<!-- www.addthis.com/dashboard -->
+
+	<div class="addthis_inline_share_toolbox">
+	</div>
+
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e" async="async"></script>
+
+
+		
+		
+	
 </div>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e"></script>
+
 			</div>
 		</div>	
+	</div>
 	</div>
 </div>
 
@@ -1031,65 +805,91 @@ Repository
 	</script>
     
 
+	
 
- 
 
 <!-- show math formula -->
 
 
 
-<script>
-	//Refer to https://xinyo.org/archives/66226, thanks xinyo!
-	function codeCopy() {
-		var copyContainerId = 'copy-nav';
-						
-		$("pre").before(" <nav class=' " + copyContainerId + " '><i class='code-language'></i></nav> ");
-		
-		$('.' + copyContainerId).append("<i class='fa fa-clipboard copy-btn' aria-hidden='true'></i>");
-		
-		$('#article-content').find('pre').each( function () {
-			var language = $(this).children('code').attr('class').substr(9);//why 9? Need to check language?
-			$(this).prev().find('.code-language').text( language );	
-		});
-				
-		//为复制按钮添加click事件
-		$('.copy-btn').on("click", function() {
-			//初始化
-			$("textarea").remove("#targetId");
-			
-			//获取对应的代码
-			var codePre = $(this).parent().next(),
-				codeText = codePre[0].textContent,
-				target = document.createElement("textarea");
-			target.style.position = "absolute";
-			target.style.left = "-9999px";
-			target.style.top = "0";
-			target.id = "targetId";
-			codePre.append(target);
-			target.textContent = codeText;
+	 
+	<script src="/plugin/clipboard/clipboard.js"></script>
+	<script>
+		// Copy code !
+	    function codePreprocessing() {
+	        $("#article-content .highlight").each(function() {
 
-			//选中textarea内的代码
-			target.focus();
-			target.setSelectionRange(0, target.value.length);
+	            $(this).wrap('<div id="post-code"></div>');
 
-			// 复制选中的内容
-			document.execCommand("copy");
-			
-			//删除添加的节点
-			$("textarea").remove("#targetId");
-			
-			var thisCopied = $(this);
-			thisCopied.addClass('copy-status');	
-			setTimeout( function() {
-				thisCopied.removeClass('copy-status');
-			}, 2000)
-		});	
-	}
-	
-	if( $('.layout-post').length )	{
-		codeCopy();
-	}
-</script>
+	        })
+
+	        $("#article-content #post-code").each(function() {
+
+	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
+
+	        })
+
+	        $("#article-content .copy-nav").each(function() {
+	            var temp = $(this).next().attr('class'),
+	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+
+	            $(this).find('.code-language').text(language);
+
+	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
+
+	        });
+	    }
+
+		function codeCopy() {
+		    $('#article-content #post-code').each(function(i) {
+		        var codeCopyId = 'codeCopy-' + i;
+
+		        var codeNode = $(this).find('.code'),
+		            copyButton = $(this).find('.copy-btn');
+
+		        codeNode.attr('id', codeCopyId);
+		        copyButton.attr('data-clipboard-target-id', codeCopyId);
+		    })
+
+		    
+			var clipboard = new ClipboardJS('.copy-btn', {
+					target: function(trigger) {
+						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+					}
+		      	});
+
+			//pure js
+			function showTooltip(elem, msg) {		   
+				elem.setAttribute('aria-label', msg);
+				elem.setAttribute('class', 'copy-btn copy-status');
+				setTimeout(function() {
+					elem.setAttribute('class', 'copy-btn');
+				}, 2000);
+			}
+
+			clipboard.on('success', function(e) {
+			    e.clearSelection();
+			    console.info('Action:', e.action);		   
+			    console.info('Trigger:', e.trigger);
+			    showTooltip(e.trigger, 'Copied!');
+			    
+			});
+			clipboard.on('error', function(e) {
+			    console.error('Action:', e.action);
+			    console.error('Trigger:', e.trigger);
+			});
+		
+
+		}
+
+		if ($('.layout-post').length) {
+		    codePreprocessing();
+		    codeCopy();
+		} 
+	</script>
+
+
+
 
 
 <!-- TODO: There seems to be a bug when you close the post gallery! -->
@@ -1114,67 +914,51 @@ Repository
 	});
 	//TODO：支持video
 </script>
-
-<!--
-	时间：2018-11-17
-	描述：
-		插件名称：katelog.min.js
-		插件作者：KELEN
-		插件来源: https://github.com/KELEN/katelog
--->
-
-		
-
-		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
-		<script src="/plugin/toc/katelog.min.js"></script>
-
-		
-	           
 		</main>
-		
+
 		<!--footer-->
 		<footer>
 	<div class="social">
 		<ul>
 	
-		
-			<li>
-				<a href="http://github.com/" title="Github" target="_blank">
-					<i class="fa fa-github"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Weibo" target="_blank">
-					<i class="fa fa-weibo"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="mailto:http://github.com/" title="Email" target="_blank">
-					<i class="fa fa-envelope-o"></i>
-				</a>
-			</li>
-		
-
-		
-			<li>
-				<a href="http://github.com/" title="QQ" target="_blank">
-					<i class="fa fa-qq"></i>
-				</a>
-			</li>
-		
-		
-			<li>
-				<a href="http://github.com/" title="Twitter" target="_blank">
-					<i class="fa fa-twitter"></i>
-				</a>
-			</li>
-		
-	 
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
 </ul>
+
 	</div>
 		
 	<div class="copyright">
@@ -1188,34 +972,21 @@ Repository
 	<!-- busuanzi -->
 	<!-- busuanzi -->
 
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_page_pv">
-	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-		</span>
-
-	
-
-
 
 
 		</p>
 		<p>
 			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
-			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>
-			<a href="javascript:void(0);" class="fontSizePlus">A+</a>
-            <a href="javascript:void(0);" class="fontSizeReset">默认</a>           
-            <a href="javascript:void(0);" class="fontSizeMinus">A-</a>	 					
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
 		</p>
 	</div>		
 </footer>
 		
-    <!-- set '1' to show motto in all pages! -->
+	<!-- set '1' to show motto in all pages! -->
 
-	<script src="/js/motto.js"></script>
+	<script src="/plugin/motto/motto.js"></script>
+	
 	<script type="text/javascript">
 		$(".motto").html( getMingYanContent() );
 	</script>	
@@ -1223,7 +994,7 @@ Repository
 
 
 
-    <!--
+	<!--
 	时间：2018-10-3
 	描述：
 		插件名称：hexo-generator-search-zip
@@ -1233,19 +1004,25 @@ Repository
 <div class="popup search-popup local-search-popup">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
-      ESC
-   </span>
+      		ESC
+   		</span>
 		<div class="local-search-header">
+			<div class="input-prompt">
+				
+			</div>
 			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
 		</div>
 		<div class="local-search-body">
 			<div id="local-search-output"></div>
 		</div>
 		<div class="local-search-footer">
-			
+			<div class="topN-post">				
+				
 
    
-	<div id="topN"></div>
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
 	
     <script>
         var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
@@ -1258,13 +1035,14 @@ Repository
         }
     </script>
    
-
+								
+			</div>
 		</div>
 	</div>
 </div>
 
-<script src="/js/ziploader.js"></script>
-<script src="/js/search.js"></script>
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -1283,26 +1061,37 @@ Repository
 </script>
 
 
+<!-- love effect -->
 
-    <script src="/js/love.js"></script>
+	<script src="/plugin/love/love.js"></script>
 
 
-<!--back to top-->
+<!-- back to top -->
 
-    
+	
 	<div id="totop">
   		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
 	</div>
-	<div id="tobuttom">
-		<a href="javascript:;" name="TOBUTTOM" class="fa fa-arrow-down"></a>
-	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
  
 
-
- 
-
-<script src="/js/vibrant.js"></script>
-<script src="/js/chinese.js"></script>
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
 <script src="/js/main.js"></script>
-	</body>
-	</html>
+	</body>	
+</html>

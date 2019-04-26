@@ -1,0 +1,726 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<!DOCTYPE html>
+<html class="html-loading">
+		
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <title>
+    
+      tag: webpack | SARIAY-Blog
+    
+  </title>
+  <meta name="author" content="Sariay">
+  <meta name="keywords" content>
+  <meta name="description" content>
+	<!-- favicon -->
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/highlight/highlight.css">
+<link rel="stylesheet" href="/css/style.css">
+  
+  <!-- jquery -->
+	<script src="/js/jquery.min.js"></script>
+
+  <!-- leancloud -->
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+<script src="/js/leancloud.js"></script>
+</head>
+	<body>
+		<!-- Preloader -->
+
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
+
+<!-- header -->
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="/img/random/">
+	<div class="mask">
+		<!-- Logo and navigation -->
+		<div class="h-header">
+			<div id="logo">
+				<a href="/">
+						
+						<img src="/img/logo4.png" alt="Logo">
+					
+				</a>
+			</div>
+			
+			<div id="navigation-show">
+				<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+			</div>				
+		</div>
+
+		<!-- motto -->
+		<div class="h-body">	
+			
+				<p class="motto"></p>
+			
+		</div>
+		
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+
+			
+				<!-- 
+	This is only a demo, please go to "https://time.is" to set your city time! 
+-->
+<style type="text/css">
+	.header-date {
+		font-size: 1.6rem;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		right: 1rem;
+		writing-mode: tb-rl;
+	}	
+	
+	.header-date a {
+		border-bottom: none;
+	}
+
+	@media only screen and (max-width: 768 ) {
+		.header-date {
+			font-size: 1rem;
+		}			
+	}
+</style>
+<div class="header-date">
+	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
+	<span id="Beijing_z43d"></span>
+</div>
+<script src="//widget.time.is/zh.js"></script>
+<script>
+	time_is_widget.init({
+		Beijing_z43d:{
+			template:"DATE", 
+			date_format:"year年 monthname dnum日"
+		}
+	});
+</script>
+			
+		</div>
+	</div>
+</header>
+
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
+
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button">目录</span></div>
+
+	<!-- Page title -->
+	<p>
+		
+			标签
+		
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
+		<ul>
+	
+		<li class="menu-home">
+			<a href="/" class="menu-item-home">主页</a>
+		</li>
+	
+		<li class="menu-archive">
+			<a href="/archives" class="menu-item-archive">归档</a>
+		</li>
+	
+		<li class="menu-categories">
+			<a href="/categories" class="menu-item-categories">分类</a>
+		</li>
+	
+		<li class="menu-tags">
+			<a href="/tags" class="menu-item-tags">标签</a>
+		</li>
+	
+		<li class="menu-about">
+			<a href="/about" class="menu-item-about">关于</a>
+		</li>
+	
+		<li class="menu-gallery">
+			<a href="/gallery" class="menu-item-gallery">相册</a>
+		</li>
+	
+
+	
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger">搜索</a>
+		</li>
+	
+</ul>
+	</div>
+	<div class="nav-footer">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+</nav>
+			
+		<!--main-->
+		<main>
+			<!--
+	时间：2018-11-08
+	描述：The archive module refers to 'https://1984n.win/archives-post/' & 'http://1900.live/one-theme/', include js、css. Relevant rights reserved by them! 
+-->
+<div class="layout-archive">
+    <div class="i-container">
+        <i class="fa fa-book">
+			<!--
+	Post number counter for archive.ejs.  
+-->
+
+		 
+	
+	webpack 1 篇
+		
+
+		</i>
+    </div>
+
+    <!-- Archive by year, display in page( archive ) -->
+    <div 12 2019 id="layout-archive-year" style="display: 
+        
+        
+        <ul>
+            
+                <li>
+                    <a href=" 04 webpack网站开发入门 ">
+            			<em year="2019">
+                            04-12
+                        </em>
+        			    <span itemprop="name">
+                            webpack网站开发入门
+                        </span>
+        			    
+                			<a href="/tags/开发实践/" class="tag">
+                				开发实践
+                			</a>
+                        
+                			<a href="/tags/webpack/" class="tag">
+                				webpack
+                			</a>
+                        
+                    
+                
+            
+                <li>
+                    <a href="/2019/03/12/相册主题Dream介绍/">
+            			<em year="2019">
+                            03-12
+                        </em>
+        			    <span itemprop="name">
+                            相册主题Dream介绍
+                        </span>
+        			    
+                			<a href="/tags/说明/" class="tag">
+                				说明
+                			</a>
+                        
+                			<a href="/tags/相册/" class="tag">
+                				相册
+                			</a>
+                        
+                			<a href="/tags/主题/" class="tag">
+                				主题
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2019/02/26/《人间失格》抄录1/">
+            			<em year="2019">
+                            02-26
+                        </em>
+        			    <span itemprop="name">
+                            《人间失格》抄录1
+                        </span>
+        			    
+                			<a href="/tags/日本文学/" class="tag">
+                				日本文学
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/12/28/银字笙调，奈何初冬/">
+            			<em year="2018">
+                            12-28
+                        </em>
+        			    <span itemprop="name">
+                            银字笙调，奈何初冬
+                        </span>
+        			    
+                			<a href="/tags/文学摘抄/" class="tag">
+                				文学摘抄
+                			</a>
+                        
+                			<a href="/tags/散文/" class="tag">
+                				散文
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/11/18/Annie主题使用Gitalk/">
+            			<em year="2018">
+                            11-18
+                        </em>
+        			    <span itemprop="name">
+                            Annie主题使用Gitalk
+                        </span>
+        			    
+                			<a href="/tags/说明/" class="tag">
+                				说明
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/10/02/山鬼情书之零/">
+            			<em year="2018">
+                            10-02
+                        </em>
+        			    <span itemprop="name">
+                            山鬼情书之零
+                        </span>
+        			    
+                			<a href="/tags/日记/" class="tag">
+                				日记
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/09/25/Annie主题更新日志/">
+            			<em year="2018">
+                            09-25
+                        </em>
+        			    <span itemprop="name">
+                            Annie主题更新日志
+                        </span>
+        			    
+                			<a href="/tags/说明/" class="tag">
+                				说明
+                			</a>
+                        
+                			<a href="/tags/开发实践/" class="tag">
+                				开发实践
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/09/21/toc标题测试/">
+            			<em year="2018">
+                            09-21
+                        </em>
+        			    <span itemprop="name">
+                            toc标题测试
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/09/08/起风了/">
+            			<em year="2018">
+                            09-08
+                        </em>
+        			    <span itemprop="name">
+                            起风了
+                        </span>
+        			    
+                			<a href="/tags/歌词摘抄/" class="tag">
+                				歌词摘抄
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/08/27/Annie主题使用说明/">
+            			<em year="2018">
+                            08-27
+                        </em>
+        			    <span itemprop="name">
+                            Annie主题使用说明
+                        </span>
+        			    
+                			<a href="/tags/说明/" class="tag">
+                				说明
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/08/02/Github入门术语/">
+            			<em year="2018">
+                            08-02
+                        </em>
+        			    <span itemprop="name">
+                            Github入门术语
+                        </span>
+        			    
+                			<a href="/tags/Github入门/" class="tag">
+                				Github入门
+                			</a>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/2018/07/25/秦时明月/">
+            			<em year="2018">
+                            07-25
+                        </em>
+        			    <span itemprop="name">
+                            秦时明月
+                        </span>
+        			    
+                    </a>
+                </li>
+            
+        
+    </div>
+
+     <!-- Archive by month, called by page( categories, tags... ) -->
+    <div id="layout-archive-month" style="display: 
+         
+            block"> 
+        
+
+        
+        
+            
+
+            
+                
+                <h3 class="archive-year">
+                    <!-- <a href="/archives/2019/04"> -->
+                    <a>
+                        2019 - 04
+                    </a>
+                </h3>
+            
+
+            <ul>
+                <li>
+                    <a href="/2019/04/12/webpack网站开发入门/">
+                        <em>
+                            04-12
+                        </em>
+                        <span itemprop="name">
+                            webpack网站开发入门
+                        </span>
+                        
+                            <a href="/tags/开发实践/" class="tag">
+                                开发实践
+                            </a>
+                        
+                            <a href="/tags/webpack/" class="tag">
+                                webpack
+                            </a>
+                               
+                    </a>
+                </li>
+            </ul>
+        
+    </div>
+
+    
+        
+	
+
+	
+
+    
+</div>
+		</main>
+
+		<!--footer-->
+		<footer>
+	<div class="social">
+		<ul>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-weibo"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-pinterest"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-instagram"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<i class="fa fa-twitter"></i>
+			</a>
+		</li>
+	
+		<li>
+			<a href="/atom.xml" target="_blank">
+				<i class="fa fa-rss"></i>
+			</a>
+		</li>
+			
+</ul>
+
+	</div>
+		
+	<div class="copyright">
+		<p>
+			 
+				&copy;2017 - 2019, content by Sariay. All Rights Reserved.
+			
+			
+			
+
+	<!-- busuanzi -->
+	<!-- busuanzi -->
+
+
+
+		</p>
+		<p>
+			<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
+		</p>
+	</div>		
+</footer>
+		
+	<!-- set '1' to show motto in all pages! -->
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$(".motto").html( getMingYanContent() );
+	</script>	
+
+
+
+
+	<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup">
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">
+				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				
+
+   
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
+	
+    <script>
+        var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
+            appkey = 'wzGaywJpxGEhEclcl87rdtHG',
+            limitCount = 10;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
+								
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/plugin/search/ziploader.js"></script>
+<script src="/plugin/search/search.js"></script>
+
+<script type="text/javascript">
+	var search_path = 'search.json',
+		zip_Path = '/search.zip',
+		version_Path = '/searchVersion.txt',
+		input_Trigger = 'auto',
+		top_N = '2';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>
+
+
+<!-- love effect -->
+
+	<script src="/plugin/love/love.js"></script>
+
+
+<!-- back to top -->
+
+	
+	<div id="totop">
+  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+	</div>
+
+
+
+
+<!-- site analysis -->
+
+
+	<!-- site-analysis -->
+	
+	
+	
+	
+	
+ 
+
+<script src="/plugin/vibrant/vibrant.js"></script>
+<script src="/plugin/chinese/chinese.js"></script>
+<script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
+<script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
+<script src="/js/main.js"></script>
+	</body>	
+</html>
