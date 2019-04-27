@@ -24,15 +24,8 @@ jQuery(document).ready(function($) {
 		postTocId = '#catelog-list',
 		paginationId = '#pagination a',
 		paginationContainer = '#layout-cart, #layout-pure';
-
-	// niceScrollSetting： Init nicescroll(plugin/nicescroll/jquery.nicescroll.js)
 	// loadAnimation：Loading animation for 'fun Annie_LoadPost()' & 'fun Annie_QueryPostsByTag()'
-	var niceScrollSetting = $().niceScroll({
-			cursorborder: "none",
-			zindex: 120,
-			autohidemode: true
-		}),
-		loadAnimation = '<div class = "transition"><div class = "three-bounce1"> </div> <div class = "three-bounce2"> </div> <div class = "three-bounce3"> </div> </div> ';
+	var loadAnimation = '<div class = "transition"><div class = "three-bounce1"> </div> <div class = "three-bounce2"> </div> <div class = "three-bounce3"> </div> </div> ';
 
 	/**
 	 * Preloader for html page. If the background image of header is loaded, it will remove the mask layer immediately, or else after 10 seconds at most!
@@ -149,7 +142,7 @@ jQuery(document).ready(function($) {
 			}
 
 			// set motto color
-			$('.motto').css({
+			$('.motto, #read-more').css({
 				'color': fontColor || mainColor
 			});
 
@@ -238,14 +231,14 @@ jQuery(document).ready(function($) {
 		$('.nav-trigger').on('click', function(event) {
 			event.preventDefault();
 			toggleNav(true);
-			$('body').css('overflow', 'hidden');
+			$('body').addClass('body-fixed');
 		});
 
 		//close navigation
 		$('.nav-close').on('click', function(event) {
 			event.preventDefault();
 			toggleNav(false);
-			$('body').css('overflow', 'auto');
+			$('body').removeClass('body-fixed');
 		});
 
 		function toggleNav(bool) {
@@ -516,7 +509,7 @@ jQuery(document).ready(function($) {
 					}
 				},
 				complete: function() {
-					niceScrollSetting.resize();
+					// TODO
 				}
 			});
 
@@ -582,7 +575,7 @@ jQuery(document).ready(function($) {
 						});
 					},
 					complete: function() {
-						niceScrollSetting.resize();
+						// TODO
 					}
 				});
 			}
@@ -610,10 +603,37 @@ jQuery(document).ready(function($) {
 		});
 	};
 
-	var Annie_ImageResize = function() {
+	/**
+	 * Resize image to parent.
+	 * PLUGIN: plugin/imgResize/jquery.resizeimagetoparent.min.js
+	 * 
+	 * @method   Annie_ImageResize
+	 */
+	var Annie_ImageResize = function() {		
 		$('.post-cover img, .relate-post-cover img').resizeToParent({
 			parent: '.post-cover, .relate-post-cover'
 		});
+	};
+
+	/**
+	 * Adjust the browser scroll bar for 'html body', 'code bloack'.
+	 * PLUGIN: plugin/nicescroll/jquery.nicescroll.js
+	 *
+	 * @method   Annie_NiceScroll
+	 */
+	var Annie_NiceScroll = function() {
+		var niceScrollId = 'body, .highlight',
+			niceScrollSetting = $(niceScrollId).niceScroll({
+					cursorborder: "none",					
+					autohidemode: true
+			});	
+			
+		// PLUGIN: js/resizediv.js
+		$(niceScrollId).resize(function(event) {
+			setTimeout(function() {
+				niceScrollSetting.resize();
+			}, 2);	
+		});		
 	};
 
 	/**
@@ -639,5 +659,6 @@ jQuery(document).ready(function($) {
 		Annie_LanguageSet();
 		Annie_ImageLazyLoad();
 		Annie_ImageResize();
+		Annie_NiceScroll();
 	})();
 });

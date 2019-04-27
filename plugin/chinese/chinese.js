@@ -2,7 +2,7 @@
 // -------------- 以下参数大部分可以更改 --------------------
 //s = simplified 简体中文 t = traditional 繁体中文 n = normal 正常显示
 var zh_default = 'n'; //默认语言，请不要改变
-var zh_choose = 't'; //当前选择
+var zh_choose = 's'; //当前选择
 var zh_expires = 7; //cookie过期天数
 var zh_class = 'zh_click'; //链接的class名，id为class + s/t/n 之一
 var zh_style_active = 'background: #00A1DF; color:#FFFFFF;'; //当前选择的链接式样
