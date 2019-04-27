@@ -50,14 +50,14 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="/img/random/">
+<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/">
 	<div class="mask">
 		<!-- Logo and navigation -->
 		<div class="h-header">
 			<div id="logo">
 				<a href="/">
 						
-						<img src="/img/logo4.png" alt="Logo">
+						<img src="/img/logo5.png" alt="Logo">
 					
 				</a>
 			</div>
@@ -312,12 +312,12 @@
 			<i class="fa fa-tags"></i>
 			
 	
-		<a href="/tags/说明/" class=" ">
-			说明
-		</a>
-	
 		<a href="/tags/开发实践/" class=" ">
 			开发实践
+		</a>
+	
+		<a href="/tags/说明/" class=" ">
+			说明
 		</a>
 	
 		
@@ -388,9 +388,9 @@
 <td style="text-align:left">弃用hexo-plugin-prism，使用next主题的highlight.styl</td>
 </tr>
 <tr>
-<td style="text-align:center">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
+<td style="text-align:center">新增</td>
+<td style="text-align:left">图片懒加载</td>
+<td style="text-align:left">使用插件yall.min.js</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
@@ -829,9 +829,73 @@ Repository
 
 		
 
-			<!-- I don't know !!!-->
-			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
-			
+			<!-- gitalk comment -->
+			<!-- show gitalk comment -->
+<div id="gitalk-container"></div>
+
+<!-- gitalk`s css & js -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<link rel="stylesheet" href="/css/comment.css">
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script type="text/javascript">
+	//Thanks O-R
+	//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+	//去除尾部匹配正则数组的字符串  
+	//Remove redundant characters
+	String.prototype.trimEnd = function(regStr) {
+		var result = this;
+		if(regStr == undefined || regStr == null || regStr == "") {
+			return result;
+		}
+		var array = regStr.split(',');
+
+		if(array.length > 0) {
+
+			var c = array.shift();
+			var str = this;
+			var i = str.length;
+			var rg = new RegExp(c);
+			var matchArr = str.match(rg);
+
+			if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+				var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+					.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+					.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+					.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+					.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+					.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+					.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+					.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+				matchStr = matchStr + '$';
+				result = str.replace(new RegExp(matchStr), "");
+			}
+
+			if(array.length > 0) {
+				return result.trimEnd(array.join())
+			} else {
+				return result;
+			}
+		}
+	};
+
+	//Create gitalk
+	var gitalk = new Gitalk({
+		clientID: 'bf19f33d43d567dce87e',
+		clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
+		//id: window.location.pathname,
+		//id: decodeURI(window.location.pathname),
+		//id: (window.location.pathname).split("/").pop().substring(0, 49),
+		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+		repo: 'annie-gitalk',
+		owner: 'Sariay',
+		admin: 'Sariay',
+		distractionFreeMode: 'true',
+	})
+	gitalk.render('gitalk-container');
+</script>
+
 		
 		
 	
@@ -844,16 +908,14 @@ Repository
 	
 
 		
+			
+			<!-- socialShare share -->
+			<div class="social-share"></div>
 
-			<!-- addThis share -->
-			<!-- www.addthis.com/dashboard -->
-
-	<div class="addthis_inline_share_toolbox">
-	</div>
-
-	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c7a56e7cb0ee41e" async="async"></script>
-
-
+<!--  css & js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+			
 		
 		
 	
@@ -1062,6 +1124,17 @@ Repository
 
 	<!-- busuanzi -->
 	<!-- busuanzi -->
+
+		
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+		<span id="busuanzi_container_page_pv">
+	  		本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+		</span>
+
+	
+
 
 
 
