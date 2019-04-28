@@ -319,7 +319,7 @@
 
 	<a href="/2019/04/12/webpack网站开发入门/" itemprop="url">
 		<time datetime="2019-04-12T14:30:58.000Z" itemprop="dateUpdated">
-	  		2019-04-25
+	  		2019-04-28
 	  </time>
 	</a> 
 
@@ -479,7 +479,7 @@
 <p>此时命令行窗口的输出应该如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br><span class="line"></span><br><span class="line">&gt; webpack-demo@1.0.0 dev C:\Users\水煮鱼肠面\Desktop\webpack-demo</span><br><span class="line">&gt; webpack-dev-server</span><br><span class="line"></span><br><span class="line">i ｢wds｣: Project is running at http://localhost:9800/</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">Built at: 2019-04-13 23:14:57</span><br><span class="line">        Asset     Size  Chunks             Chunk Names</span><br><span class="line">app.bundle.js  687 KiB     app  [emitted]  app</span><br><span class="line">Entrypoint app = app.bundle.js</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">    + 14 hidden modules</span><br><span class="line">i ｢wdm｣: Compiled successfully.</span><br></pre></td></tr></table></figure>
 <p>你应该关注此条输出</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i ｢wds｣: Project is running at http://localhost:9800/</span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ i ｢wds｣: Project is running at http://localhost:9800/</span></span><br></pre></td></tr></table></figure>
 <p>在浏览器中打开<u>localhost:9800</u>，你应该看到<u>Hello webpack-demo!</u></p>
 <p><strong>测试实时服务器dev-server</strong></p>
 <p>修改index.js</p>
@@ -587,8 +587,9 @@ Repository
 							</p>
 							<p class="relate-post-content">
 								
- 2019-4-14 主题优化
+ 2019-4-27 主题优化 
 
+commit b421393
 
 
 
@@ -600,17 +601,13 @@ Repository
 
 
 优化
-文章Markdown
-优化表格、代码块样式
+文章模块
+Markdown（重写样式，优化表格、引用等样式）
 
 
 新增
-文章分享
-addThis、baiduShare、shareThis、socialShare
-
-
-新增
-站点...
+文章模块
+color quote（info、succes...
 							</p>
 						</div>
 
@@ -658,12 +655,10 @@ addThis、baiduShare、shareThis、socialShare
 								二月 26日, 2019				
 							</p>
 							<p class="relate-post-content">
-								
-手记之三 1
-
+								手记之三 1
 竹一的两大预言，兑现了一个，落空了一个。“被女人迷恋上“这一并不光彩的预言化作了现实，而”肯定会成为一个伟大的画家“的这一祝福性的预言却归于泡影。
 我仅仅当上了给粗俗杂志投稿的无名的蹩脚漫画家而已。
-由于镰仓的殉情自...
+由于镰仓的殉情自杀事...
 							</p>
 						</div>
 
@@ -826,9 +821,17 @@ I...
 								八月 27日, 2018				
 							</p>
 							<p class="relate-post-content">
-								12+this is add!-this is quer.
-一、LOGO和FAVICON编辑主题目录下的_config.yml文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。
-二、...
+								零、准备工作开始之前，你应该预先理解下列标签的意义：
+
+代码对比
+
+123  This is a diff block.+ This is add!- This is subtract!
+
+信息提示
+
+这是一个info提示
+
+这是一个...
 							</p>
 						</div>
 

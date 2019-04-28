@@ -307,7 +307,7 @@
 
 	<a href="/2018/09/25/Annie主题更新日志/" itemprop="url">
 		<time datetime="2018-09-25T12:16:32.000Z" itemprop="dateUpdated">
-	  		2019-04-27
+	  		2019-04-28
 	  </time>
 	</a> 
 
@@ -352,8 +352,9 @@
 
 	<div class="article-content" id="article-content">
 		<ul>
-<li style="list-style: none"><input type="checkbox" checked> 2019-4-14 主题优化</li>
+<li style="list-style: none"><input type="checkbox" checked> 2019-4-27 主题优化 </li>
 </ul>
+<p>commit <a href="https://github.com/Sariay/hexo-theme-Annie/commit/b421393dd259809fadba119547fda4fcf2633f1f" target="_blank" rel="noopener">b421393</a></p>
 <table>
 <thead>
 <tr>
@@ -365,64 +366,103 @@
 <tbody>
 <tr>
 <td style="text-align:center">优化</td>
-<td style="text-align:left">文章Markdown</td>
-<td style="text-align:left">优化表格、代码块样式</td>
+<td style="text-align:left">文章模块</td>
+<td style="text-align:left">Markdown（重写样式，优化表格、引用等样式）</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
-<td style="text-align:left">文章分享</td>
-<td style="text-align:left">addThis、baiduShare、shareThis、socialShare</td>
+<td style="text-align:left">文章模块</td>
+<td style="text-align:left">color quote（info、success、warning、danger）</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left"><strong>文章模块</strong></td>
+<td style="text-align:left"><strong>代码块高亮</strong>（弃用hexo-plugin-prism，使用next主题的highlight.styl）</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left">文章模块</td>
+<td style="text-align:left">分享功能（addThis、baiduShare、shareThis、socialShare）</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left"><strong>文章模块</strong></td>
+<td style="text-align:left">toc目录（增加开关，控制展示与否）</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
 <td style="text-align:left">站点分析</td>
-<td style="text-align:left">百度分析、google分析等</td>
+<td style="text-align:left">baidu分析、google分析、cnzz分析等</td>
 </tr>
 <tr>
 <td style="text-align:center">优化</td>
-<td style="text-align:left">toc目录</td>
-<td style="text-align:left">增加开关（控制展示与否）</td>
-</tr>
-<tr>
-<td style="text-align:center">优化</td>
-<td style="text-align:left">social.ejs</td>
-<td style="text-align:left">代码重构</td>
-</tr>
-<tr>
-<td style="text-align:center">优化</td>
-<td style="text-align:left">代码块</td>
-<td style="text-align:left">弃用hexo-plugin-prism，使用next主题的highlight.styl</td>
+<td style="text-align:left">页脚模块</td>
+<td style="text-align:left">social.ejs（重构代码）</td>
 </tr>
 <tr>
 <td style="text-align:center">新增</td>
-<td style="text-align:left">图片懒加载</td>
-<td style="text-align:left">使用插件yall.min.js</td>
-</tr>
-<tr>
-<td style="text-align:center">新增</td>
-<td style="text-align:left">滚动条</td>
-<td style="text-align:left">使用jquery.nicescroll.js美化滚动条</td>
+<td style="text-align:left">图片模块</td>
+<td style="text-align:left">懒加载（使用插件yall.min.js，懒加载index.ejs、post-relate.ejs的图片）</td>
 </tr>
 <tr>
 <td style="text-align:center">优化</td>
-<td style="text-align:left">图片缩放比例</td>
-<td style="text-align:left">优化主页文章缩略图、文章页相关文章缩略图的<strong>缩放比例</strong>（按原始比例裁剪）。插件<a href="https://github.com/levymetal/jquery-resize-image-to-parent" target="_blank" rel="noopener">jquery-resize-image-to-parent</a></td>
-</tr>
-<tr>
-<td style="text-align:center">优化</td>
-<td style="text-align:left">搜索页</td>
-<td style="text-align:left">优化样式，增加搜索结果提示</td>
+<td style="text-align:left">图片模块</td>
+<td style="text-align:left">缩放比例（使用插件<a href="https://github.com/levymetal/jquery-resize-image-to-parent" target="_blank" rel="noopener">jquery-resize-image-to-parent</a>，按原始比例裁剪index.ejs、post-relate.ejs的图片）</td>
 </tr>
 <tr>
 <td style="text-align:center">修复</td>
-<td style="text-align:left">文章图片</td>
-<td style="text-align:left">修复lightgallery插件的报错问题（使用fancybox插件替代）</td>
+<td style="text-align:left">图片模块</td>
+<td style="text-align:left">文章内图片（使用fancybox插件，修复关闭lightgallery画廊时的错误问题）</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left"><strong>滚动条</strong></td>
+<td style="text-align:left">使用jquery.nicescroll.js美化网页页面、代码块的滚动条</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left"><strong>搜索模块</strong></td>
+<td style="text-align:left">优化样式，增加搜索结果提示，提供更炫酷的搜索体验</td>
+</tr>
+<tr>
+<td style="text-align:center">修复</td>
+<td style="text-align:left">文章模块</td>
+<td style="text-align:left">代码块复制（修复点击<u>复制按钮</u>时，页面滚动问题）</td>
+</tr>
+<tr>
+<td style="text-align:center">新增</td>
+<td style="text-align:left"><strong>语言模块</strong></td>
+<td style="text-align:left">支持繁体中文、简体中文的互转（页脚增加切换按钮）</td>
+</tr>
+<tr>
+<td style="text-align:center">修复</td>
+<td style="text-align:left"><strong>归档模块</strong></td>
+<td style="text-align:left">修复具有指定标签、分类的文章总数的计数问题（新增post-number.ejs）</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">layout.ejs</td>
+<td style="text-align:left">优化layout.ejs的结构，删除冗余代码（综合考虑了gallery.ejs）</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left">main.js</td>
+<td style="text-align:left">优化部分function的逻辑</td>
+</tr>
+<tr>
+<td style="text-align:center">优化</td>
+<td style="text-align:left"><strong>Annie主题</strong></td>
+<td style="text-align:left">重新组织项目结构，优化部分语法问题</td>
 </tr>
 </tbody>
 </table>
+<blockquote class="colorquote warning">
+layout.ejs</blockquote>
+<figure class="highlight diff"><figcaption><span>layout.ejs</span><a href="https://github.com/Sariay/hexo-theme-Annie/commit/b421393dd259809fadba119547fda4fcf2633f1f" target="_blank" rel="noopener">commit-b421393</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-3,26 </span></span><br><span class="line"><span class="addition">+3,19</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">-&lt;% if(page.type === "gallery") &#123; %&gt;</span></span><br><span class="line"><span class="deletion">-</span></span><br><span class="line"><span class="deletion">-	&lt;!--gallery--&gt;</span></span><br><span class="line"><span class="deletion">-	&lt;%- partial('gallery') %&gt;</span></span><br><span class="line"><span class="deletion">-</span></span><br><span class="line"><span class="deletion">-&lt;% &#125; else &#123; %&gt;</span></span><br><span class="line"><span class="deletion">-	&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="deletion">-	&lt;html class="scrollbar"&gt;</span></span><br><span class="line"><span class="addition">+&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="addition">+&lt;html class="html-loading"&gt;</span></span><br><span class="line">		&lt;%- partial('_partial/head',&#123;cache: true&#125;) %&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;%- partial('_partial/header',&#123;cache: true&#125;) %&gt;</span><br><span class="line"><span class="deletion">-		</span></span><br><span class="line"><span class="addition">+			</span></span><br><span class="line">		&lt;!--main--&gt;</span><br><span class="line">		&lt;main&gt;</span><br><span class="line">			&lt;%- body %&gt;</span><br><span class="line">		&lt;/main&gt;</span><br><span class="line"><span class="deletion">-</span></span><br><span class="line"><span class="addition">+</span></span><br><span class="line">		&lt;!--footer--&gt;</span><br><span class="line">		&lt;%- partial('_partial/footer',&#123;cache: true&#125;) %&gt;</span><br><span class="line">		&lt;%- partial('_partial/footer-after',&#123;cache: true&#125;) %&gt;</span><br><span class="line"><span class="deletion">-	&lt;/body&gt;</span></span><br><span class="line"><span class="deletion">-	&lt;/html&gt;</span></span><br><span class="line"><span class="deletion">-&lt;% &#125; %&gt;</span></span><br><span class="line"><span class="addition">+	&lt;/body&gt;	</span></span><br><span class="line"><span class="addition">+&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li style="list-style: none"><input type="checkbox" checked> 2018-12-27 主题重构</li>
 </ul>
+<p>commit <a href="https://github.com/Sariay/hexo-theme-Annie/commit/0e63d03a44ffcb18acbab8c3ff02b9755b983d4e" target="_blank" rel="noopener">0e63d03</a> </p>
 <table>
 <thead>
 <tr>
@@ -681,9 +721,17 @@ Gitalk使用方法一新建仓库
 								八月 27日, 2018				
 							</p>
 							<p class="relate-post-content">
-								12+this is add!-this is quer.
-一、LOGO和FAVICON编辑主题目录下的_config.yml文件，设置favicon和avtor（logo）的路径即可。当然，你可使用文字logo或图片logo。
-二、...
+								零、准备工作开始之前，你应该预先理解下列标签的意义：
+
+代码对比
+
+123  This is a diff block.+ This is add!- This is subtract!
+
+信息提示
+
+这是一个info提示
+
+这是一个...
 							</p>
 						</div>
 
@@ -730,12 +778,10 @@ Gitalk使用方法一新建仓库
 								二月 26日, 2019				
 							</p>
 							<p class="relate-post-content">
-								
-手记之三 1
-
+								手记之三 1
 竹一的两大预言，兑现了一个，落空了一个。“被女人迷恋上“这一并不光彩的预言化作了现实，而”肯定会成为一个伟大的画家“的这一祝福性的预言却归于泡影。
 我仅仅当上了给粗俗杂志投稿的无名的蹩脚漫画家而已。
-由于镰仓的殉情自...
+由于镰仓的殉情自杀事...
 							</p>
 						</div>
 
