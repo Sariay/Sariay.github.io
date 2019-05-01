@@ -319,7 +319,7 @@
 
 	<a href="/2018/08/27/Annie主题使用说明/" itemprop="url">
 		<time datetime="2018-08-27T12:16:19.000Z" itemprop="dateUpdated">
-	  		2019-04-29
+	  		2019-05-01
 	  </time>
 	</a> 
 
@@ -339,22 +339,7 @@
 		
 		
 
-	
-    <span class="leancloud_visitors" id="/2018/08/27/Annie主题使用说明/_visitors" data-url="/2018/08/27/Annie主题使用说明/" data-title="Annie主题使用说明">
-       	<i class="fa fa-eye"></i>
-       	热度
-        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
-    </span>
-    
 
-
-
-	
-    <span class="leancloud_likes" id="/2018/08/27/Annie主题使用说明/_likes" data-url="/2018/08/27/Annie主题使用说明/" data-title="Annie主题使用说明" rel="unlike">
-        <i class="fa fa-heart"></i>
-        喜欢
-        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
-    </span>
 
 	</div>
 
@@ -367,12 +352,12 @@
 <ol start="2">
 <li>信息提示</li>
 </ol>
-<blockquote class="colorquote info">这是一个info提示</blockquote>
+<blockquote class="colorquote info"><p>这是一个info提示</p></blockquote>
 
-<blockquote class="colorquote success">这是一个success提示 </blockquote>
-<blockquote class="colorquote warning">这是一个warning提示</blockquote>
+<blockquote class="colorquote success"><p>这是一个success提示 </p></blockquote>
+<blockquote class="colorquote warning"><p>这是一个warning提示</p></blockquote>
 
-<blockquote class="colorquote danger">这是一个danger提示</blockquote>
+<blockquote class="colorquote danger"><p>这是一个danger提示</p></blockquote>
 <ol start="3">
 <li>名词约定</li>
 </ol>
@@ -409,8 +394,7 @@
 <h3 id="一、LOGO和FAVICON"><a href="#一、LOGO和FAVICON" class="headerlink" title="一、LOGO和FAVICON"></a>一、LOGO和FAVICON</h3><p>编辑<u>主题配置文件</u>，设置<code>favicon</code>和<code>logo</code>的路径即可。当然，你可以使用文字logo或图片logo，即<code>logo</code>的值为空时，主题使用<code>title</code>的值作为logo！</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># favicon &amp; logo</span><br><span class="line"># if the value of logo is false, the 'title' is optional.</span><br><span class="line"><span class="deletion">-favicon: /img/favicon.ico</span></span><br><span class="line"><span class="deletion">-logo: /img/logo.png</span></span><br><span class="line"><span class="deletion">-title: Welcome </span></span><br><span class="line"><span class="addition">+favicon: /img/your-favicon.ico</span></span><br><span class="line"><span class="addition">+logo: /img/your-logo.png</span></span><br><span class="line"><span class="addition">+title: your-title</span></span><br></pre></td></tr></table></figure>
 <h3 id="二、页头背景图片"><a href="#二、页头背景图片" class="headerlink" title="二、页头背景图片"></a>二、页头背景图片</h3><p>文章详情页的<u>页头背景图片</u>为该文章的封面图，其他页的<u>页头背景图片</u>为随机图片或固定图片。原则上，使用固定图片时，应将参数<code>mode</code>设为<code>normal</code>，然后设置<code>normal_url</code>的路径；使用随机图片时，应将参数<code>mode</code>设为<code>random</code>，然后设置<code>random_url</code>的路径。</p>
-<blockquote class="colorquote warning"><b>warning!</b>
-<br>注意跨域问题，尽量不使用跨域的图片（即背景图片和网页最好托管在一起，存放于同一服务器）</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b><br>注意跨域问题，尽量不使用跨域的图片（即背景图片和网页最好托管在一起，存放于同一服务器）</p></blockquote>
 <ol>
 <li>使用固定图片，请确保参数<code>mode</code>设为<code>normal</code>，然后设置参数<code>normal_url</code>的值</li>
 </ol>
@@ -431,12 +415,7 @@
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># background_image</span><br><span class="line"># /img/01.jpg</span><br><span class="line"># https://source.unsplash.com/collection/954550/1920x1080</span><br><span class="line"># https://sariay.github.io/Random-img/</span><br><span class="line"># May be cause CROS bug!</span><br><span class="line">background_image:</span><br><span class="line"><span class="addition">+   mode: random #normal or random</span></span><br><span class="line">    normal_url: https://source.unsplash.com/collection/954550/1920x1080</span><br><span class="line"><span class="addition">+   random_max: 110 </span></span><br><span class="line"><span class="addition">+   random_url: https://sariay.github.io/Random-img/</span></span><br></pre></td></tr></table></figure>
 <p>你可以将<u>随机图片集</u>上传到图床（腾讯云、七牛云等），然后获取<code>https://....../Random-img/</code>格式的地址，最后将<code>random_url</code>的值设置为该地址。</p>
 <p>你也可以在主题目录下的img文件夹中新建Random-img文件夹，将<code>0.jpg</code>、<code>1.jpg</code>、<code>2.jpg</code>、<code>3.jpg</code>……<code>110.jpg</code>命名格式的图片放入其中，然后将<code>random_url</code>的值设置为<code>/img/Random-img/</code>。</p>
-<blockquote class="colorquote warning">
-<b>warning!</b>
-<br>
-
-图片的命名使用连续的整数，<code>random_max</code>的值小于等于（0、1、2、3.....110）的最大整数。（ps：如你偏爱访问速度🙃，尽可能使用固定图片）
-</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b></p><p>图片的命名使用连续的整数，<code>random_max</code>的值小于等于（0、1、2、3…..110）的最大整数。（ps：如你偏爱访问速度🙃，尽可能使用固定图片）</p></blockquote>
 <h3 id="三、随机名言与当地时间"><a href="#三、随机名言与当地时间" class="headerlink" title="三、随机名言与当地时间"></a>三、随机名言与当地时间</h3><p>每次刷新网页，网页页头展示一条随机名言，获取并展示该时区的标准时间。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># show motto</span><br><span class="line">motto:</span><br><span class="line">    enable: true</span><br><span class="line">    </span><br><span class="line"># show current time</span><br><span class="line"><span class="addition">+ #This is only a demo, please go to "https://time.is" to set your city time!</span></span><br><span class="line">timejs:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 <h3 id="四、预加载遮罩"><a href="#四、预加载遮罩" class="headerlink" title="四、预加载遮罩"></a>四、预加载遮罩</h3><p><u>预加载遮罩</u>的作用为，确保背景图片加载完成和背景构造完成。当背景加载并构造完成时，主题立即移除遮罩。<u>预加载行为</u>的超时时间默认设为10s，即最多10s左右后，不管背景是否加载并构造完成，主題都移除遮罩。你可以决定是否使用：</p>
@@ -450,11 +429,7 @@
 <h4 id="5-3文字的截断"><a href="#5-3文字的截断" class="headerlink" title="5.3文字的截断"></a>5.3文字的截断</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_excerpt for index page</span></span><br><span class="line"><span class="attr">excerpt_cart:</span> <span class="number">80</span></span><br><span class="line"><span class="attr">excerpt_pure:</span> <span class="number">300</span>   </span><br><span class="line"><span class="attr">excerpt_link:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p><code>excerpt_cart</code>为图文模式的截取字数，推荐<strong>小于等于</strong>100。<code>excerpt_pure</code>为纯净模式的截取字数，推荐字数为300。<code>excerpt_link</code>为<u>阅读更多</u>按钮展示与否的开关。</p>
 <h3 id="六、归档页的使用"><a href="#六、归档页的使用" class="headerlink" title="六、归档页的使用"></a>六、归档页的使用</h3><p>Annie主题的归档页按年归档，不分页。当然，可以置参数<code>archive_generator.per_page</code>（<u>站点配置文件</u>）为1、2、3…..以达到分页目的。</p>
-<blockquote class="colorquote warning">
-<b>warning!</b>
-<br>
-
-Annie主题中无效，分页是对该页面[主页、归档页、标签页、分类页]的文章进行分页，即每次（每页）展示指定数量的文章</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b></p><p>Annie主题中无效，分页是对该页面[主页、归档页、标签页、分类页]的文章进行分页，即每次（每页）展示指定数量的文章</p></blockquote>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">archive:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">category:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">tag:</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="attr">category_generator:</span> </span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 <h3 id="七、分类页的使用"><a href="#七、分类页的使用" class="headerlink" title="七、分类页的使用"></a>七、分类页的使用</h3><p>执行命令，创建分类页</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
@@ -473,11 +448,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <p>然后编辑站点目录下的<code>source/gallery/index.md</code>，添加如下<code>Front-matter</code></p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: gallery</span><br><span class="line">date: 2019-03-30 19:25:34</span><br><span class="line"><span class="addition">+ layout: gallery</span></span><br><span class="line"><span class="addition">+ type: gallery</span></span><br></pre></td></tr></table></figure>
 <p>打开文件data.json（<u>Annie/source/plugin/gallerypage/data.json</u>）, 按照json语法在数组[……]中添加gallery的图片数据，请设置合适的<code>eWidth</code>、<code>eHeight</code>的值。</p>
-<blockquote class="colorquote warning">
-<b>warning!</b>
-<br>
-
-注意：下列注释在json文件中无效，使用时请去掉注释。（注释仅为说明）</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b></p><p>注意：下列注释在json文件中无效，使用时请去掉注释。（注释仅为说明）</p></blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">&#123;&#125;, </span><br><span class="line">&#123;</span><br><span class="line">        "thumbnail": "https://img.jpg",    	 		//小图路径</span><br><span class="line">        "enlarged": "https://img.jpg",			 	//大图路径（可与小图一致）</span><br><span class="line">        "title": "百里守约",						//图片标题</span><br><span class="line">        "categories": [&#123;</span><br><span class="line">                "id": 9,							//根据id来进行分类</span><br><span class="line">                "title": "百里玄策",</span><br><span class="line">                "photo_count": 41787,				 //可忽略</span><br><span class="line">                "links": &#123;							//可忽略</span><br><span class="line">                    "self": "https://img.jpg",</span><br><span class="line">                    "photos": "https://img.jpg"</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        "tWidth": 800.6130030959752,				//小图相对宽度</span><br><span class="line">        "tHeight": 500,							   //小图相对高度</span><br><span class="line">        "eWidth": 3630,							   //大图相对宽度</span><br><span class="line">        "eHeight": 2907							   //大图相对高度</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;&#125;</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
 <p>当然，你可以将该文件<strong>data.json</strong>移至其他目录，相应地修改路径<code>gallery_data</code>。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># gallery page</span><br><span class="line"># gallery_format: natural | square</span><br><span class="line">gallery_format: natural</span><br><span class="line"># one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)</span><br><span class="line">gallery_limit: 0</span><br><span class="line"># data url</span><br><span class="line"><span class="addition">+ gallery_data: plugin/gallerypage/data.json</span></span><br></pre></td></tr></table></figure>
@@ -491,12 +462,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <p>分类页的<code>HEXO博客</code>字段来源于文章Front-matter中的<code>categories</code>参数值，标签页的<code>说明</code>字段来源于文章Front-matter中的<code>tags</code>参数值。hexo博客框架只支持一个同级分类，支持多个同级标签。</p>
 <h4 id="12-2相关的文章"><a href="#12-2相关的文章" class="headerlink" title="12.2相关的文章"></a>12.2相关的文章</h4><p>文章页将展示与<u>当前文章</u>具有相同分类、相同标签的系列文章，排序规则：分类&gt;标签&gt;时间&gt;不相关文章。你可以决定是否使用该模块，<code>posts_limit</code>为显示的文章篇数，<code>posts_excerpt</code>为每篇文章的文字截取数量。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 04-POST</span></span><br><span class="line"><span class="comment"># post_relate</span></span><br><span class="line"><span class="attr">relate:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    posts_limit:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">    posts_excerpt:</span> <span class="number">120</span></span><br></pre></td></tr></table></figure>
-<blockquote class="colorquote info">
-<b>info!</b>
-
-<br>
-
-只有全站博客文章篇数大于1且<code>relate.enable</code>为真时，该模块有效。</blockquote>
+<blockquote class="colorquote info"><p><b>info!</b></p><p>只有全站博客文章篇数大于1且<code>relate.enable</code>为真时，该模块有效。</p></blockquote>
 <h4 id="12-3阅读量计数"><a href="#12-3阅读量计数" class="headerlink" title="12.3阅读量计数"></a>12.3阅读量计数</h4><p>对于<code>leancloud_count</code>，你必须设置appid、appkey；对于<code>busuanzi_count</code>，你只需要开启它即可。</p>
 <ol>
 <li>leancloud计数</li>
@@ -512,12 +478,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># post_count</span><br><span class="line">leancloud_count:</span><br><span class="line">    enable: false</span><br><span class="line">    appid: 'dX--'</span><br><span class="line">    appkey: 'dX--'</span><br><span class="line"><span class="addition">+   like_post:</span></span><br><span class="line"><span class="addition">+       enable: true</span></span><br><span class="line">    visit_post:</span><br><span class="line">        enable: true</span><br><span class="line">    topN_post: </span><br><span class="line">        enable: true #param1 for topN_post</span><br><span class="line">        limit: 10 #param2 for topN_post</span><br><span class="line"></span><br><span class="line">busuanzi_count:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 <h4 id="12-5-文章排行"><a href="#12-5-文章排行" class="headerlink" title="12.5 文章排行"></a>12.5 文章排行</h4><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># post_count</span><br><span class="line">leancloud_count:</span><br><span class="line">    enable: false</span><br><span class="line">    appid: 'dX--'</span><br><span class="line">    appkey: 'dX--'</span><br><span class="line">    like_post:</span><br><span class="line">       enable: true</span><br><span class="line">    visit_post:</span><br><span class="line">        enable: true</span><br><span class="line"><span class="addition">+   topN_post: </span></span><br><span class="line"><span class="addition">+       enable: true #param1 for topN_post</span></span><br><span class="line"><span class="addition">+       limit: 10 #param2 for topN_post</span></span><br><span class="line"></span><br><span class="line">busuanzi_count:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 <p>如果你完成了<u>12.3阅读量计数</u>的<u>leancloud计数</u>的设置，那么只需要开启<code>topN_post</code>。（<strong>文章阅读排行</strong>依赖于<strong>12.3阅读量计数</strong>）</p>
-<blockquote class="colorquote info">
-<b>info!</b>
-
-<br>
-
-该模块放置于搜索页面，你可按需定制</blockquote>
+<blockquote class="colorquote info"><p><b>info!</b></p><p>该模块放置于搜索页面，你可按需定制</p></blockquote>
 <h4 id="12-6文章目录"><a href="#12-6文章目录" class="headerlink" title="12.6文章目录"></a>12.6文章目录</h4><p>若一篇文章的正文存在h1、h2、h3等标题，则文章页展示<u>目录按钮</u>。点击<u>目录按钮</u>，页面左侧展示文章目录。当屏幕宽度小于1024px或页面滚动高度大于文章正文高度时，页面隐藏文章目录。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post_toc</span></span><br><span class="line"><span class="attr">post_toc:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    katelog:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h4 id="12-7数学公式"><a href="#12-7数学公式" class="headerlink" title="12.7数学公式"></a>12.7数学公式</h4><p>请先设置<u>主题配置文件</u>的<code>mathjax</code>参数，再于文章的Front-matter中添加<code>mathjax: true</code></p>
@@ -532,12 +493,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <li>编辑<u>站点配置文件</u>，设置<code>highlight</code>的值</li>
 </ol>
 <figure class="highlight diff"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name of new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: false # Transform title into titlecase</span><br><span class="line">external_link: true # Open external links in new tab</span><br><span class="line">filename_case: 0</span><br><span class="line">render_drafts: false</span><br><span class="line">post_asset_folder: true</span><br><span class="line">relative_link: false</span><br><span class="line">future: true</span><br><span class="line"><span class="addition">+highlight:</span></span><br><span class="line"><span class="addition">+  enable: true</span></span><br><span class="line"><span class="addition">+  line_number: true</span></span><br><span class="line">  auto_detect: false</span><br><span class="line">  tab_replace:</span><br></pre></td></tr></table></figure>
-<blockquote class="colorquote warning">
-<b>warning!</b>
-
-<br>
-
-请尽可能地指定<u>相应代码块</u>的<u>语言类型</u>（html、js、c++、java......），以使高亮风格有效。</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b></p><p>请尽可能地指定<u>相应代码块</u>的<u>语言类型</u>（html、js、c++、java……），以使高亮风格有效。</p></blockquote>
 <h4 id="12-9代码块复制"><a href="#12-9代码块复制" class="headerlink" title="12.9代码块复制"></a>12.9代码块复制</h4><p>只有<code>theme.code_copy.enable</code>为真且<code>config.highlight.enable</code>为真时，代码块的复制功能才有效。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># post_code</span><br><span class="line"># highlight_theme: normal | night | night blue | night bright | night eighties</span><br><span class="line">highlight_theme: night bright</span><br><span class="line">code_copy:</span><br><span class="line"><span class="addition">+    enable: true</span></span><br></pre></td></tr></table></figure>
 <h4 id="12-10文章评论功能"><a href="#12-10文章评论功能" class="headerlink" title="12.10文章评论功能"></a>12.10文章评论功能</h4><p>Hexo-theme-Annie主题集成了gitalk、DesertsP版的valine、livere评论插件。</p>
@@ -567,12 +523,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 </tr>
 </tbody>
 </table>
-<blockquote class="colorquote warning">
-<b>warning!</b>
-
-<br>
-
-对于gitalk，你必须设置clientID、clientSecret；对于Valine，你必须设置appid、appkey；对于livere，你必须设置livere_uid。</blockquote>
+<blockquote class="colorquote warning"><p><b>warning!</b></p><p>对于gitalk，你必须设置clientID、clientSecret；对于Valine，你必须设置appid、appkey；对于livere，你必须设置livere_uid。</p></blockquote>
 <h4 id="12-11文章分享功能"><a href="#12-11文章分享功能" class="headerlink" title="12.11文章分享功能"></a>12.11文章分享功能</h4><p>Hexo-theme-Annie主题集成了addThis、baiduShare、shareThis、socialShare分享插件。</p>
 <table>
 <thead>
@@ -605,12 +556,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 </tr>
 </tbody>
 </table>
-<blockquote class="colorquote info">
-<b>info!</b>
-
-<br>
-
-使用addThis、shareThis时，应注意<b>关闭</b>浏览器的内容拦截插件。</blockquote>
+<blockquote class="colorquote info"><p><b>info!</b></p><p>使用addThis、shareThis时，应注意<b>关闭</b>浏览器的内容拦截插件。</p></blockquote>
 <h3 id="十三、站点分析"><a href="#十三、站点分析" class="headerlink" title="十三、站点分析"></a>十三、站点分析</h3><table>
 <thead>
 <tr>
@@ -659,6 +605,7 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <h4 id="14-4点击页面浮现桃心"><a href="#14-4点击页面浮现桃心" class="headerlink" title="14.4点击页面浮现桃心"></a>14.4点击页面浮现桃心</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># when click, emerge heart</span><br><span class="line">love:</span><br><span class="line">    enable: true</span><br><span class="line"></span><br><span class="line"># back to top</span><br><span class="line">totop:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
 <p>对于<code>love</code>，若设置为true，则点击页面时，会出现随机颜色的桃心💚💛💕。对于<code>totop</code>，若设置为true，则启用<u>返回顶部按钮</u>。</p>
 <h3 id="十五、开发定制问题"><a href="#十五、开发定制问题" class="headerlink" title="十五、开发定制问题"></a>十五、开发定制问题</h3><h4 id="15-1主题项目结构"><a href="#15-1主题项目结构" class="headerlink" title="15.1主题项目结构"></a>15.1主题项目结构</h4><figure class="highlight plain"><figcaption><span>Annie</span><a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank" rel="noopener">hexo-theme-Annie </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">ANNIE</span><br><span class="line">├─languages					#国际化语言支持</span><br><span class="line">├─layout					#html页面模板</span><br><span class="line">│  └─_partial</span><br><span class="line">│      ├─custom</span><br><span class="line">│      ├─plugin</span><br><span class="line">│      │  ├─clipboard</span><br><span class="line">│      │  ├─comment</span><br><span class="line">│      │  ├─share</span><br><span class="line">│      │  └─statistics</span><br><span class="line">│      ├─post</span><br><span class="line">│      └─widget</span><br><span class="line">├─scripts					#站点脚本</span><br><span class="line">└─source					#主题资源</span><br><span class="line">    ├─css</span><br><span class="line">    │  └─_highlight</span><br><span class="line">    ├─img</span><br><span class="line">    │  ├─post-cover</span><br><span class="line">    │  ├─quote</span><br><span class="line">    │  └─random</span><br><span class="line">    ├─js</span><br><span class="line">    └─plugin</span><br><span class="line">        ├─chinese</span><br><span class="line">        ├─clipboard</span><br><span class="line">        ├─comment</span><br><span class="line">        ├─fancybox</span><br><span class="line">        ├─gallerypage</span><br><span class="line">        │  └─images</span><br><span class="line">        ├─imgLazyLoader</span><br><span class="line">        ├─imgResize</span><br><span class="line">        ├─love</span><br><span class="line">        ├─motto</span><br><span class="line">        ├─nicescroll</span><br><span class="line">        ├─search</span><br><span class="line">        ├─toc</span><br><span class="line">        └─vibrant</span><br></pre></td></tr></table></figure>
+<p>Annie主题基于<u>hexo 3.8.0</u>、ejs、styl开发而成。一般来说，如果你想修改页面的html结构，请到<u>layout</u>目录下添加或修改相应的ejs文件； 如果你想修改页面元素的css样式，请到<u>source/css</u>目录下添加或修改相应的styl文件；如果你想添加一些js代码，原则上，自定义代码片段应添加于<u>source/js/main.js</u>文件中，引入的js文件应放置于<u>source/plugin</u>目录下。 </p>
 <h4 id="15-2主题字体问题"><a href="#15-2主题字体问题" class="headerlink" title="15.2主题字体问题"></a>15.2主题字体问题</h4><p>主题整体字体大小，修改html标签的<code>font-size</code>属性</p>
 <figure class="highlight diff"><figcaption><span>_main.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">html &#123;</span><br><span class="line"><span class="deletion">-   font-size: 16px;</span></span><br><span class="line"><span class="addition">+   font-size: 14px;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>主题整体字体族，修改body标签的<code>font-family</code>属性</p>
@@ -709,6 +656,30 @@ Annie主题中无效，分页是对该页面[主页、归档页、标签页、�
 <div class="relate-post">
 	
 		<ul>
+			
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="/2019/04/30/Annie主题使用Hexo-Tag-Plugins/" title="Annie主题使用Hexo-Tag-Plugins">
+								Annie主题使用Hexo-Tag-Plugins			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								四月 30日, 2019				
+							</p>
+							<p class="relate-post-content">
+								一、块引用Block Quote tag语法
+123&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;content&#123;% endb...
+							</p>
+						</div>
+
+						<div class="relate-post-cover">
+							<a href="/2019/04/30/Annie主题使用Hexo-Tag-Plugins/" title="Annie主题使用Hexo-Tag-Plugins">				
+								
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Hexo-Tag-Plugins">
+							</a>
+						</div>
+					</li>											
+			
 			
 					<li>
 						<div class="relate-post-text">
@@ -969,32 +940,6 @@ I...
 					</li>											
 			
 			
-					<li>
-						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2018/08/02/Github入门术语/" title="Github入门术语">
-								Github入门术语			
-							</a>
-							<p class="relate-post-date">
-								<i class="fa fa-calendar"></i>
-								八月 2日, 2018				
-							</p>
-							<p class="relate-post-content">
-								什么是Git 
-Git是一个版本控制系统（Version Control System），版本控制即记录一个或若干文件内容变化的情况。Git属于分布式版本控制系统，客户端提取文件时总是镜像的完整仓库。
-Repository  
-仓库，...
-							</p>
-						</div>
-
-						<div class="relate-post-cover">
-							<a href="/2018/08/02/Github入门术语/" title="Github入门术语">				
-								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
-							</a>
-						</div>
-					</li>											
-			
-			
 		</ul>
 	
 </div>	
@@ -1126,14 +1071,6 @@ Repository
 				参考了01 & 02进行简单的设计与实现
 -->
 
-
-
-	<script>
-		var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
-            appkey = 'wzGaywJpxGEhEclcl87rdtHG';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
 
 	
 
@@ -1378,23 +1315,6 @@ Repository
 		<div class="local-search-footer">
 			<div class="topN-post">				
 				
-
-   
-	<div id="topN">
-		<div class="topN-title" data-title="热门文章"></div> 
-	</div>
-	
-    <script>
-        var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
-            appkey = 'wzGaywJpxGEhEclcl87rdtHG',
-            limitCount = 10;
-        if( $('#topN').length ){
-            AV.initialize(appid, appkey);
-            var Counter = AV.Object.extend("Counter");  
-            topNPost(Counter, limitCount);
-        }
-    </script>
-   
 								
 			</div>
 		</div>

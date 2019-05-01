@@ -407,6 +407,22 @@ blockquote footer cite:before {
   font-size: 0.9rem;
   text-align: center;
 }
+.text-highlight {
+  display: inline;
+  padding: 2px 4px;
+}
+.text-highlight.info {
+  background-color: #def0fd;
+}
+.text-highlight.success {
+  background-color: #cbf6da;
+}
+.text-highlight.warning {
+  background-color: #fff6d1;
+}
+.text-highlight.danger {
+  background-color: #ffb3c2;
+}
 .scrollbar::-webkit-scrollbar {
   width: 0px;
 }
@@ -1685,7 +1701,7 @@ main {
   }
 }
 .about {
-  width: 70%;
+  width: 100%;
   min-height: 100vh;
   margin: 0em auto;
   border: 1px solid transparent;
@@ -1887,7 +1903,6 @@ main {
   display: inline-block;
   width: 70%;
   vertical-align: top;
-  margin-right: 3%;
   clear: right;
 }
 .relate-post .relate-post-text p {
@@ -1910,7 +1925,6 @@ main {
   overflow: hidden;
 }
 .relate-post .relate-post-cover img {
-  margin-right: 2em;
   margin-bottom: 0;
   position: relative;
 }
