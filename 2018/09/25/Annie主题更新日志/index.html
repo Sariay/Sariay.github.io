@@ -331,7 +331,22 @@
 		
 		
 
+	
+    <span class="leancloud_visitors" id="/2018/09/25/Annie主题更新日志/_visitors" data-url="/2018/09/25/Annie主题更新日志/" data-title="Annie主题更新日志">
+       	<i class="fa fa-eye"></i>
+       	热度
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
 
+
+
+	
+    <span class="leancloud_likes" id="/2018/09/25/Annie主题更新日志/_likes" data-url="/2018/09/25/Annie主题更新日志/" data-title="Annie主题更新日志" rel="unlike">
+        <i class="fa fa-heart"></i>
+        喜欢
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
 
 	</div>
 
@@ -1049,6 +1064,14 @@ I...
 -->
 
 
+
+	<script>
+		var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
+            appkey = 'wzGaywJpxGEhEclcl87rdtHG';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+
 	
 
 
@@ -1292,6 +1315,23 @@ I...
 		<div class="local-search-footer">
 			<div class="topN-post">				
 				
+
+   
+	<div id="topN">
+		<div class="topN-title" data-title="热门文章"></div> 
+	</div>
+	
+    <script>
+        var appid = 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz',
+            appkey = 'wzGaywJpxGEhEclcl87rdtHG',
+            limitCount = 10;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
 								
 			</div>
 		</div>
