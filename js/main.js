@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
 		}
 
 		/**
-		 * 背景图片加载完成后，设置header的背景
+		 * 设置header的背景
 		 *
 		 * @method   Annie_SetBg
 		 * @param    {[type]}    imgSrc [description]
@@ -103,12 +103,6 @@ jQuery(document).ready(function($) {
 		function Annie_SetBg(imgSrc) {
 			var backgroundImg = 'url(' + imgSrc + ')';
 			$('header').css('background-image', backgroundImg);
-
-			Annie_Transition();
-
-			if($(postPageId).length) {
-				Annie_Scroll()
-			}
 		}
 
 		/**
@@ -172,8 +166,7 @@ jQuery(document).ready(function($) {
 		 * 根据背景图片的加载状况，调用不同的方法
 		 * TODO：We can use "https://github.com/desandro/imagesloaded plugin" to check img.load status!
 		 */
-		var img = new Image(),
-			stop = setTimeout(function() {
+		var stop = setTimeout(function() {
 				function timeoutCalled() {
 					console.log('timeout');
 					Annie_Transition();
@@ -182,43 +175,20 @@ jQuery(document).ready(function($) {
 				return timeoutCalled();
 			}, delayTimeG * 20); // delayTime = delayTimeG * 20 = 10s
 
-		img.crossOrigin = "Anonymous"; // TODO: CROS bug!
-		img.src = curImgSrc;
-
-		img.onerror = function() {
+		Annie_SetBg(curImgSrc);
+	
+		// header背景加载成功
+		$("header").imagesLoaded({background: true}, function(){
 			if(stop) {
 				clearTimeout(stop);
 			}
-
+			
 			Annie_Transition();
-			Annie_Scroll();
-			console.log("Header background imgSrc:" + img.src);
-			console.log('Failed to load & set background img for header!');
-		}
-
-		img.onload = function() {
-			if(stop) {
-				clearTimeout(stop);
+			
+			if($(postPageId).length) {
+				Annie_Scroll()
 			}
-
-			Annie_SetBg(img.src);
-
-			Annie_ColorExtraction(img);
-		}
-		//The following code may have a bug when using img.src 'https://source.unsplash.com/collection/954550/1920x1080' in Fixfox...( because of cache)!
-		//		if( img.complete || img.height ){
-		//			if ( stop ) {
-		//				clearTimeout( stop );
-		//			}			
-		//			Annie_SetBg( img.src );	
-		//		} else {
-		//			img.onload = function() {
-		//				if ( stop ) {
-		//					clearTimeout( stop );
-		//				}				
-		//				Annie_SetBg( img.src );
-		//			}				
-		//		}
+		});
 	};
 
 	/**
@@ -658,7 +628,7 @@ jQuery(document).ready(function($) {
 		Annie_QueryPostsByTag();
 		Annie_LanguageSet();
 		Annie_ImageLazyLoad();
-		Annie_ImageResize();
+		// Annie_ImageResize();
 		Annie_NiceScroll();
 	})();
 });

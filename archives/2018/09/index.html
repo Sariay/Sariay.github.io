@@ -49,7 +49,7 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="random" data-normal-src="/img/1.jpg" data-random-max="110" data-random-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/">
+<header class="fixbackground" data-img-mode="normal" data-normal-src="https://sariay.github.io/Random-img/74.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
 	<div class="mask">
 		<!-- Logo and navigation -->
 		<div class="h-header">
@@ -101,55 +101,22 @@
 		<!-- motto -->
 		<div class="h-body">	
 			
-				<p class="motto"></p>
+				<div class="motto">
+					<p class="content" id="motto-content">获取中...</p>
+					<p class="author" id="motto-author"></p>
+				</div>
 			
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			<a href="javascript:;" id="read-more" class="scroll-down"><i class="fa fa-angle-double-down annie-animation-scroll-down" aria-hidden="true"></i>
 			</a>
 
 			
-				<!-- 
-	This is only a demo, please go to "https://time.is" to set your city time! 
--->
-<style type="text/css">
-	.header-date {
-		font-size: 1.6rem;
-		color: #fff;
-		position: absolute;
-		bottom: 5px;
-		right: 1rem;
-		writing-mode: tb-rl;
-	}	
-	
-	.header-date a {
-		border-bottom: none;
-	}
-
-	@media only screen and (max-width: 768 ) {
-		.header-date {
-			font-size: 1rem;
-		}			
-	}
-</style>
-<div class="header-date">
-	<a href="https://time.is/Beijing" id="time_is_link" rel="nofollow"></a>
-	<span id="Beijing_z43d"></span>
-</div>
-<script src="//widget.time.is/zh.js"></script>
-<script>
-	time_is_widget.init({
-		Beijing_z43d:{
-			template:"DATE", 
-			date_format:"year年 monthname dnum日"
-		}
-	});
-</script>
-			
 		</div>
 	</div>
+	
 </header>
 
 <div id="navigation-hide">
@@ -167,6 +134,9 @@
 			文章归档
 		
 	</p>
+
+	
+	
 
 	<!-- Nav trigger for navigation-H-->
 	<a class="nav-trigger"><span></span></a>
@@ -271,7 +241,7 @@
 -->
 
 	
-	总计 13 篇 文章
+	总计 14 篇 文章
 	
 
 		</i>
@@ -284,6 +254,26 @@
         
         
         <ul>
+            
+                <li>
+                    <a href="/2019/08/09/QiXi：一些诗句/">
+            			<em year="2019">
+                            08-09
+                        </em>
+        			    <span itemprop="name">
+                            QiXi（七夕）：一些诗句
+                        </span>
+        			    
+                			<a href="/tags/七夕/" class="tag">
+                				七夕
+                			</a>
+                        
+                			<a href="/tags/文学摘抄/" class="tag">
+                				文学摘抄
+                			</a>
+                        
+                    </a>
+                </li>
             
                 <li>
                     <a href="/2019/04/30/Annie主题使用Hexo-Tag-Plugins/">
@@ -679,12 +669,27 @@
 </footer>
 		
 	<!-- set '1' to show motto in all pages! -->
+ 
+	<!-- 现代写法，推荐 -->
+	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+	<!--End-->
+	<script>
+		fetch('https://v1.hitokoto.cn/?c=d')
+			.then(function (res){
+			return res.json();
+		})
+		.then(function (data) {
+			// var hitokoto = document.getElementById('motto-content');
+			document.getElementById('motto-content').innerText = data.hitokoto; 		
+			document.getElementById('motto-author').innerText = data.creator +　"　/　"　+ data.from; 
 
-	<script src="/plugin/motto/motto.js"></script>
-	
-	<script type="text/javascript">
-		$(".motto").html( getMingYanContent() );
-	</script>	
+		})
+		.catch(function (err) {
+			console.error(err);
+		})
+	</script>
 
 
 
@@ -784,6 +789,7 @@
 <script src="/plugin/vibrant/vibrant.js"></script>
 <script src="/plugin/chinese/chinese.js"></script>
 <script src="/plugin/imgLazyLoader/yall.min.js"></script>
+<script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
 <script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
 <script src="/js/resizediv.js"></script>

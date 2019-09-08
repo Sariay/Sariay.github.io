@@ -312,20 +312,26 @@ function AnnieLeancloud(appid, appkey){
             var star = getCookieById("star", post_id);
             if(star != "") {
                 $('.leancloud_likes').addClass("heartAnimation");
+				$('#star-button').addClass("heartAnimation");
             }
 
             showLikes(Counter);
 
-            $('.layout-post').on("click", '.leancloud_likes', function() {
-                var checkD = $(this).attr("rel");
+            $('#navigation-hide').on("click", '#star-button', function() {
+            	var likeContainer = $('.leancloud_likes'),
+            		likeButton = $('#star-button');            	
+            	
+                var checkD = likeContainer.attr("rel");
                 if((checkD === "unlike") && (star == "")) {
                     //init(Counter);
                     addLikes(Counter);
-                    $(this).addClass("heartAnimation").attr("rel", "like");
+                    likeContainer.addClass("heartAnimation").attr("rel", "like"); 
+                    likeButton.addClass("heartAnimation").attr("rel", "like");
+                                    
                     addCookieById("star", post_id, 0.5);
-                    //0.5天后自动销毁cookie, 允许再次点赞
-                } else {					
-                    //alert('您已经点赞过啦!');
+                    //0.5天后自动销毁cookie, 允许再次点赞                                       
+                } else {               	              	              	
+                    alert('您已经点赞过啦!');
                 }
             });
         }
