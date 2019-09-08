@@ -2162,7 +2162,6 @@ span.#star-button {
   position: relative;
   border-bottom: 0px solid #e9e9e9;
   font-size: 1em;
-  z-index: 0;
 }
 .gt-container .gt-popup .gt-action.is--active:before {
   content: '';
