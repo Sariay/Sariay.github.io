@@ -196,7 +196,7 @@ function topNPost(limitCount) {
                         title = temporaryV.get('title'),
                         visitors = temporaryV.get('visitors');
                     var topNumber = i + 1,     
-                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "【文章热度:" + visitors + "℃】" + "</i>" + "</li>" + "</ul>";     
+                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "「文章热度:" + visitors + "℃」" + "</i>" + "</li>" + "</ul>";     
                     $("#topN").append(topContent);
                 }
                         
@@ -280,11 +280,15 @@ const post = {
 }
 //调用函数add或者show数据    
 // function annieLeancloud() {
+// AV.init({
+// 	appId: "dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz",
+// 	appKey: "wzGaywJpxGEhEclcl87rdtHG",
+// 	serverURLs: "https://dx2cfn1a.lc-cn-n1-shared.com"
+// });	
 AV.init({
-	appId: "dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz",
-	appKey: "wzGaywJpxGEhEclcl87rdtHG",
-	serverURLs: "https://dx2cfn1a.lc-cn-n1-shared.com"
-});	
+    appId: "AU87cOou2gQvagmdb0qIteOF-MdYXbMMI",
+    appKey: "4cUgTiHKDlfYOAFa5PHwHcfF"
+});
 
 let initCounter = AV.Object.extend("Counter");
 
