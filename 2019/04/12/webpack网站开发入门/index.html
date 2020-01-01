@@ -28,6 +28,18 @@
   
   <!-- jquery -->
 	<script src="/js/jquery.min.js"></script>
+
+<script>
+    var CONFIG_BGIMAGE = {
+      mode: 'random',
+      normalSrc: '/img/random/6.jpg',
+      randomMax: 110,
+      randomSrc: 'https://sariay.github.io/Random-img/'
+    }
+    var CONFIG_LEACLOUD_COUNT = {
+      enable: 'true'
+    }
+  </script>
 </head>
 	<body>
 		<!-- Preloader -->
@@ -45,7 +57,7 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="normal" data-normal-src="https://sariay.github.io/Random-img/74.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -80,7 +92,7 @@
 	<!-- Page title -->
 	<p>
 		
-			《webpack网站开发入门》
+			「webpack网站开发入门」
 		
 	</p>
 
@@ -102,7 +114,7 @@
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
 	<div class="nav-body">
-		<ul>
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
@@ -507,7 +519,7 @@ Repository
 						<div class="relate-post-cover">
 							<a href="/2018/08/02/Github入门术语/" title="Github入门术语">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
+								<img class="lazy" src="/img/lazy.gif" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg" alt="Github入门术语">
 							</a>
 						</div>
 					</li>											
@@ -551,7 +563,7 @@ color quote（info、succes...
 						<div class="relate-post-cover">
 							<a href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题更新日志">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题更新日志">
 							</a>
 						</div>
 					</li>											
@@ -577,7 +589,7 @@ Between the moon and the snow, lies the beauty of yo...
 						<div class="relate-post-cover">
 							<a href="/2019/08/09/QiXi：一些诗句/" title="QiXi（七夕）：一些诗句">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/77.jpg" alt="QiXi（七夕）：一些诗句">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/77.jpg" alt="QiXi（七夕）：一些诗句">
 							</a>
 						</div>
 					</li>											
@@ -601,7 +613,7 @@ Between the moon and the snow, lies the beauty of yo...
 						<div class="relate-post-cover">
 							<a href="/2019/04/30/Annie主题使用Hexo-Tag-Plugins/" title="Annie主题使用Hexo-Tag-Plugins">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Hexo-Tag-Plugins">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Hexo-Tag-Plugins">
 							</a>
 						</div>
 					</li>											
@@ -626,7 +638,7 @@ Between the moon and the snow, lies the beauty of yo...
 						<div class="relate-post-cover">
 							<a href="/2019/03/12/相册主题Dream介绍/" title="相册主题Dream介绍">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
 							</a>
 						</div>
 					</li>											
@@ -652,7 +664,7 @@ Between the moon and the snow, lies the beauty of yo...
 						<div class="relate-post-cover">
 							<a href="/2019/02/26/《人间失格》抄录1/" title="《人间失格》抄录1">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
 							</a>
 						</div>
 					</li>											
@@ -677,7 +689,7 @@ Between the moon and the snow, lies the beauty of yo...
 						<div class="relate-post-cover">
 							<a href="/2018/12/28/银字笙调，奈何初冬/" title="银字笙调，奈何初冬">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
 							</a>
 						</div>
 					</li>											
@@ -702,7 +714,7 @@ Gitalk使用方法一新建仓库
 						<div class="relate-post-cover">
 							<a href="/2018/11/18/Annie主题使用Gitalk/" title="Annie主题使用Gitalk">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
 							</a>
 						</div>
 					</li>											
@@ -735,7 +747,7 @@ I...
 						<div class="relate-post-cover">
 							<a href="/2018/10/02/山鬼情书之零/" title="山鬼情书之零">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
 							</a>
 						</div>
 					</li>											
@@ -758,7 +770,7 @@ I...
 						<div class="relate-post-cover">
 							<a href="/2018/09/21/toc标题测试/" title="toc标题测试">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/post-cover/72.jpg" alt="toc标题测试">
+								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="toc标题测试">
 							</a>
 						</div>
 					</li>											
@@ -1016,7 +1028,7 @@ I...
 		<!--footer-->
 		<footer>
 			<div id="navigation-show">
-				<ul>
+				<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
@@ -1061,7 +1073,7 @@ I...
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2019, content by Sariay. All Rights Reserved.
+				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
 						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
@@ -1093,33 +1105,16 @@ I...
 </footer>
 		
 	<!-- set '1' to show motto in all pages! -->
- 
-	<!-- 现代写法，推荐 -->
-	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<!--End-->
-	<script>
-		fetch('https://v1.hitokoto.cn/?c=d')
-			.then(function (res){
-			return res.json();
-		})
-		.then(function (data) {
-			// var hitokoto = document.getElementById('motto-content');
-			document.getElementById('motto-content').innerText = data.hitokoto; 		
-			document.getElementById('motto-author').innerText = data.creator +　"　/　"　+ data.from; 
 
-		})
-		.catch(function (err) {
-			console.error(err);
-		})
-	</script>
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$("#motto-content").html( getMingYanContent() );
+	</script>	
 
 
 
 <!-- love effect -->
-
-	<script src="/plugin/love/love.js"></script>
 
 
 <!-- back to top -->
@@ -1242,11 +1237,9 @@ I...
 
 
 
-<script src="/plugin/vibrant/vibrant.js"></script>
 <script src="/plugin/chinese/chinese.js"></script>
 <script src="/plugin/imgLazyLoader/yall.min.js"></script>
 <script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
 <script src="/js/resizediv.js"></script>
 <script src="/js/main.js"></script>

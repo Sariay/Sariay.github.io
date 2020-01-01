@@ -28,6 +28,18 @@
   
   <!-- jquery -->
 	<script src="/js/jquery.min.js"></script>
+
+<script>
+    var CONFIG_BGIMAGE = {
+      mode: 'random',
+      normalSrc: '/img/random/6.jpg',
+      randomMax: 110,
+      randomSrc: 'https://sariay.github.io/Random-img/'
+    }
+    var CONFIG_LEACLOUD_COUNT = {
+      enable: 'true'
+    }
+  </script>
 </head>
 	<body>
 		<!-- Preloader -->
@@ -45,7 +57,7 @@
 
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="normal" data-normal-src="https://sariay.github.io/Random-img/74.jpg" data-random-max="110" data-random-src="https://sariay.github.io/Random-img/">
+<header class="fixbackground">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -98,7 +110,7 @@
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
 	<div class="nav-body">
-		<ul>
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
@@ -616,7 +628,7 @@
 		<!--footer-->
 		<footer>
 			<div id="navigation-show">
-				<ul>
+				<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
@@ -661,7 +673,7 @@
 	<div class="copyright">
 		<p>
 			 
-				&copy;2017 - 2019, content by Sariay. All Rights Reserved.
+				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
 						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
@@ -697,33 +709,16 @@
 </footer>
 		
 	<!-- set '1' to show motto in all pages! -->
- 
-	<!-- 现代写法，推荐 -->
-	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<!--End-->
-	<script>
-		fetch('https://v1.hitokoto.cn/?c=d')
-			.then(function (res){
-			return res.json();
-		})
-		.then(function (data) {
-			// var hitokoto = document.getElementById('motto-content');
-			document.getElementById('motto-content').innerText = data.hitokoto; 		
-			document.getElementById('motto-author').innerText = data.creator +　"　/　"　+ data.from; 
 
-		})
-		.catch(function (err) {
-			console.error(err);
-		})
-	</script>
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		$("#motto-content").html( getMingYanContent() );
+	</script>	
 
 
 
 <!-- love effect -->
-
-	<script src="/plugin/love/love.js"></script>
 
 
 <!-- back to top -->
@@ -846,11 +841,9 @@
 
 
 
-<script src="/plugin/vibrant/vibrant.js"></script>
 <script src="/plugin/chinese/chinese.js"></script>
 <script src="/plugin/imgLazyLoader/yall.min.js"></script>
 <script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
-<script src="/plugin/imgResize/jquery.resizeimagetoparent.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
 <script src="/js/resizediv.js"></script>
 <script src="/js/main.js"></script>

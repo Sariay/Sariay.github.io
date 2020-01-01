@@ -2,7 +2,7 @@
  * Main js for hexo-theme-Annie.
  *
  * @Author   Sariay
- * @DateTime 2019-08-26
+ * @DateTime 2018-08-26
  */
 jQuery(document).ready(function($) {
 
@@ -10,48 +10,54 @@ jQuery(document).ready(function($) {
 
 	/**
 	 * Some global variables.
+	 * loadAnimation：Loading animation for 'fun Annie_LoadPost()' & 'fun Annie_QueryPostsByTag()'
 	 */
-	var scrollLimitG = 500,
-		scrollSpeedG = 500,
-		delayTimeG = 500,
-		headerH = $('header').outerHeight(),
-		headerAId = '#navigation-show a, #logo a',
-		postContentH = $('#article-content').outerHeight(),
-		mainH = $("main").outerHeight(),
-		investmentContainerH = $(".investment-container").outerHeight(),
-		postPageId = '.layout-post',
-		postCoverId = '#current-post-cover',
-		postTocId = '#catelog-list',
-		paginationId = '#pagination a',
-		paginationContainer = '#layout-cart, #layout-pure';
-	// loadAnimation：Loading animation for 'fun Annie_LoadPost()' & 'fun Annie_QueryPostsByTag()'
-	var loadAnimation = '<div class = "transition"><div class = "three-bounce1"> </div> <div class = "three-bounce2"> </div> <div class = "three-bounce3"> </div> </div> ';
+	const ANNIE = {
+		scrollLimitG        : 500,
+		scrollSpeedG        : 500,
+		delayTimeG          : 500,
+		headerH             : $('header').outerHeight(),
+		postContentH        : $('#article-content').outerHeight(),
+		mainH               : $('main').outerHeight(),
+		investmentContainerH: $('.investment-container').outerHeight(),
+		headerAId           : '#navigation-show a, #logo a',
+		postPageId          : '.layout-post',
+		postCoverId         : '#current-post-cover',
+		postTocId           : '#catelog-list',
+		paginationId        : '#pagination a',
+		paginationContainer : '#layout-cart, #layout-pure',
+		loadAnimation       : '<div class = "transition"><div class = "three-bounce1"> </div> <div class = "three-bounce2"> </div> <div class = "three-bounce3"> </div> </div> '
+	};
 
 	/**
 	 * Preloader for html page. If the background image of header is loaded, it will remove the mask layer immediately, or else after 10 seconds at most!
 	 *
 	 * @method   Annie_Preloader
 	 */
-	var Annie_Preloader = function() {
-		var mode = $('header').attr('data-img-mode'),
-			curImgSrc = ' ',
-			randomMax = $('header').attr('data-random-max'),
-			randomNum = 0;
+	const Annie_Preloader = function() {
+		let mode = CONFIG_BGIMAGE.mode,
+			curImgSrc = '22223eeddd',
+			randomMax = CONFIG_BGIMAGE.randomMax,
+			randomNum = 0,
+			normalSrc = CONFIG_BGIMAGE.normalSrc,
+			randomSrc = CONFIG_BGIMAGE.randomSrc;
+		let postPageId = ANNIE.postPageId,
+			postCoverId = ANNIE.postCoverId;
 
-		if($(postPageId).length && $(postCoverId).length) {
+		if ($(postPageId).length && $(postCoverId).length) {
 			mode = 'post';
 		}
 
-		switch(mode) {
+		switch (mode) {
 			case 'random':
 				{
 					randomNum = Math.floor(Math.random() * (randomMax - 1) + 1);
-					curImgSrc = $('header').attr('data-random-src') + randomNum + '.jpg';
+					curImgSrc = randomSrc + randomNum + '.jpg';
 				}
 				break;
 			case 'normal':
 				{
-					curImgSrc = $('header').attr('data-normal-src');
+					curImgSrc = normalSrc;
 				}
 				break;
 			case 'post':
@@ -62,7 +68,8 @@ jQuery(document).ready(function($) {
 			default:
 				{
 					//TODO: Maybe, it loads slowly!
-					curImgSrc = 'https://source.unsplash.com/collection/954550/1920x1080';
+					curImgSrc =
+					'https://source.unsplash.com/collection/954550/1920x1080';
 				}
 				break;
 		}
@@ -73,135 +80,145 @@ jQuery(document).ready(function($) {
 		 * @method   Annie_Scroll
 		 */
 		function Annie_Scroll() {
-			$('html, body').delay(delayTimeG * 2).animate({
-				scrollTop: headerH + 2
-			}, delayTimeG * 3);
+			let delayTime = ANNIE.delayTimeG,
+				headerH = ANNIE.headerH,
+				scrollTop = 0,
+				scrollHeight = 0,
+				scrollTime = 0;
+
+			function getCookie(sName) {
+				let aCookie = document.cookie.split("; ");
+				for (let i = 0; i < aCookie.length; i++) {
+					let aCrumb = aCookie[i].split("=");
+					if (sName == aCrumb[0])
+						return unescape(aCrumb[1]);
+				}
+				return 0;
+			}
+
+			function setCookie(sName, sValue) {
+				document.cookie = sName + "=" + escape(sValue) + ";";
+			}
+
+			function pageScroll(scrollHeight, scrollTime) {
+				$('html, body').delay(scrollTime).animate({
+					scrollTop: scrollHeight
+				}, scrollTime);
+			}
+
+			$(window).scroll( function() {
+				scrollTop = $(document).scrollTop();
+
+				setCookie('scrollTop', scrollTop);
+			}).trigger('scroll');
+
+			if (performance.navigation.type == 1) {
+				scrollHeight = scrollTop || getCookie('scrollTop');
+				scrollTime = delayTime * 0;
+				console.info("This page is reloaded");
+			} else {
+				scrollHeight = headerH + 2;
+				scrollTime = delayTime * 2;
+			}
+			pageScroll(scrollHeight, scrollTime);
 		}
 
 		/**
-		 * Set & then remove the mask layer for html page!
+		 * To set & then remove the mask layer for html page!
 		 *
 		 * @method   Annie_Transition
 		 */
 		function Annie_Transition() {
+			let delayTime = ANNIE.delayTimeG;
+
 			$('#status').fadeOut();
-			$('#preloader').delay(delayTimeG).fadeOut('slow');
-			$('body').delay(delayTimeG);
-			
-			// delayTime = delayTimeG = 500, make the html page can be scrolled.
+			$('#preloader').delay(delayTime).fadeOut('slow');
+			$('body').delay(delayTime);
+
 			setTimeout(function() {
 				$('html').removeClass('html-loading');
-			}, delayTimeG);
+			}, delayTime);
 		}
 
 		/**
-		 * 设置header的背景
+		 * To set the background of the header.
 		 *
 		 * @method   Annie_SetBg
 		 * @param    {[type]}    imgSrc [description]
 		 */
 		function Annie_SetBg(imgSrc) {
-			var backgroundImg = 'url(' + imgSrc + ')';
+			let backgroundImg = 'url(' + imgSrc + ')';
 			$('header').css('background-image', backgroundImg);
 		}
 
-		/**
-		 * header背景图片主色提取，根据主色设置导航菜单项、motto的颜色（黑或白)。
-		 * PLUGIN：plugin/vibrant/vibrant.js
-		 * WARNING：背景主色提取可能影响页面加载速度 or 引起CROS bug！
-		 * TODO：重构header模块
-		 *
-		 * @method   Annie_ColorExtraction
-		 * @param    {[type]}              img [description]
-		 */
-		function Annie_ColorExtraction(img) {
-			var vibrant = new Vibrant(img),
-				swatches = vibrant.swatches(),
-				mainColor = '',
-				mainRgb = [],
-				mainVibrant = swatches['Vibrant'];
-			if(mainVibrant) {
-				mainColor = mainVibrant.getBodyTextColor();
-				mainRgb = mainVibrant.getRgb();
-			}
-
-			var fontColor = ' ', //mainColor
-				grayLevel = mainRgb[0] * 0.299 + mainRgb[1] * 0.587 + mainRgb[2] * 0.114;
-			if(grayLevel >= 192) {
-				// 若为浅色，把文字设置为黑色
-				fontColor = '#000';
-			} else {
-				// 若为深色，把文字设置为白色
-				fontColor = '#fff';
-			}
-
-			// set motto color
-			$('.motto, #read-more').css({
-				'color': fontColor || mainColor
-			});
-
-			// set header nav color
-			$(headerAId).css({
-				'color': fontColor || mainColor
-			});
-
-			$(headerAId).each(function() {
-				$(this).hover(
-					function() {
-						$(this).css({
-							'color': 'darkgoldenrod'
-						});
-					},
-					function() {
-						$(this).css({
-							'color': fontColor || mainColor
-						});
-					}
-
-				)
-			});
-		}
 
 		/**
-		 * 根据背景图片的加载状况，调用不同的方法
-		 * TODO：We can use "https://github.com/desandro/imagesloaded plugin" to check img.load status!
+		 * We use "https://github.com/desandro/imagesloaded plugin" to check img.load status!
 		 */
-		var stop = setTimeout(function() {
-				function timeoutCalled() {
-					console.log('timeout');
-					Annie_Transition();
-					//Annie_Scroll();
-				}
-				return timeoutCalled();
-			}, delayTimeG * 20); // delayTime = delayTimeG * 20 = 10s
+		let stop = setTimeout(function() {
+			function timeoutCalled() {
+				Annie_Transition();
+				Annie_Scroll();
+				console.log('timeout');
+			}
+			return timeoutCalled();
+		}, ANNIE.delayTimeG * 20); // delayTime = ANNIE.delayTimeG * 20 = 10s
 
 		Annie_SetBg(curImgSrc);
-	
-		// header背景加载成功
-		$("header").imagesLoaded({background: true}, function(){
-			if(stop) {
+
+		$("header").imagesLoaded({background: true}, function() {
+			// The background iamge of header is already loaded.
+			if (stop) {
 				clearTimeout(stop);
-			}
-			
-			Annie_Transition();
-			
-			if($(postPageId).length) {
-				//Annie_Scroll()
+
+				Annie_Transition();
+
+				if ($(postPageId).length) {
+					Annie_Scroll()
+				}
 			}
 		});
 	};
 
 	/**
-	 * Nav set for theme.
+	 * To set the current active item of nav.
 	 *
 	 * @method   Annie_Nav
 	 */
-	var Annie_Nav = function() {
+	const Annie_Nav = function() {
+		function currentNavStatus(element) {
+			//some operation
+			let urlStr = location.href,
+				urlSta = false,
+				homePage = ANNIE.paginationContainer,
+				allLink = element + ' ' + '#global-nav a';
+
+			$(allLink).each(function() {
+				let currentUrl = $(this).attr('class');
+				currentUrl = currentUrl.substr(10);
+
+				if (urlStr.indexOf(currentUrl) > -1 && $(this).attr('href') != ' ') {
+					$(this).addClass('active');
+					urlSta = true;
+				} else {
+					$(this).removeClass('active');
+				}
+			});
+
+			if (!urlSta && ($(homePage).length)) {
+				$(allLink).eq(0).addClass('active');
+			}
+		}
+
+		function toggleNav(bool) {
+			$('.nav-container').toggleClass('is-visible', bool);
+		}
+
 		//open navigation
 		$('.nav-trigger').on('click', function(event) {
+			$('body').addClass('body-fixed');
 			event.preventDefault();
 			toggleNav(true);
-			$('body').addClass('body-fixed');
 		});
 
 		//close navigation
@@ -211,34 +228,9 @@ jQuery(document).ready(function($) {
 			$('body').removeClass('body-fixed');
 		});
 
-		function toggleNav(bool) {
-			$('.nav-container').toggleClass('is-visible', bool);
-		}
+		currentNavStatus('#navigation-show');
 
-		function currentNavStatus() {
-			//some operation
-			var urlStr = location.href,
-				urlSta = false,
-				homePage = paginationContainer;
-
-			$('#navigation-show a').each(function() {
-				var currentUrl = $(this).attr('class');
-				currentUrl = currentUrl.substr(10);
-
-				if(urlStr.indexOf(currentUrl) > -1 && $(this).attr('href') != '') {
-					$(this).addClass('active');
-					urlSta = true;
-				} else {
-					$(this).removeClass('active');
-				}
-			});
-
-			if(!urlSta && ($(homePage).length)) {
-				$("#navigation-show a").eq(0).addClass('active');
-			}
-		}
-
-		currentNavStatus();
+		currentNavStatus('.nav-container');
 	};
 
 	/**
@@ -246,20 +238,23 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_Progress
 	 */
-	var Annie_Progress = function() {
-		var navBarId = "#navigation-hide",
+	const Annie_Progress = function() {
+		let navBarId = "#navigation-hide",
 			navBarHeight = $(navBarId).outerHeight();
-
-		var postTitleH = $(".article-title").outerHeight(),
-			postMetaH = $(".article-meta").outerHeight();
+		let postTitleH = $(".article-title").outerHeight(),
+			postMetaH = $(".article-meta").outerHeight(),
+			postContentH = ANNIE.postContentH,
+			headerH = ANNIE.headerH,
+			postPageId = ANNIE.postPageId,
+			scrollLimit = ANNIE.scrollLimitG;
 
 		$(window).scroll(function() {
-			var scrollTop = $(window).scrollTop(),
+			let scrollTop = $(document).scrollTop(),
 				docHeight = $(document).height(),
 				windowHeight = $(window).height(),
 				scrollPercent = 0;
 
-			if($(postPageId).length) {
+			if ($(postPageId).length) {
 				// 80 = div.layout-post的padding-top
 				scrollPercent = ((scrollTop - headerH) / (postContentH + postTitleH + postMetaH + 80 - windowHeight)) * 100;
 			} else {
@@ -268,15 +263,15 @@ jQuery(document).ready(function($) {
 
 			scrollPercent = scrollPercent.toFixed(1);
 
-			if(scrollPercent > 100 || scrollPercent < 0) {
+			if (scrollPercent > 100 || scrollPercent < 0) {
 				scrollPercent = 100;
 			}
 
 			$('#progress-percentage h1').text(scrollPercent + "%");
 
-			$("#progress-bar").attr("style", "width: " + (scrollPercent) + "%; display: block;");
+			$("#progress-bar").attr("style", "width:" + (scrollPercent) +"%; display: block;");
 
-			if(scrollTop >= ((scrollLimitG > headerH) ? scrollLimitG : headerH)) {
+			if (scrollTop >= ((scrollLimit > headerH) ? scrollLimit : headerH)) {
 				$(navBarId).css({
 					top: '0'
 				}).show();
@@ -289,7 +284,7 @@ jQuery(document).ready(function($) {
 			}
 
 			//Current post or page title
-			if(scrollTop >= headerH + 300) {
+			if (scrollTop >= headerH + 300) {
 				$('#navigation-hide p').show();
 			} else {
 				$('#navigation-hide p').hide();
@@ -302,28 +297,31 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_Toc
 	 */
-	var Annie_Toc = function() {
-		var scrollSpeed = scrollSpeedG,
-			upperLimit1 = headerH,
-			upperLimit2 = mainH - investmentContainerH;
-		var tocSwitchButton = ".switch-button";
+	const Annie_Toc = function() {
+		let scrollSpeed = ANNIE.scrollSpeedG,
+			upperLimit1 = ANNIE.headerH,
+			upperLimit2 = ANNIE.mainH - ANNIE.investmentContainerH;
+		let tocSwitchButton = ".switch-button",
+			delayTime = ANNIE.delayTimeG,
+			postTocId = ANNIE.postTocId,
+			postPageId = ANNIE.postPageId;
 
 		function fixedAndShowTocId() {
 			$(window).scroll(function() {
-				var scrollTop = $(document).scrollTop();
+				let scrollTop = $(document).scrollTop();
 
-				if((scrollTop >= upperLimit1) && (scrollTop < upperLimit2)) {
-					//屏幕宽度<=1024px时应隐藏
-					$(postTocId).css('position', 'fixed').show().fadeIn(delayTimeG);
+				if ((scrollTop >= upperLimit1) && (scrollTop < upperLimit2)) {
+					//屏幕宽度<= 1024px时应隐藏
+					$(postTocId).css('position', 'fixed').show().fadeIn(delayTime);
 
 				} else {
-					$(postTocId).hide().fadeOut(delayTimeG);
+					$(postTocId).hide().fadeOut(delayTime);
 				}
 			});
 		}
 
 		function generateToclist() {
-			var katelogIns = new katelog({
+			let katelogIns = new katelog({
 				contentEl: 'article-content',
 				catelogEl: 'catelog-list',
 				linkClass: 'k-catelog-link',
@@ -333,39 +331,48 @@ jQuery(document).ready(function($) {
 				active: function(el) {}
 			});
 			//TODO: 添加目录标题、层级标题
-			//var tocTitle = $( postTocId ).attr('data-title'), htmlText = '<h2>' + tocTitle + '</h2>';	
 		}
 
 		function adjustTocContainer() {
-			var clickCount = 1;
+			let clickCount = 1;
 
 			$(tocSwitchButton).on("click", function() {
 
 				$(this).toggleClass("toc-switch-button-active");
 
-				if(clickCount == 1) {
+
+				if (clickCount == 1) {
 					$('main').toggleClass("inline-flex");
-					$('#layout-toc').toggleClass("show").fadeToggle();
+					setTimeout(function() {
+						$('#layout-toc').toggleClass("show").fadeToggle();
+					}, delayTime / 2); //delayTimeG = 500ms	
+
+
+
 					clickCount = 2;
 				} else {
 					$('#layout-toc').toggleClass("show").fadeToggle();
 					setTimeout(function() {
 						$('main').toggleClass("inline-flex");
-					}, delayTimeG / 2); //delayTimeG = 500ms
+
+
+					}, delayTime / 2); //delayTimeG = 500ms
+
+
 					clickCount = 1;
 				}
 			});
 		}
 
-		if($(postPageId).length) {
+		if ($(postPageId).length) {
 			fixedAndShowTocId();
 		}
 
-		if($(postTocId).length) {
+		if ($(postTocId).length) {
 			generateToclist();
 		}
 
-		if($(postPageId).length && $(postTocId).length) {
+		if ($(postPageId).length && $(postTocId).length) {
 			$(tocSwitchButton).show();
 
 			adjustTocContainer();
@@ -379,21 +386,22 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_ToAnchor
 	 */
-	var Annie_ToAnchor = function() {
-		var scrollSpeed = scrollSpeedG,
-			upperLimit = scrollLimitG,
+	const Annie_ToAnchor = function() {
+		let scrollSpeed = ANNIE.scrollSpeedG,
+			upperLimit = ANNIE.scrollLimitG,
+			delayTime = ANNIE.delayTimeG,
 			toTop = $('#totop'),
 			readMore = $('#read-more');
 
 		toTop.hide();
 
 		$(window).scroll(function() {
-			var scrollTop = $(document).scrollTop();
+			let scrollTop = $(document).scrollTop();
 
-			if(scrollTop > upperLimit) {
-				$(toTop).stop().fadeTo(delayTimeG, 1);
+			if (scrollTop > upperLimit) {
+				$(toTop).stop().fadeTo(delayTime, 1);
 			} else {
-				$(toTop).stop().fadeTo(delayTimeG, 0);
+				$(toTop).stop().fadeTo(delayTime, 0);
 			}
 		});
 
@@ -417,67 +425,79 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_Archive
 	 */
-	var Annie_Archive = function() {
-		if(window.location.pathname.indexOf("archive") == -1) {
+	const Annie_Archive = function() {
+		if (window.location.pathname.indexOf("archive") == -1) {
 			return;
 		}
-		var currentYear = "",
+		let currentYear = "",
 			Newy = "";
 		$("#layout-archive-year  ul li").each(function(i) {
-			var year = $(this).find("em").attr("year");
-			if(year < currentYear || currentYear == "") {
+			let year = $(this).find("em").attr("year");
+			if (year < currentYear || currentYear == "") {
 				currentYear = year;
-				if(Newy == "") {
+				if (Newy == "") {
 					Newy = year
 				}
-				$(this).before("<h3 class='" + currentYear + "'>" + currentYear + "<em>(" + $("[year='" + currentYear + "']").length + "篇)</em></h3>");
+				$(this).before("<h3 class = '" + currentYear + "'>" + currentYear + "<em>(" + $("[year = '" + currentYear + "']").length + "篇)</em></h3>");
 			}
 			$(this).attr("year", currentYear);
 		});
 
 		$("#layout-archive-year h3").each(function() {
-			$("#layout-archive-year ul li[year='" + $(this).attr("class") + "'").wrapAll("<div year='" + $(this).attr("class") + "'></div>");
+			$("#layout-archive-year ul li[year = '" + $(this).attr("class") + "'").wrapAll("<div year = '" + $(this).attr("class") + "'></div>");
 			$("h3." + $(this).attr("class")).click(function() {
 				$(this).toggleClass("title-bg").next().slideToggle(300);
 
 			})
 		});
-		$("#layout-archive-year ul div[year!='" + Newy + "']").hide();
+		$("#layout-archive-year ul div[year!= '" + Newy + "']").hide();
 		$("h3." + Newy).addClass("title-bg");
 		//TODO: Archive by month
 	};
-
-
 
 	/**
 	 * InfiniteLoading to load more posts for index page！
 	 *
 	 * @method   Annie_LoadPost
 	 */
-	var Annie_LoadPost = function() {
+	const Annie_LoadPost = function() {
+		let paginationId = ANNIE.paginationId,
+			loadAnimation = ANNIE.loadAnimation,
+			delayTime = ANNIE.delayTimeG,
+			paginationContainer = ANNIE.paginationContainer,
+			leancloudCount = CONFIG_LEACLOUD_COUNT.enable || 'false';
+		
 		$('body').on('click', paginationId, function() {
+			let thisUrl = $(this).attr("href");
 			$(paginationId).text(" ").append(loadAnimation);
 
 			$.ajax({
 				type: "get",
-				url: $(this).attr("href"),
+				url: thisUrl,
 				async: true,
-				timeout: delayTimeG * 20, //10s
-				error: function(request) {
-					//TODO: error				
+				timeout: delayTime * 20, //10s
+				error: function(event,xhr,options) {
+
+					$(paginationId).attr("href", thisUrl).empty().text($(paginationId).attr('data-title'));
+
+					alert("Error requesting " + options.url + ":  " + xhr.status + ",  " + xhr.statusText);
+
+					console.log("Error requesting " + options.url + ":  " + xhr.status + ",  " + xhr.statusText)	
 				},
 				success: function(data) {
-					var result = $(data).find("#post"),
+					let result = $(data).find("#post"),
 						newhref = $(data).find(paginationId).attr("href");
 
-						$(paginationContainer).append(result.fadeIn(delayTimeG).addClass('annie-animation-zoom'));
+					$(paginationContainer).append(result.fadeIn(delayTime).addClass('annie-animation-zoom'));
 
-					//leancloud
-					annieShowData();
+					if (leancloudCount === 'true') {
+						//FIX: ajax bug
+						annieShowData();
+					}
 
 					$(paginationId).empty().text($(paginationId).attr('data-title'));
 
-					if(newhref != undefined) {
+					if (newhref != undefined) {
 						$(paginationId).attr("href", newhref);
 					} else {
 						$("#pagination").html("<span>" + $(paginationId).attr('data-status') + "</span>");
@@ -497,7 +517,7 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_Tab
 	 */
-	var Annie_Tab = function() {
+	const Annie_Tab = function() {
 		function tabs(tabTit, on, tabCon) {
 			$(tabCon).each(function() {
 				$(this).children().eq(0).show();
@@ -509,7 +529,7 @@ jQuery(document).ready(function($) {
 
 			$(tabTit).children().click(function() {
 				$(this).addClass(on).siblings().removeClass(on);
-				var index = $(tabTit).children().index(this);
+				let index = $(tabTit).children().index(this);
 				$(tabCon).children().eq(index).show().siblings().hide();
 			});
 		}
@@ -522,25 +542,32 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_QueryPostsByTag
 	 */
-	var Annie_QueryPostsByTag = function() {
+	const Annie_QueryPostsByTag = function() {
+		let loadAnimation = ANNIE.loadAnimation,
+			delayTime = ANNIE.delayTimeG;
+
 		$('.tags a, .category a').click(function() {
 			$("#TCP-title").text("查询结果");
 			//添加查询结果之前，清除容器中的内容
 			$("#TCP-content").text("").append(loadAnimation);
-			var href = $(this).attr("href");
-			if(href != undefined) {
+			let href = $(this).attr("href");
+			if (href != undefined) {
 				$.ajax({
 					url: href,
 					type: "get",
 					async: true,
-					error: function(request) {
-						//TODO: erro
+					timeout: delayTime * 20, //10s
+					error: function(event,xhr,options) {
+
+						alert("Error requesting " + options.url + ": " + xhr.status + "," + xhr.statusText);
+
+						console.log("Error requesting " + options.url + ": " + xhr.status + "," + xhr.statusText)	
 					},
 					success: function(data) {
 						$("#TCP-content").empty();
 
 						var result = $(data).find(".layout-archive");
-						$('#TCP-content').append(result.fadeIn(delayTimeG).addClass('annie-animation-zoom'));
+						$('#TCP-content').append(result.fadeIn(delayTime).addClass('annie-animation-zoom'));
 						$(".layout-archive").css({
 							'paddingTop': '0'
 						});
@@ -563,7 +590,7 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_LanguageSet
 	 */
-	var Annie_LanguageSet = function() {
+	const Annie_LanguageSet = function() {
 		zh_init();
 	};
 
@@ -572,21 +599,9 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_ImageLazyLoad
 	 */
-	var Annie_ImageLazyLoad = function() {
+	const Annie_ImageLazyLoad = function() {
 		yall({
 			observeChanges: true
-		});
-	};
-
-	/**
-	 * Resize image to parent.
-	 * PLUGIN: plugin/imgResize/jquery.resizeimagetoparent.min.js
-	 * 
-	 * @method   Annie_ImageResize
-	 */
-	var Annie_ImageResize = function() {		
-		$('.post-cover img, .relate-post-cover img').resizeToParent({
-			parent: '.post-cover, .relate-post-cover'
 		});
 	};
 
@@ -596,26 +611,26 @@ jQuery(document).ready(function($) {
 	 *
 	 * @method   Annie_NiceScroll
 	 */
-	var Annie_NiceScroll = function() {
-		var niceScrollId = 'body, .highlight',
+	const Annie_NiceScroll = function() {
+		const niceScrollId = 'body, .highlight',
 			niceScrollSetting = $(niceScrollId).niceScroll({
-					cursorborder: "none",					
-					autohidemode: true
-			});	
-			
+				cursorborder: "none",
+				autohidemode: true
+			});
+
 		// PLUGIN: js/resizediv.js
 		$(niceScrollId).resize(function(event) {
 			setTimeout(function() {
 				niceScrollSetting.resize();
-			}, 2);	
-		});		
+			}, 2);
+		});
 	};
 
 	/**
-	 * Other js functions. An function example might be as follows:
+	 * Other js functions. An function example might be as follows: 
 	 */
 	/*  
-		var Annie_XXX = function(argument) {
+		const Annie_XXX = function(argument) {
 			// body...
 		};
 	*/
@@ -633,7 +648,8 @@ jQuery(document).ready(function($) {
 		Annie_QueryPostsByTag();
 		Annie_LanguageSet();
 		Annie_ImageLazyLoad();
-		// Annie_ImageResize();
 		Annie_NiceScroll();
 	})();
 });
+
+console.log("%c Github %c","background: #424c50; color: #ffffff", " ","https://github.com/Sariay/hexo-theme-Annie");
