@@ -68,8 +68,7 @@ jQuery(document).ready(function($) {
 			default:
 				{
 					//TODO: Maybe, it loads slowly!
-					curImgSrc =
-					'https://source.unsplash.com/collection/954550/1920x1080';
+					curImgSrc = 'https://source.unsplash.com/collection/954550/1920x1080';
 				}
 				break;
 		}
