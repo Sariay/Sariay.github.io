@@ -487,7 +487,7 @@ jQuery(document).ready(function($) {
 					let result = $(data).find("#post"),
 						newhref = $(data).find(paginationId).attr("href");
 
-					$(paginationContainer).append(result.fadeIn(delayTime).addClass('annie-animation-zoom'));
+					$(paginationContainer).append(result.fadeIn(delayTime).addClass('animation-zoom'));
 
 					if (leancloudCount === 'true') {
 						//FIX: ajax bug
@@ -566,7 +566,7 @@ jQuery(document).ready(function($) {
 						$("#TCP-content").empty();
 
 						var result = $(data).find(".layout-archive");
-						$('#TCP-content').append(result.fadeIn(delayTime).addClass('annie-animation-zoom'));
+						$('#TCP-content').append(result.fadeIn(delayTime).addClass('animation-zoom'));
 						$(".layout-archive").css({
 							'paddingTop': '0'
 						});

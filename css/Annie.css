@@ -151,7 +151,7 @@ hr {
 }
 blockquote {
   quotes: none;
-  border-left: 4px solid #eee;
+  border-left: 4px solid #ddd;
   background: #f0f0f0;
   margin-bottom: 1rem;
   padding: 0.5rem 0.5rem 0.5rem 2rem;
@@ -300,9 +300,6 @@ pre code {
 iframe {
   border: none;
   margin-bottom: 1rem;
-}
-.body-fixed {
-  overflow: hidden;
 }
 /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
@@ -1300,7 +1297,7 @@ main {
     transform: scale(1);
   }
 }
-.annie-animation-zoom {
+.animation-zoom {
 /*For one div: Zoom from 0 to 1!*/
   -webkit-animation: zoom 0.8s;
   animation: zoom 0.8s;
@@ -1334,7 +1331,7 @@ main {
   -o-transition: all 2s ease-in-out 0s;
   transition: all 2s ease-in-out 0s;
 }
-.annie-animation-scroll-down {
+.animation-scroll-down {
   position: relative;
   -webkit-animation-name: scroll-down-effect;
   -webkit-animation-duration: 1.5s;
@@ -1574,17 +1571,6 @@ main {
   border-radius: 50%;
   cursor: pointer;
 }
-#tobuttom {
-  position: fixed;
-  right: 16px;
-  bottom: 40px;
-  display: none;
-  z-index: 5;
-  background: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-#tobuttom a,
 #totop a {
   color: #222;
   background-color: transparent;
@@ -1592,7 +1578,6 @@ main {
   border: none;
 }
 @media (max-width: 768px) {
-  #tobuttom a,
   #totop a {
     display: none;
   }
@@ -1743,26 +1728,6 @@ blockquote footer cite:before {
   position: absolute;
   left: 0.5em;
   top: 1.2375em;
-}
-.valine .vwrap {
-  overflow: hidden;
-  position: relative;
-  border: 1px solid #ededed;
-  cursor: pointer;
-}
-.valine img {
-  display: inline-block;
-}
-.valine .vlist .vcard .vfooter .vat {
-  background: transparent;
-  color: #fff;
-  padding: 0.2em 1em;
-  line-height: 1.6;
-  cursor: pointer;
-  word-break: keep-all;
-  text-transform: uppercase;
-  display: inline-block;
-/*display: inline-block;  fix button ‘回复’ display on Firefox*/
 }
 .layout-share {
   line-height: inherit;
@@ -2733,6 +2698,9 @@ pre .javascript .function {
     width: 92%;
     display: none;
   }
+}
+.body-fixed {
+  overflow: hidden;
 }
 @-moz-keyframes fadein {
   0% {
