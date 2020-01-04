@@ -197,7 +197,7 @@ jQuery(document).ready(function($) {
 				currentUrl = currentUrl.substr(10);
 
 				if (urlStr.indexOf(currentUrl) > -1 && $(this).attr('href') != ' ') {
-					$(this).addClass('active');
+					$(this).parent('li').addClass('active');
 					urlSta = true;
 				} else {
 					$(this).removeClass('active');
@@ -266,7 +266,7 @@ jQuery(document).ready(function($) {
 				scrollPercent = 100;
 			}
 
-			$('#progress-percentage h1').text(scrollPercent + "%");
+			$('#progress-percentage span').text(scrollPercent + "%");
 
 			$("#progress-bar").attr("style", "width:" + (scrollPercent) +"%; display: block;");
 
@@ -425,6 +425,53 @@ jQuery(document).ready(function($) {
 	 * @method   Annie_Archive
 	 */
 	const Annie_Archive = function() {
+		function getZodiac( year ){
+			
+			let zodiac = 'rat';
+			
+			switch ( year % 12 ){
+				case 0:
+					zodiac = 'monkey';
+					break;
+				case 1:
+					zodiac = 'rooster';
+					break;
+				case 2:
+					zodiac = 'dog';
+					break;
+				case 3:
+					zodiac = 'pig';
+					break;
+				case 4:
+					zodiac = 'rat';
+					break;
+				case 5:
+					zodiac = 'ox';
+					break;
+				case 6:
+					zodiac = 'tiger'
+					break;
+				case 7:
+					zodiac = 'rabbit'
+					break;
+				case 8:
+					zodiac = 'dragon'
+					break;
+				case 9:
+					zodiac = 'snake'
+					break;
+				case 10:
+					zodiac = 'horse'
+					break;
+				case 11:
+					zodiac = 'goat'
+					break;
+				default:
+					break;
+			}
+			return zodiac;
+		}
+		
 		if (window.location.pathname.indexOf("archive") == -1) {
 			return;
 		}
@@ -437,7 +484,7 @@ jQuery(document).ready(function($) {
 				if (Newy == "") {
 					Newy = year
 				}
-				$(this).before("<h3 class = '" + currentYear + "'>" + currentYear + "<em>(" + $("[year = '" + currentYear + "']").length + "篇)</em></h3>");
+				$(this).before("<h3 class = '" + currentYear + "'>" + currentYear + "&nbsp;&nbsp;" +"<i class='icon-" + getZodiac( year ) + "'></i>"  + "<em>(" + $("[year = '" + currentYear + "']").length + "篇)</em>"  +"</h3>");
 			}
 			$(this).attr("year", currentYear);
 		});

@@ -178,29 +178,29 @@ function showLikes(currentCounter, currentPost) {
 }
 
 function topNPost(limitCount) {
-    var visitors = 0,
+    let visitors = 0,
         title = "",
         url = "";
-    var query = new AV.Query('Counter');
+    let query = new AV.Query('Counter');
     query.notEqualTo('id', 0);
     query.descending('visitors'); 	//降序排序
     query.limit(limitCount); 		//限制n篇
     query.find().then(
         function(results) {
-            var smallerValue = (limitCount > results.length) ? results.length : limitCount;
+            let smallerValue = (limitCount > results.length) ? results.length : limitCount;
 
             if (smallerValue > 0) {
-                for (var i = 0; i < smallerValue; i++) {
-                    var temporaryV = results[i],
+                for (let i = 0; i < smallerValue; i++) {
+                    let temporaryV = results[i],
                         url = temporaryV.get('url'),
                         title = temporaryV.get('title'),
                         visitors = temporaryV.get('visitors');
-                    var topNumber = i + 1,     
-                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "「文章热度:" + visitors + "℃」" + "</i>" + "</li>" + "</ul>";     
+                    let topNumber = i + 1,     
+                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP-" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "「文章热度:" + visitors + "℃」" + "</i>" + "</li>" + "</ul>";     
                     $("#topN").append(topContent);
                 }
                         
-                var	topTitleId = '.topN-title',
+                let	topTitleId = '.topN-title',
                 	topTitle = $(topTitleId).attr('data-title').trim();           
                 $(topTitleId).text(topTitle + "(" + smallerValue + " posts)" );              
             }
@@ -302,8 +302,8 @@ function annieAddData(){
 		const postId = $('.leancloud_likes').attr('data-url').trim();
 		let star = postCookie.getCookieById("star", postId);
 		if(star != "") {
-			$('.leancloud_likes').addClass("heartAnimation");
-			$('#star-button').addClass("heartAnimation");
+			$('.leancloud_likes').addClass("star-animation");
+			$('#star-button').addClass("star-animation");
 		}
 
 		showLikes(initCounter, initPost);
@@ -316,8 +316,8 @@ function annieAddData(){
 			if((checkD === "unlike") && (star == "")) {
 	
 				addLikes(initCounter, initPost);
-				likeContainer.addClass("heartAnimation").attr("rel", "like"); 
-				likeButton.addClass("heartAnimation").attr("rel", "like");
+				likeContainer.addClass("star-animation").attr("rel", "like"); 
+				likeButton.addClass("star-animation").attr("rel", "like");
 								
 				postCookie.addCookieById("star", postId, 0.5);
 				//0.5天后自动销毁cookie, 允许再次点赞                                       

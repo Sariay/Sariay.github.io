@@ -264,9 +264,7 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
                         }
 
                         slicesOfContent.forEach(function(slice) {
-                            resultItem += "<a target='_blank' href='" + articleUrl + "'>" +
-                                "<p class=\"search-result-content\">" + highlightKeyword(content, slice) +
-                                "...</p>" + "</a>";
+                            resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
                         });
 
                         resultItem += "</li>";

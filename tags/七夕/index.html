@@ -31,7 +31,7 @@
 
 <script>
     var CONFIG_BGIMAGE = {
-      mode: 'random',
+      mode: 'normal',
       normalSrc: '/img/random/6.jpg',
       randomMax: 110,
       randomSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/'
@@ -73,8 +73,6 @@
 		<div class="h-footer">
 			<a href="javascript:;" id="read-more" class="scroll-down"><i class="fa fa-angle-double-down animation-scroll-down" aria-hidden="true"></i>
 			</a>
-
-			
 		</div>
 	</div>
 	
@@ -85,7 +83,7 @@
 	<div id="progress-bar"></div>
 
 	<!-- Progress percent -->
-	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div id="progress-percentage"><span>0.0%</span></div>
 
 	<div class="toc-switch"><span class="switch-button">目录</span></div>
 
@@ -106,41 +104,46 @@
 <!-- Navigation in div(id="navigation-H") -->
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
-		<h3>Navigation</h3>
+		<span class="logo"> 
+
+			<img src="/img/logo5.png">
+	
+		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
+	
 	<div class="nav-body">
 		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-archive">
 			<a href="/archives" class="menu-item-archive">归档</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-categories">
 			<a href="/categories" class="menu-item-categories">分类</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-tags">
 			<a href="/tags" class="menu-item-tags">标签</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-about">
 			<a href="/about" class="menu-item-about">关于</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-gallery">
 			<a href="/gallery" class="menu-item-gallery">相册</a>
 		</li>
-		<span> / </span>
+		
 	
 
 	
@@ -150,8 +153,9 @@
 	
 </ul>
 	</div>
+	
 	<div class="nav-footer">
-		<ul>
+		<ul id="global-social">
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
@@ -202,7 +206,7 @@
 -->
 <div class="layout-archive">
     <div class="i-container">
-        <i class="fa fa-book">
+        <i class="fa fa-book i-tag">
 			<!--
 	Post number counter for archive.ejs.  
 -->
@@ -216,13 +220,33 @@
     </div>
 
     <!-- Archive by year, display in page( archive ) -->
-    <div 2019 id="layout-archive-year" style="display: 
+    <div 2020 id="layout-archive-year" style="display: 
         
         
         <ul>
             
                 <li>
-                    <a href=" 08 09 qixi：一些诗句 ">
+                    <a href=" 01 05 选调和选韵 ">
+            			<em year="2020">
+                            01-05
+                        </em>
+        			    <span itemprop="name">
+                            选调和选韵
+                        </span>
+        			    
+                			<a href="/tags/宋词/" class="tag">
+                				宋词
+                			</a>
+                        
+                			<a href="/tags/文学/" class="tag">
+                				文学
+                			</a>
+                        
+                    
+                
+            
+                <li>
+                    <a href="/2019/08/09/QiXi：一些诗句/">
             			<em year="2019">
                             08-09
                         </em>
@@ -238,8 +262,8 @@
                 				文学摘抄
                 			</a>
                         
-                    
-                
+                    </a>
+                </li>
             
                 <li>
                     <a href="/2019/04/30/Annie主题使用Hexo-Tag-Plugins/">
@@ -526,32 +550,32 @@
 		<li class="menu-home">
 			<a href="/" class="menu-item-home">主页</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-archive">
 			<a href="/archives" class="menu-item-archive">归档</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-categories">
 			<a href="/categories" class="menu-item-categories">分类</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-tags">
 			<a href="/tags" class="menu-item-tags">标签</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-about">
 			<a href="/about" class="menu-item-about">关于</a>
 		</li>
-		<span> / </span>
+		
 	
 		<li class="menu-gallery">
 			<a href="/gallery" class="menu-item-gallery">相册</a>
 		</li>
-		<span> / </span>
+		
 	
 
 	
@@ -578,21 +602,6 @@
 	<!-- busuanzi -->
 	<!-- busuanzi -->
 
-		
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
-
-		<span id="busuanzi_container_site_pv">
-	    	本站总访问量<span id="busuanzi_value_site_pv"></span>次
-		</span>
-
-		<span id="busuanzi_container_site_uv">
-	  		本站访客数<span id="busuanzi_value_site_uv"></span>人次
-		</span>
-		
-	
-
-
 
 
 			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
@@ -618,7 +627,7 @@
 
 	
 	<div id="totop">
-  		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"></a>
+		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"> </a> 
 	</div>
 
 
