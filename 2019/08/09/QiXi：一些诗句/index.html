@@ -64,14 +64,16 @@
 			
 				<div class="motto text-shadow-pop-left">
 					<p class="content" id="motto-content">获取中...</p>
-					<p class="author" id="motto-author"></p>
+					<p>-</p><p>
+					</p><p class="author" id="motto-author"></p>
 				</div>
 			
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<a href="javascript:;" id="read-more" class="scroll-down"><i class="fa fa-angle-double-down animation-scroll-down" aria-hidden="true"></i>
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
 			</a>
 		</div>
 	</div>
@@ -163,37 +165,49 @@
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
-				<i class="fa fa-github"></i>
+				<span class="icon-one"><span class="path1"></span><span class="path2"></span></span>
 			</a>
 		</li>
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
-				<i class="fa fa-weibo"></i>
+				<span class="icon-zhihu"></span>
 			</a>
 		</li>
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
-				<i class="fa fa-pinterest"></i>
+				<span class="icon-github"></span>
 			</a>
 		</li>
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
-				<i class="fa fa-instagram"></i>
+				<span class="icon-sina-weibo "></span>
 			</a>
 		</li>
 	
 		<li>
 			<a href="http://github.com/" target="_blank">
-				<i class="fa fa-twitter"></i>
+				<span class="icon-pinterest2"></span>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<span class="icon-instagram"></span>
+			</a>
+		</li>
+	
+		<li>
+			<a href="http://github.com/" target="_blank">
+				<span class="icon-twitter"></span>
 			</a>
 		</li>
 	
 		<li>
 			<a href="/atom.xml" target="_blank">
-				<i class="fa fa-rss"></i>
+				<span class="icon-rss"></span>
 			</a>
 		</li>
 			
@@ -923,12 +937,31 @@ color quote（info、succes...
 </footer>
 		
 	<!-- set '1' to show motto in all pages! -->
-
-	<script src="/plugin/motto/motto.js"></script>
-	
-	<script type="text/javascript">
-		$("#motto-content").html( getMingYanContent() );
-	</script>	
+ 
+	<!-- 现代写法，推荐 -->
+	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+	<!--End-->
+	<script>
+		fetch('https://v1.hitokoto.cn/?c=d')
+			.then(function (res){
+			return res.json();
+		})
+		.then(function (data) {
+			$("#motto-content").html( data.hitokoto?data.hitokoto:'请刷新...' );
+			
+			let	mottoAuthor =' ';
+				mottoAuthor += data.creator?data.creator:'一言';
+				mottoAuthor += "　/　";
+				mottoAuthor += data.from?data.from:'一言官网';
+				
+			$("#motto-author").html( mottoAuthor );
+		})
+		.catch(function (err) {
+			console.error(err);
+		})
+	</script>
 
 
 
@@ -939,7 +972,7 @@ color quote（info、succes...
 
 	
 	<div id="totop">
-		<a href="javascript:;" name="TOTOP" class="fa fa-arrow-up"> </a> 
+		<span class="icon-circle-up"></span>
 	</div>
 
 

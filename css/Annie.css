@@ -303,8 +303,8 @@ iframe {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?3xboh1");
-  src: url("fonts/icomoon.eot?3xboh1#iefix") format('embedded-opentype'), url("fonts/icomoon.ttf?3xboh1") format('truetype'), url("fonts/icomoon.woff?3xboh1") format('woff'), url("fonts/icomoon.svg?3xboh1#icomoon") format('svg');
+  src: url("fonts/icomoon.eot?2jyd6c");
+  src: url("fonts/icomoon.eot?2jyd6c#iefix") format('embedded-opentype'), url("fonts/icomoon.ttf?2jyd6c") format('truetype'), url("fonts/icomoon.woff?2jyd6c") format('woff'), url("fonts/icomoon.svg?2jyd6c#icomoon") format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -322,6 +322,134 @@ iframe {
 /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-baidu:before {
+  content: "\e931";
+}
+.icon-coding:before {
+  content: "\e932";
+}
+.icon-csdn:before {
+  content: "\e933";
+  color: #888;
+}
+.icon-douban:before {
+  content: "\e934";
+}
+.icon-email .path1:before {
+  content: "\e937";
+  color: #efefef;
+}
+.icon-email .path2:before {
+  content: "\e939";
+  margin-left: -1.1083984375em;
+  color: #fff;
+}
+.icon-email .path3:before {
+  content: "\e93a";
+  margin-left: -1.1083984375em;
+  color: #efefef;
+}
+.icon-email .path4:before {
+  content: "\e93b";
+  margin-left: -1.1083984375em;
+  color: #efefef;
+}
+.icon-email .path5:before {
+  content: "\e93c";
+  margin-left: -1.1083984375em;
+  color: #000;
+}
+.icon-email .path6:before {
+  content: "\e93d";
+  margin-left: -1.1083984375em;
+  color: #efefef;
+}
+.icon-email .path7:before {
+  content: "\e93e";
+  margin-left: -1.1083984375em;
+  color: #000;
+}
+.icon-email .path8:before {
+  content: "\e93f";
+  margin-left: -1.1083984375em;
+  color: #fff;
+}
+.icon-email .path9:before {
+  content: "\e940";
+  margin-left: -1.1083984375em;
+  color: #000;
+}
+.icon-email .path10:before {
+  content: "\e941";
+  margin-left: -1.1083984375em;
+  color: #000;
+}
+.icon-gitee:before {
+  content: "\e942";
+}
+.icon-gitlab:before {
+  content: "\e943";
+}
+.icon-hitokoto:before {
+  content: "\e944";
+}
+.icon-jianshu .path1:before {
+  content: "\e945";
+  color: #999;
+}
+.icon-jianshu .path2:before {
+  content: "\e946";
+  margin-left: -1em;
+  color: #fff;
+}
+.icon-jianshu .path3:before {
+  content: "\e947";
+  margin-left: -1em;
+  color: #fff;
+}
+.icon-jianshu .path4:before {
+  content: "\e948";
+  margin-left: -1em;
+  color: #fff;
+}
+.icon-juejing:before {
+  content: "\e94a";
+}
+.icon-netease .path1:before {
+  content: "\e94b";
+  color: #e82202;
+}
+.icon-netease .path2:before {
+  content: "\e94d";
+  margin-left: -1em;
+  color: #fff;
+}
+.icon-netease .path3:before {
+  content: "\e94f";
+  margin-left: -1em;
+  color: #e82202;
+}
+.icon-one .path1:before {
+  content: "\e950";
+  color: #000;
+}
+.icon-one .path2:before {
+  content: "\e951";
+  margin-left: -1em;
+  color: #010101;
+}
+.icon-qiniu:before {
+  content: "\e952";
+}
+.icon-qq:before {
+  content: "\e954";
+}
+.icon-weixin:before {
+  content: "\e955";
+}
+.icon-zhihu:before {
+  content: "\e956";
 }
 .icon-pig:before {
   content: "\e92f";
@@ -365,11 +493,20 @@ iframe {
 .icon-goat:before {
   content: "\e92e";
 }
+.icon-flag1:before {
+  content: "\e024";
+}
 .icon-anchor1:before {
   content: "\e03f";
 }
+.icon-rss1:before {
+  content: "\e060";
+}
 .icon-link1:before {
   content: "\e901";
+}
+.icon-calendar2:before {
+  content: "\e957";
 }
 .icon-calendar1:before {
   content: "\e902";
@@ -397,6 +534,9 @@ iframe {
 }
 .icon-chronometer:before {
   content: "\e90b";
+}
+.icon-time:before {
+  content: "\e958";
 }
 .icon-checkmark2:before {
   content: "\e90c";
@@ -638,11 +778,20 @@ iframe {
 .icon-arrow-down2:before {
   content: "\ea3e";
 }
+.icon-arrow-left2:before {
+  content: "\ea40";
+}
 .icon-circle-up:before {
   content: "\ea41";
 }
+.icon-circle-right:before {
+  content: "\ea42";
+}
 .icon-circle-down:before {
   content: "\ea43";
+}
+.icon-circle-left:before {
+  content: "\ea44";
 }
 .icon-embed2:before {
   content: "\ea80";
@@ -957,6 +1106,17 @@ header .h-body .motto p.content {
 header .h-body .motto p.author {
   font-size: inherit;
   font-style: italic;
+}
+header .h-body .motto span.icon-quotes-left {
+  float: left;
+  left: -45px;
+  position: absolute;
+}
+header .h-body .motto span.icon-quotes-right {
+  float: right;
+  position: relative;
+  top: -45px;
+  right: -15px;
 }
 header .h-footer {
   width: 100%;
@@ -1882,18 +2042,14 @@ main {
 }
 #totop {
   position: fixed;
-  right: 16px;
+  right: 20px;
   bottom: 80px;
   z-index: 5;
-  border-radius: 50%;
-  background: #fff;
   cursor: pointer;
 }
-#totop a {
-  color: #222;
-  background-color: transparent;
-  padding: 10px;
-  border: none;
+#totop span {
+  color: #555;
+  font-size: 1.5rem;
 }
 @media (max-width: 768px) {
   #totop {
