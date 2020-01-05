@@ -23,8 +23,7 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
 
   <!-- css -->
-  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="/css/Annie.css">
+  <link rel="stylesheet" href="/css/Annie.css">
   
   <!-- jquery -->
 	<script src="/js/jquery.min.js"></script>
@@ -44,20 +43,9 @@
 	<body>
 		<!-- Preloader -->
 
-	<div id="preloader">
-		<div class="pre-container">
-			
-				<div class="spinner">
-					<div class="double-bounce1"></div>
-					<div class="double-bounce2"></div>
-				</div>
-						
-		</div>
-	</div>
-
 
 <!-- header -->
-<header class="fixbackground">
+<header class="fixbackground bg-pan-bl">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -118,32 +106,32 @@
 		<ul id="global-nav">
 	
 		<li class="menu-home">
-			<a href="/" class="menu-item-home">主页</a>
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
 		</li>
 		
 	
 		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive">归档</a>
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
 		</li>
 		
 	
 		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories">分类</a>
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
 		</li>
 		
 	
 		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags">标签</a>
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
 		</li>
 		
 	
 		<li class="menu-about">
-			<a href="/about" class="menu-item-about">关于</a>
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
 		</li>
 		
 	
 		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery">相册</a>
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
 		</li>
 		
 	
@@ -592,32 +580,32 @@
 				<ul id="global-nav">
 	
 		<li class="menu-home">
-			<a href="/" class="menu-item-home">主页</a>
+			<a href="/" class="menu-item-home" target="_blank">主页</a>
 		</li>
 		
 	
 		<li class="menu-archive">
-			<a href="/archives" class="menu-item-archive">归档</a>
+			<a href="/archives" class="menu-item-archive" target="_blank">归档</a>
 		</li>
 		
 	
 		<li class="menu-categories">
-			<a href="/categories" class="menu-item-categories">分类</a>
+			<a href="/categories" class="menu-item-categories" target="_blank">分类</a>
 		</li>
 		
 	
 		<li class="menu-tags">
-			<a href="/tags" class="menu-item-tags">标签</a>
+			<a href="/tags" class="menu-item-tags" target="_blank">标签</a>
 		</li>
 		
 	
 		<li class="menu-about">
-			<a href="/about" class="menu-item-about">关于</a>
+			<a href="/about" class="menu-item-about" target="_blank">关于</a>
 		</li>
 		
 	
 		<li class="menu-gallery">
-			<a href="/gallery" class="menu-item-gallery">相册</a>
+			<a href="/gallery" class="menu-item-gallery" target="_blank">相册</a>
 		</li>
 		
 	
@@ -630,7 +618,7 @@
 </ul>
 			</div>
 
-		
+	
 	<div class="copyright">
 		<p>
 			 
@@ -655,31 +643,23 @@
 </footer>
 		
 	<!-- set '1' to show motto in all pages! -->
- 
-	<!-- 现代写法，推荐 -->
-	<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<!--End-->
-	<script>
-		fetch('https://v1.hitokoto.cn/?c=d')
-			.then(function (res){
-			return res.json();
-		})
-		.then(function (data) {
-			$("#motto-content").html( data.hitokoto?data.hitokoto:'请刷新...' );
+
+	<script src="/plugin/motto/motto.js"></script>
+	
+	<script type="text/javascript">
+		
+		let mottoText = getMingYanContent().split('</br> - </br>'),
+		
+			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
 			
-			let	mottoAuthor =' ';
-				mottoAuthor += data.creator?data.creator:'一言';
-				mottoAuthor += "　/　";
-				mottoAuthor += data.from?data.from:'一言官网';
-				
-			$("#motto-author").html( mottoAuthor );
-		})
-		.catch(function (err) {
-			console.error(err);
-		})
-	</script>
+			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
+			
+			mottoTextContent = mottoTextContent.trim().substring(0, 100);
+		
+		$("#motto-content").html( mottoTextContent);
+		$("#motto-author").html( mottoTextFrom  );
+		
+	</script>	
 
 
 

@@ -196,7 +196,7 @@ function topNPost(limitCount) {
                         title = temporaryV.get('title'),
                         visitors = temporaryV.get('visitors');
                     let topNumber = i + 1,     
-                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP-" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "「文章热度:" + visitors + "℃」" + "</i>" + "</li>" + "</ul>";     
+                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP-" + topNumber + "</span>" + "<a class='item-title' target='_blank' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "「文章热度:" + visitors + "℃」" + "</i>" + "</li>" + "</ul>";     
                     $("#topN").append(topContent);
                 }
                         

@@ -278,9 +278,9 @@ var themeLocalSearch = function({search_path, zip_Path, version_Path, input_Trig
                 })
             };
             if (keywords.length === 1 && keywords[0] === "") {
-                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-2x" /></div>'
+                resultContent.innerHTML = '<div id="no-result"><i class="" />Please type in some words!</div>'
             } else if (resultItems.length === 0) {
-                resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-3x" /></div>'
+                resultContent.innerHTML = '<div id="no-result"><i class="" />No any results!</div>'
             } else {
                 resultItems.sort(function(resultLeft, resultRight) {
                     if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
