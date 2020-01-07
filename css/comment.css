@@ -1,6 +1,6 @@
 .layout-comment {
   line-height: inherit;
-  margin-top: 1em;
+  margin-top: 0em;
 }
 .layout-comment a {
   border-bottom: none;
@@ -35,6 +35,9 @@
   border-bottom: 0px solid #e9e9e9;
   font-size: 1em;
 }
+.gt-container .gt-popup {
+  top: 2.8em;
+}
 .gt-container .gt-popup .gt-action.is--active:before {
   content: '';
   width: 0.25em;
@@ -43,8 +46,4 @@
   position: absolute;
   left: 0.5em;
   top: 1.2375em;
-}
-.layout-share {
-  line-height: inherit;
-  margin-top: 1em;
 }

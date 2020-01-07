@@ -1,7 +1,7 @@
 <!--
 	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
 -->
 <!DOCTYPE html>
 <html class="html-loading">
@@ -26,26 +26,43 @@
   <link rel="stylesheet" href="/css/Annie.css">
   
   <!-- jquery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/plugin/jquery/jquery.min.js"></script>
 
 <script>
-    var CONFIG_BGIMAGE = {
+    const CONFIG_BGIMAGE = {
       mode: 'normal',
-      normalSrc: '/img/random/6.jpg',
-      randomMax: 110,
-      randomSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/'
+      normalSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+      randomYouMax: 110,
+      randomYouSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
     }
-    var CONFIG_LEACLOUD_COUNT = {
-      enable: 'true'
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: true,
+	  appId: 'AU87cOou2gQvagmdb0qIteOF-MdYXbMMI',
+	  appKey: '4cUgTiHKDlfYOAFa5PHwHcfF',
+	  serverURLs: 'hhtt' || ' '
     }
   </script>
 </head>
 	<body>
 		<!-- Preloader -->
 
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
 
 <!-- header -->
-<header class="fixbackground bg-pan-bl">
+<header class="fixbackground bg-pan-br">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -53,7 +70,7 @@
 				<div class="motto text-shadow-pop-left">
 					<p class="content" id="motto-content">获取中...</p>
 					<p>-</p><p>
-					</p><p class="author" id="motto-author"></p>
+					</p><p class="author" id="motto-author">Just a minute...</p>
 				</div>
 			
 		</div>
@@ -65,7 +82,6 @@
 			</a>
 		</div>
 	</div>
-	
 </header>
 
 <div id="navigation-hide">
@@ -95,9 +111,7 @@
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<span class="logo"> 
-
-			<img src="/img/logo5.png">
-	
+			<img src="/img/logo.png">
 		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
@@ -210,42 +224,40 @@
 	<div class="layout-cart">
 	<div id="layout-cart">
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2018/09/21/toc标题测试/" title=" toc标题测试 ">
-				
-				<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg">
-			</a>
+			<div class="post" id="post">
+				<a class="post-cover" href="/2018/09/21/toc标题测试/" title=" toc标题测试 " target="_blank">
+					
+					<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg">
+				</a>
 
-			<div class="post-text">
-				<p class="post-time">
-					九月 21日, 2018
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2018/09/21/toc标题测试/" title="toc标题测试">
-						
-						
+				<div class="post-text">
+					<p class="post-time">
+						九月 21日, 2018
+					</p>	
+					<h3 class="post-title" id="post-title-index">
+						<a href="/2018/09/21/toc标题测试/" title="toc标题测试">							
+							
 	<a href="/2018/09/21/toc标题测试/" itemprop="url">
 		toc标题测试
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2...
-					
-				</p>
-				<p class="post-meta">
-					
+						</a>
+					</h3>
+					<p class="post-content">
+						
+							h1标题：的霍华德和很多很多和很多很多和很多很多h2标题好的话的霍华德和和和好的话的霍华德和好的话h2标题h3标题h3标题h2标题h5h6h6h1标题h2...
+						
+					</p>
+					<p class="post-meta">
+						
 
 	
     <span class="leancloud_visitors" id="/2018/09/21/toc标题测试/_visitors" data-url="/2018/09/21/toc标题测试/" data-title="toc标题测试">
        	<i class="icon-eye"></i>
        	热度
         
-            <i class="leancloud_visitors_count" id="leancloud_visitors_count"></i>
-        
-                
+            <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+                   
     </span>
     
 
@@ -259,53 +271,50 @@
     </span>
 	
 
-					
-				</p>
+					</p>
+				</div>
 			</div>
-		</div>
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2018/09/08/起风了/" title=" 起风了 ">
-				
-				<img class="lazy" src="/img/lazy.gif" data-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg">
-			</a>
+			<div class="post" id="post">
+				<a class="post-cover" href="/2018/09/08/起风了/" title=" 起风了 " target="_blank">
+					
+					<img class="lazy" src="/img/lazy.gif" data-src="https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/68.jpg">
+				</a>
 
-			<div class="post-text">
-				<p class="post-time">
-					九月 8日, 2018
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2018/09/08/起风了/" title="起风了">
-						
-						
+				<div class="post-text">
+					<p class="post-time">
+						九月 8日, 2018
+					</p>	
+					<h3 class="post-title" id="post-title-index">
+						<a href="/2018/09/08/起风了/" title="起风了">							
+							
 	<a href="/2018/09/08/起风了/" itemprop="url">
 		起风了
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
+						</a>
+					</h3>
+					<p class="post-content">
+						
+							起风了 (原曲： 高桥优 -《ヤキモチ》) - 买辣椒也用券 
 词：米果 
 曲：高桥优 
 这一路上走走停停 
 顺着少年漂流的痕迹 
 迈出车站的前一刻 
 竟...
-					
-				</p>
-				<p class="post-meta">
-					
+						
+					</p>
+					<p class="post-meta">
+						
 
 	
     <span class="leancloud_visitors" id="/2018/09/08/起风了/_visitors" data-url="/2018/09/08/起风了/" data-title="起风了">
        	<i class="icon-eye"></i>
        	热度
         
-            <i class="leancloud_visitors_count" id="leancloud_visitors_count"></i>
-        
-                
+            <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+                   
     </span>
     
 
@@ -319,51 +328,48 @@
     </span>
 	
 
-					
-				</p>
+					</p>
+				</div>
 			</div>
-		</div>
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2018/08/27/Annie主题使用说明/" title=" Annie主题使用说明 ">
-				
-				<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/65.jpg">
-			</a>
+			<div class="post" id="post">
+				<a class="post-cover" href="/2018/08/27/Annie主题使用说明/" title=" Annie主题使用说明 " target="_blank">
+					
+					<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/65.jpg">
+				</a>
 
-			<div class="post-text">
-				<p class="post-time">
-					八月 27日, 2018
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">
-						
-						
+				<div class="post-text">
+					<p class="post-time">
+						八月 27日, 2018
+					</p>	
+					<h3 class="post-title" id="post-title-index">
+						<a href="/2018/08/27/Annie主题使用说明/" title="Annie主题使用说明">							
+							
 	<a href="/2018/08/27/Annie主题使用说明/" itemprop="url">
 		Annie主题使用说明
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						零、准备工作开始之前，你应该预先理解下列标签的意义：
+						</a>
+					</h3>
+					<p class="post-content">
+						
+							零、准备工作开始之前，你应该预先理解下列标签的意义：
 
 代码对比
 
 123  This is a diff block.+ This is add!- T...
-					
-				</p>
-				<p class="post-meta">
-					
+						
+					</p>
+					<p class="post-meta">
+						
 
 	
     <span class="leancloud_visitors" id="/2018/08/27/Annie主题使用说明/_visitors" data-url="/2018/08/27/Annie主题使用说明/" data-title="Annie主题使用说明">
        	<i class="icon-eye"></i>
        	热度
         
-            <i class="leancloud_visitors_count" id="leancloud_visitors_count"></i>
-        
-                
+            <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+                   
     </span>
     
 
@@ -377,48 +383,45 @@
     </span>
 	
 
-					
-				</p>
+					</p>
+				</div>
 			</div>
-		</div>
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2018/08/02/Github入门术语/" title=" Github入门术语 ">
-				
-				<img class="lazy" src="/img/lazy.gif" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg">
-			</a>
+			<div class="post" id="post">
+				<a class="post-cover" href="/2018/08/02/Github入门术语/" title=" Github入门术语 " target="_blank">
+					
+					<img class="lazy" src="/img/lazy.gif" data-src="https://1024-1253939655.cos.ap-beijing.myqcloud.com/hexo-theme-Annie/Annie-rose.jpg">
+				</a>
 
-			<div class="post-text">
-				<p class="post-time">
-					八月 2日, 2018
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2018/08/02/Github入门术语/" title="Github入门术语">
-						
-						
+				<div class="post-text">
+					<p class="post-time">
+						八月 2日, 2018
+					</p>	
+					<h3 class="post-title" id="post-title-index">
+						<a href="/2018/08/02/Github入门术语/" title="Github入门术语">							
+							
 	<a href="/2018/08/02/Github入门术语/" itemprop="url">
 		Github入门术语
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						什么是Git 
+						</a>
+					</h3>
+					<p class="post-content">
+						
+							什么是Git 
 Git是一个版本控制系统（Version Control System），版本控制即记录一个或若干文件内容变化的情况。Git属于分布式版本...
-					
-				</p>
-				<p class="post-meta">
-					
+						
+					</p>
+					<p class="post-meta">
+						
 
 	
     <span class="leancloud_visitors" id="/2018/08/02/Github入门术语/_visitors" data-url="/2018/08/02/Github入门术语/" data-title="Github入门术语">
        	<i class="icon-eye"></i>
        	热度
         
-            <i class="leancloud_visitors_count" id="leancloud_visitors_count"></i>
-        
-                
+            <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+                   
     </span>
     
 
@@ -432,48 +435,45 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
     </span>
 	
 
-					
-				</p>
+					</p>
+				</div>
 			</div>
-		</div>
 		
-		<div class="post" id="post">
-			<a class="post-cover" href="/2018/07/25/秦时明月/" title=" 秦时明月 ">
-				
-				<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/45.jpg">
-			</a>
+			<div class="post" id="post">
+				<a class="post-cover" href="/2018/07/25/秦时明月/" title=" 秦时明月 " target="_blank">
+					
+					<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/45.jpg">
+				</a>
 
-			<div class="post-text">
-				<p class="post-time">
-					七月 25日, 2018
-				</p>	
-				<h3 class="post-title" id="post-title-index">
-					<a href="/2018/07/25/秦时明月/" title="秦时明月">
-						
-						
+				<div class="post-text">
+					<p class="post-time">
+						七月 25日, 2018
+					</p>	
+					<h3 class="post-title" id="post-title-index">
+						<a href="/2018/07/25/秦时明月/" title="秦时明月">							
+							
 	<a href="/2018/07/25/秦时明月/" itemprop="url">
 		秦时明月
 	</a>
 
-					</a>
-				</h3>
-				<p class="post-content">
-					
-						空页测试
+						</a>
+					</h3>
+					<p class="post-content">
+						
+							空页测试
 
-					
-				</p>
-				<p class="post-meta">
-					
+						
+					</p>
+					<p class="post-meta">
+						
 
 	
     <span class="leancloud_visitors" id="/2018/07/25/秦时明月/_visitors" data-url="/2018/07/25/秦时明月/" data-title="秦时明月">
        	<i class="icon-eye"></i>
        	热度
         
-            <i class="leancloud_visitors_count" id="leancloud_visitors_count"></i>
-        
-                
+            <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+                   
     </span>
     
 
@@ -487,10 +487,9 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
     </span>
 	
 
-					
-				</p>
+					</p>
+				</div>
 			</div>
-		</div>
 		
 	</div>
 	
@@ -508,8 +507,8 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 
 		<!--footer-->
 		<footer>
-			<div id="navigation-show">
-				<ul id="global-nav">
+	<div id="navigation-show">
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home" target="_blank">主页</a>
@@ -548,20 +547,19 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 		</li>
 	
 </ul>
-			</div>
+	</div>
 
-	
 	<div class="copyright">
 		<p>
 			 
 				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
-						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			
 		</p>
 		<p>
-
+			
 
 	<!-- busuanzi -->
 	<!-- busuanzi -->
@@ -574,23 +572,23 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 	</div>		
 </footer>
 		
-	<!-- set '1' to show motto in all pages! -->
+	<!-- Local or hitokoto! -->
 
 	<script src="/plugin/motto/motto.js"></script>
 	
 	<script type="text/javascript">
-		
-		let mottoText = getMingYanContent().split('</br> - </br>'),
-		
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
 			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
 			
 			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
 			
 			mottoTextContent = mottoTextContent.trim().substring(0, 100);
 		
-		$("#motto-content").html( mottoTextContent);
-		$("#motto-author").html( mottoTextFrom  );
-		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
 	</script>	
 
 
@@ -600,11 +598,9 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 
 <!-- back to top -->
 
-	
 	<div id="totop">
-		<span class="icon-circle-up"></span>
-	</div>
-
+	<span class="icon-circle-up"></span>
+</div>
 
 
 
@@ -621,7 +617,6 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 
 <!-- leancloud -->
 
-	
 
 	<!-- leancloud -->
 	<!--
@@ -643,11 +638,10 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 -->
 
 
-  <script src="/js/av-min.js"></script>
-<script src="/js/annie-leancloud.js"></script>
+  <script src="/plugin/leancloud/av-min.js"></script>
+<script src="/js/leancloud-count.js"></script>
 
 	
-
 
   
 
@@ -658,7 +652,7 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
 		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
 -->
-<div class="popup search-popup local-search-popup">
+<div class="popup search-popup local-search-popup scrollbar">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
       		ESC
@@ -685,8 +679,7 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
         if( $('#topN').length ){
             setTimeout(function() {
                 topNPost(limitCount);
-}, 5000);
-            
+			}, 3000);
         }
     </script>
    
@@ -697,7 +690,7 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 </div>
 
 <script src="/plugin/search/ziploader.js"></script>
-<script src="/plugin/search/search.js"></script>
+<script src="/js/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -716,13 +709,11 @@ Git是一个版本控制系统（Version Control System），版本控制即记�
 </script>
 
 
-
-
 <script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/imglazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
 <script src="/js/main.js"></script>
 	</body>	
 </html>

@@ -1,7 +1,7 @@
 <!--
 	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
 -->
 <!DOCTYPE html>
 <html class="html-loading">
@@ -26,26 +26,43 @@
   <link rel="stylesheet" href="/css/Annie.css">
   
   <!-- jquery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/plugin/jquery/jquery.min.js"></script>
 
 <script>
-    var CONFIG_BGIMAGE = {
+    const CONFIG_BGIMAGE = {
       mode: 'normal',
-      normalSrc: '/img/random/6.jpg',
-      randomMax: 110,
-      randomSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/'
+      normalSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+      randomYouMax: 110,
+      randomYouSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
     }
-    var CONFIG_LEACLOUD_COUNT = {
-      enable: 'true'
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: true,
+	  appId: 'AU87cOou2gQvagmdb0qIteOF-MdYXbMMI',
+	  appKey: '4cUgTiHKDlfYOAFa5PHwHcfF',
+	  serverURLs: 'hhtt' || ' '
     }
   </script>
 </head>
 	<body>
 		<!-- Preloader -->
 
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
 
 <!-- header -->
-<header class="fixbackground bg-pan-bl">
+<header class="fixbackground bg-pan-br">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -53,7 +70,7 @@
 				<div class="motto text-shadow-pop-left">
 					<p class="content" id="motto-content">获取中...</p>
 					<p>-</p><p>
-					</p><p class="author" id="motto-author"></p>
+					</p><p class="author" id="motto-author">Just a minute...</p>
 				</div>
 			
 		</div>
@@ -65,7 +82,6 @@
 			</a>
 		</div>
 	</div>
-	
 </header>
 
 <div id="navigation-hide">
@@ -95,9 +111,7 @@
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<span class="logo"> 
-
-			<img src="/img/logo5.png">
-	
+			<img src="/img/logo.png">
 		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
@@ -210,12 +224,12 @@
     <div class="i-container">
         <i class="fa fa-book i-tag">
 			<!--
-	Post number counter for archive.ejs.  
+	Thec counter of post number  for archive.ejs.  
 -->
 
 		 
 	
-	日本文学 1 篇
+	日本文学 1 
 		
 
 		</i>
@@ -256,12 +270,12 @@
                             QiXi（七夕）：一些诗句
                         </span>
         			    
-                			<a href="/tags/七夕/" class="tag">
-                				七夕
-                			</a>
-                        
                 			<a href="/tags/文学摘抄/" class="tag">
                 				文学摘抄
+                			</a>
+                        
+                			<a href="/tags/七夕/" class="tag">
+                				七夕
                 			</a>
                         
                     </a>
@@ -542,8 +556,8 @@
 
 		<!--footer-->
 		<footer>
-			<div id="navigation-show">
-				<ul id="global-nav">
+	<div id="navigation-show">
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home" target="_blank">主页</a>
@@ -582,20 +596,19 @@
 		</li>
 	
 </ul>
-			</div>
+	</div>
 
-	
 	<div class="copyright">
 		<p>
 			 
 				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
-						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			
 		</p>
 		<p>
-
+			
 
 	<!-- busuanzi -->
 	<!-- busuanzi -->
@@ -608,23 +621,23 @@
 	</div>		
 </footer>
 		
-	<!-- set '1' to show motto in all pages! -->
+	<!-- Local or hitokoto! -->
 
 	<script src="/plugin/motto/motto.js"></script>
 	
 	<script type="text/javascript">
-		
-		let mottoText = getMingYanContent().split('</br> - </br>'),
-		
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
 			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
 			
 			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
 			
 			mottoTextContent = mottoTextContent.trim().substring(0, 100);
 		
-		$("#motto-content").html( mottoTextContent);
-		$("#motto-author").html( mottoTextFrom  );
-		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
 	</script>	
 
 
@@ -634,11 +647,9 @@
 
 <!-- back to top -->
 
-	
 	<div id="totop">
-		<span class="icon-circle-up"></span>
-	</div>
-
+	<span class="icon-circle-up"></span>
+</div>
 
 
 
@@ -655,7 +666,6 @@
 
 <!-- leancloud -->
 
-	
 
 	<!-- leancloud -->
 	<!--
@@ -677,11 +687,10 @@
 -->
 
 
-  <script src="/js/av-min.js"></script>
-<script src="/js/annie-leancloud.js"></script>
+  <script src="/plugin/leancloud/av-min.js"></script>
+<script src="/js/leancloud-count.js"></script>
 
 	
-
 
   
 
@@ -692,7 +701,7 @@
 		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
 		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
 -->
-<div class="popup search-popup local-search-popup">
+<div class="popup search-popup local-search-popup scrollbar">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
       		ESC
@@ -719,8 +728,7 @@
         if( $('#topN').length ){
             setTimeout(function() {
                 topNPost(limitCount);
-}, 5000);
-            
+			}, 3000);
         }
     </script>
    
@@ -731,7 +739,7 @@
 </div>
 
 <script src="/plugin/search/ziploader.js"></script>
-<script src="/plugin/search/search.js"></script>
+<script src="/js/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -750,13 +758,11 @@
 </script>
 
 
-
-
 <script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/imglazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
 <script src="/js/main.js"></script>
 	</body>	
 </html>

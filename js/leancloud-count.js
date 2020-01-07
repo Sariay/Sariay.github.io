@@ -1,3 +1,6 @@
+/**
+ * Mostly created & edited by Sariay (https://github.com/Sariay/hexo-theme-Annie)..
+ */
 function init(currentCounter, currentPost){  
 	let thisAcl    = new AV.ACL();
 	thisAcl.setPublicReadAccess(true);
@@ -14,10 +17,10 @@ function init(currentCounter, currentPost){
 	newCounter.save().then(function(newCounter){
 		// 成功保存之后，执行其他逻辑.
 		console.log("Succed to create.");
-		console.log("New object created with objectId: " + newCounter.id + "/" + currentPost.title);	
+		console.log("New object created with objectId: " + newCounter.id + " / " + currentPost.title);	
 	},function(error){
 		console.log("Failed to create!");
-		console.error("Failed to create new object, with error message: " + error.message + "/" + currentPost.title);		
+		console.error("Failed to create new object, with error message: " + error.message + " / " + currentPost.title);		
 	});	  
 }
 
@@ -30,7 +33,7 @@ function addVisitors(currentCounter, currentPost) {
             if(results.length > 0) {
                 let thisPost = results[0];
                 thisPost.increment("visitors");
-                thisPost.fetchWhenSave(true);
+				thisPost.fetchWhenSave(true);
                 thisPost.save().then(
                     function(thisPost) {
                         // 成功保存之后，执行其他逻辑.
@@ -53,7 +56,6 @@ function addVisitors(currentCounter, currentPost) {
             console.log('Error:' + error.code + " " + error.message);
         }
     );
-
 }
 
 function addLikes(currentCounter, currentPost) {
@@ -63,8 +65,8 @@ function addLikes(currentCounter, currentPost) {
         function(results) {
             if(results.length > 0) {
                 let thisPost = results[0];
-                thisPost.increment("likes");
-                thisPost.fetchWhenSave(true);
+                thisPost.increment("likes"); 
+				thisPost.fetchWhenSave(true);
                 thisPost.save().then(
                     function(thisPost) {
                         // 成功保存之后，执行其他逻辑.
@@ -270,33 +272,9 @@ const postCookie = {
 	}
 }
 
-const post = {
-	url     : $(".leancloud_visitors").attr('data-url') ? $(".leancloud_visitors").attr('data-url').trim() : " ",
-	title   : $(".leancloud_visitors").attr('data-title') ? $(".leancloud_visitors").attr('data-title').trim() : " ",
-	likes   : 0,
-	visitors: 1,
-	visitorNumberContainer : $(".leancloud_visitors_count").attr('id') ? $(".leancloud_visitors_count").attr('id').trim() : " ",
-	likeNumberContainer : $(".leancloud_likes_count").attr('id') ? $(".leancloud_likes_count").attr('id').trim() : " "
-}
-//调用函数add或者show数据    
-// function annieLeancloud() {
-// AV.init({
-// 	appId: "dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz",
-// 	appKey: "wzGaywJpxGEhEclcl87rdtHG",
-// 	serverURLs: "https://dx2cfn1a.lc-cn-n1-shared.com"
-// });	
-AV.init({
-    appId: "AU87cOou2gQvagmdb0qIteOF-MdYXbMMI",
-    appKey: "4cUgTiHKDlfYOAFa5PHwHcfF"
-});
-
-let initCounter = AV.Object.extend("Counter");
-
-let initPost = post;
-
-function annieAddData(){
+function annieAddData(currentCounter, currentPost){
 	if($('.leancloud_visitors').length == 1){
-		addVisitors(initCounter, initPost)
+		addVisitors(currentCounter, currentPost)
 	}
 	if($('.leancloud_likes').length == 1){
 		const postId = $('.leancloud_likes').attr('data-url').trim();
@@ -306,16 +284,17 @@ function annieAddData(){
 			$('#star-button').addClass("star-animation");
 		}
 
-		showLikes(initCounter, initPost);
+		showLikes(currentCounter, currentPost);
 
 		$('#navigation-hide').on("click", '#star-button', function() {
 			let likeContainer = $('.leancloud_likes'),
 				likeButton = $('#star-button');            	
 			
 			const checkD = likeContainer.attr("rel");
+			
 			if((checkD === "unlike") && (star == "")) {
 	
-				addLikes(initCounter, initPost);
+				addLikes(currentCounter, currentPost);
 				likeContainer.addClass("star-animation").attr("rel", "like"); 
 				likeButton.addClass("star-animation").attr("rel", "like");
 								
@@ -328,22 +307,56 @@ function annieAddData(){
 	}
 }
 
-function annieShowData(){
+function annieShowData(currentCounter, currentPost){
 	if($('.leancloud_visitors').length >= 1){
-		showVisitors(initCounter, initPost);
+		showVisitors(currentCounter, currentPost);
 	}
+	
 	if($('.leancloud_likes').length >= 1){
-		showLikes(initCounter, initPost);
+		showLikes(currentCounter, currentPost);
 	}
 }
+
+/**
+ * 调用函数add或者show数据    	
+ */
+// (function Annie_Counter(){
+const post = {
+	url                   : ($(".leancloud_likes").attr('data-url')||$(".leancloud_visitors").attr('data-url')) ? ($(".leancloud_likes").attr('data-url').trim()||$(".leancloud_visitors").attr('data-url').trim()) : " ",
+	title                 : ($(".leancloud_likes").attr('data-title')||$(".leancloud_visitors").attr('data-title')) ? ($(".leancloud_likes").attr('data-title').trim()||$(".leancloud_visitors").attr('data-title').trim()) : " ",
+	likes                 : 0,
+	visitors              : 1,
+	visitorNumberContainer: $(".leancloud_visitors_count").attr('id') ? $(".leancloud_visitors_count").attr('id').trim()    : " ",
+	likeNumberContainer   : $(".leancloud_likes_count").attr('id') ? $(".leancloud_likes_count").attr('id').trim() : " "
+}
+
+let urlCheck = /((https|http|ftp|rtsp|mms):\/\/)?(([0-9a-z_!~*'().&=+$%-]+:)?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6})(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)/g;
+let	urlCheckStatus = urlCheck.test( CONFIG_LEACLOUD_COUNT.serverURLs);
+
+if(urlCheckStatus){
+	AV.init({
+		appId: CONFIG_LEACLOUD_COUNT.appId,
+		appKey: CONFIG_LEACLOUD_COUNT.appKey,
+		serverURLs: CONFIG_LEACLOUD_COUNT.serverURLs
+	});			
+} else {		
+	AV.init({
+		appId: CONFIG_LEACLOUD_COUNT.appId,
+		appKey: CONFIG_LEACLOUD_COUNT.appKey
+	});	
+	console.log("The format of <" + CONFIG_LEACLOUD_COUNT.serverURLs + "> is not correct!");
+}
+
+let initCounter = AV.Object.extend("Counter"),
+	initPost = post;
 
 if( $('.layout-post').length ) {
 	//文章页: 计数+1 & 展示次数
-	annieAddData();
+	annieAddData(initCounter, initPost);
 }
+
 if( ($('.layout-pure').length || $('.layout-cart').length) && $('.post-title').length >= 1) {
-// 	//主页: 只展示次数
-	annieShowData();
-}
-
-
+	//主页: 只展示次数
+	annieShowData(initCounter, initPost);
+}	
+// })();

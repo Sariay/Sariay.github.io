@@ -1,7 +1,7 @@
 <!--
 	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
 -->
 <!DOCTYPE html>
 <html class="html-loading">
@@ -26,26 +26,43 @@
   <link rel="stylesheet" href="/css/Annie.css">
   
   <!-- jquery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/plugin/jquery/jquery.min.js"></script>
 
 <script>
-    var CONFIG_BGIMAGE = {
+    const CONFIG_BGIMAGE = {
       mode: 'normal',
-      normalSrc: '/img/random/6.jpg',
-      randomMax: 110,
-      randomSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/'
+      normalSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+      randomYouMax: 110,
+      randomYouSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
     }
-    var CONFIG_LEACLOUD_COUNT = {
-      enable: 'true'
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: true,
+	  appId: 'AU87cOou2gQvagmdb0qIteOF-MdYXbMMI',
+	  appKey: '4cUgTiHKDlfYOAFa5PHwHcfF',
+	  serverURLs: 'hhtt' || ' '
     }
   </script>
 </head>
 	<body>
 		<!-- Preloader -->
 
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
 
 <!-- header -->
-<header class="fixbackground bg-pan-bl">
+<header class="fixbackground bg-pan-br">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -53,7 +70,7 @@
 				<div class="motto text-shadow-pop-left">
 					<p class="content" id="motto-content">获取中...</p>
 					<p>-</p><p>
-					</p><p class="author" id="motto-author"></p>
+					</p><p class="author" id="motto-author">Just a minute...</p>
 				</div>
 			
 		</div>
@@ -65,7 +82,6 @@
 			</a>
 		</div>
 	</div>
-	
 </header>
 
 <div id="navigation-hide">
@@ -99,9 +115,7 @@
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<span class="logo"> 
-
-			<img src="/img/logo5.png">
-	
+			<img src="/img/logo.png">
 		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
@@ -217,19 +231,19 @@
 
 <div class="layout-post">
 	<div id="layout-post">
-	<div class="article-title">
-		
+		<div class="article-title">
+			
 	<a href="/2019/03/12/相册主题Dream介绍/" itemprop="url">
 		相册主题Dream介绍
 	</a>
 
-	</div>
+		</div>
 
-	<div class="article-meta">
-		<span>
-			<i class="icon-calendar1"></i>
-			
-			
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
 
 
 
@@ -244,9 +258,9 @@
 
 
 
-		</span>
-		<span>
-			
+			</span>
+			<span>
+				
 	<i class="icon-price-tags"></i>
 	
 		<a href="/tags/说明/" class=" ">
@@ -262,9 +276,9 @@
 		</a>
 	
 		
-		</span>
-		
-		
+			</span>
+			
+			
 
 	
     <span class="leancloud_visitors" id="/2019/03/12/相册主题Dream介绍/_visitors" data-url="/2019/03/12/相册主题Dream介绍/" data-title="相册主题Dream介绍">
@@ -272,8 +286,7 @@
        	热度
         
             <i class="leancloud_visitors_count" id="leancloud_visitors_count">1</i>
-        
-                
+                   
     </span>
     
 
@@ -287,28 +300,28 @@
     </span>
 	
 
-	</div>
+		</div>
 
-	<div class="article-content" id="article-content">
-		<p>新的HEXO主题，主要用于建立<strong>相册博客</strong>。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：<a href="http://gallery.sariay.me/" target="_blank" rel="noopener">PREVIEW</a></p>
+		<div class="article-content" id="article-content">
+			<p>新的HEXO主题，主要用于建立<strong>相册博客</strong>。目前已完成主页、归档页、标签页、分类页等常用页面，主题支持搜索、点赞、浏览人数统计、评论、分享、图片打包下载、图片fancybox浏览。主题演示站点：<a href="http://gallery.sariay.me/" target="_blank" rel="noopener">PREVIEW</a></p>
 <p><img src="SARIAY-gallery2.jpg" alt="相册主页"></p>
 	
-	</div>
-	
-	<div id="current-post-cover" data-scr="/img/post-cover/75.jpg"></div>
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/75.jpg"></div>
 
-	<!-- relate post, comment...-->
-	<div class="investment-container">
-		<div class="investment-header">
-			<div class="investment-title-1">
-				<div class="on">相关文章</div>
-				<div>评论</div>
-				<div>分享</div>
-			</div>
-			<div class="investment-title-2">	            
-				
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<div>分享</div>
+				</div>
+				<div class="investment-title-2">	            
+					
 	<span>
-		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		<a id="totop-post-page">返回顶部</a>
 		
 			<a href="/2019/04/12/webpack网站开发入门/" title="webpack网站开发入门" rel="prev">
 				&laquo;上一篇
@@ -323,12 +336,12 @@
 
 
       		
-			</div>	
-		</div>
-		
-		<div class="investment-content">
-			<div class="investment-content-list">
-				
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
 
 <div class="relate-post">
 	
@@ -355,8 +368,7 @@
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Hexo-Tag-Plugins">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -380,8 +392,7 @@ Gitalk使用方法一新建仓库
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -424,8 +435,7 @@ color quote（info、succes...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题更新日志">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -457,8 +467,7 @@ color quote（info、succes...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/65.jpg" alt="Annie主题使用说明">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -480,8 +489,7 @@ color quote（info、succes...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/42.jpg" alt="选调和选韵">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -506,8 +514,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/77.jpg" alt="QiXi（七夕）：一些诗句">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -530,8 +537,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/76.jpg" alt="webpack网站开发入门">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -556,8 +562,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -581,8 +586,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -614,15 +618,14 @@ I...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 		</ul>
 	
 </div>	
-			</div>
-			<div class="investment-content-list">
-				<div class="layout-comment">
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
 
 	
 
@@ -639,60 +642,63 @@ I...
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <script type="text/javascript">
-	//Thanks O-R
-	//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
-	//去除尾部匹配正则数组的字符串  
-	//Remove redundant characters
-	String.prototype.trimEnd = function(regStr) {
-		var result = this;
-		if(regStr == undefined || regStr == null || regStr == "") {
-			return result;
-		}
-		var array = regStr.split(',');
 
-		if(array.length > 0) {
-
-			var c = array.shift();
-			var str = this;
-			var i = str.length;
-			var rg = new RegExp(c);
-			var matchArr = str.match(rg);
-
-			if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
-				var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
-					.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
-					.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
-					.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
-					.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
-					.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
-					.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
-					.replace(/\./g, "\\.").replace(/\&/g, "\\&");
-				matchStr = matchStr + '$';
-				result = str.replace(new RegExp(matchStr), "");
-			}
-
-			if(array.length > 0) {
-				return result.trimEnd(array.join())
-			} else {
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
 				return result;
 			}
-		}
-	};
+			let array = regStr.split(',');
 
-	//Create gitalk
-	var gitalk = new Gitalk({
-		clientID: 'bf19f33d43d567dce87e',
-		clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
-		//id: window.location.pathname,
-		//id: decodeURI(window.location.pathname),
-		//id: (window.location.pathname).split("/").pop().substring(0, 49),
-		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
-		repo: 'annie-gitalk',
-		owner: 'Sariay',
-		admin: 'Sariay',
-		distractionFreeMode: 'true',
-	})
-	gitalk.render('gitalk-container');
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'bf19f33d43d567dce87e',
+			clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'annie-gitalk',
+			owner: 'Sariay',
+			admin: 'Sariay',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
 </script>
 
 		
@@ -700,9 +706,9 @@ I...
 	
 
 </div>
-			</div>
-			<div class="investment-content-list">
-				<div class="layout-share">
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-share">
 	
 	
 
@@ -721,9 +727,9 @@ I...
 </div>
 
 
-			</div>
-		</div>	
-	</div>
+				</div>
+			</div>	
+		</div>
 	</div>
 </div>
 
@@ -735,43 +741,36 @@ I...
 	<script src="/plugin/clipboard/clipboard.js"></script>
 	<script>
 		// Copy code !
-	    function codePreprocessing() {
+	    function preprocessing() {
 	        $("#article-content .highlight").each(function() {
-
 	            $(this).wrap('<div id="post-code"></div>');
-
 	        })
 
 	        $("#article-content #post-code").each(function() {
-
 	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
-
 	        })
 
 	        $("#article-content .copy-nav").each(function() {
-	            var temp = $(this).next().attr('class'),
-	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
 
 	            $(this).find('.code-language').text(language);
-
 	            $(this).append('<span class="copy-btn icon-paste"></span>');
-
 	        });
 	    }
 
-		function codeCopy() {
+		function copy() {
 		    $('#article-content #post-code').each(function(i) {
-		        var codeCopyId = 'codeCopy-' + i;
+		        let codeCopyId = 'codeCopy-' + i;
 
-		        var codeNode = $(this).find('.code'),
+		        let codeNode = $(this).find('.code'),
 		            copyButton = $(this).find('.copy-btn');
 
 		        codeNode.attr('id', codeCopyId);
 		        copyButton.attr('data-clipboard-target-id', codeCopyId);
 		    })
-
-		    
-			var clipboard = new ClipboardJS('.copy-btn', {
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
 					target: function(trigger) {
 						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
 					}
@@ -790,21 +789,21 @@ I...
 			    e.clearSelection();
 			    console.info('Action:', e.action);		   
 			    console.info('Trigger:', e.trigger);
-			    showTooltip(e.trigger, 'Copied!');
-			    
+			    showTooltip(e.trigger, 'Copied!');   
 			});
+			
 			clipboard.on('error', function(e) {
 			    console.error('Action:', e.action);
 			    console.error('Trigger:', e.trigger);
 			});
-		
-
 		}
-
-		if ($('.layout-post').length) {
-		    codePreprocessing();
-		    codeCopy();
-		} 
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
 	</script>
 
 
@@ -815,50 +814,53 @@ I...
 <script src="/plugin/fancybox/jquery.fancybox.js"></script>
 
 <script type="text/javascript">
-	var titleID = $('.article-title a'),
-		imageID = $('.article-content img'),
-		videoID = $('.article-content video');
-
-	var postTitle = titleID.text() ? titleID.text() : "No post title!";
-
-	imageID.each(function() {
-		var imgPath = $(this).attr('src'),
-			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
-
-		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
-	});
-
-	videoID.each(function() {
-		var videoPath = $(this).attr('src');
-
-		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
-	});
-	//TODO：支持html5 video
-
-	if($('#layout-post').length) {
-		$('[data-fancybox="gallery"]').fancybox({
-			loop: true,
-			buttons: [
-				"zoom",
-				"share",
-				"slideShow",
-				"fullScreen",
-				//"download",
-				"thumbs",
-				"close"
-			],
-			protect: false
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
 		});
-	}
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
 </script>
 		</main>
 
 		<!--footer-->
 		<footer>
-			<div id="navigation-show">
-				<ul id="global-nav">
+	<div id="navigation-show">
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home" target="_blank">主页</a>
@@ -897,20 +899,19 @@ I...
 		</li>
 	
 </ul>
-			</div>
+	</div>
 
-	
 	<div class="copyright">
 		<p>
 			 
 				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
-						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			
 		</p>
 		<p>
-
+			
 
 	<!-- busuanzi -->
 	<!-- busuanzi -->
@@ -923,23 +924,23 @@ I...
 	</div>		
 </footer>
 		
-	<!-- set '1' to show motto in all pages! -->
+	<!-- Local or hitokoto! -->
 
 	<script src="/plugin/motto/motto.js"></script>
 	
 	<script type="text/javascript">
-		
-		let mottoText = getMingYanContent().split('</br> - </br>'),
-		
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
 			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
 			
 			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
 			
 			mottoTextContent = mottoTextContent.trim().substring(0, 100);
 		
-		$("#motto-content").html( mottoTextContent);
-		$("#motto-author").html( mottoTextFrom  );
-		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
 	</script>	
 
 
@@ -949,11 +950,9 @@ I...
 
 <!-- back to top -->
 
-	
 	<div id="totop">
-		<span class="icon-circle-up"></span>
-	</div>
-
+	<span class="icon-circle-up"></span>
+</div>
 
 
 
@@ -970,7 +969,6 @@ I...
 
 <!-- leancloud -->
 
-	
 
 	<!-- leancloud -->
 	<!--
@@ -992,11 +990,10 @@ I...
 -->
 
 
-  <script src="/js/av-min.js"></script>
-<script src="/js/annie-leancloud.js"></script>
+  <script src="/plugin/leancloud/av-min.js"></script>
+<script src="/js/leancloud-count.js"></script>
 
 	
-
 
   
 
@@ -1007,7 +1004,7 @@ I...
 		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
 		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
 -->
-<div class="popup search-popup local-search-popup">
+<div class="popup search-popup local-search-popup scrollbar">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
       		ESC
@@ -1034,8 +1031,7 @@ I...
         if( $('#topN').length ){
             setTimeout(function() {
                 topNPost(limitCount);
-}, 5000);
-            
+			}, 3000);
         }
     </script>
    
@@ -1046,7 +1042,7 @@ I...
 </div>
 
 <script src="/plugin/search/ziploader.js"></script>
-<script src="/plugin/search/search.js"></script>
+<script src="/js/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -1065,13 +1061,11 @@ I...
 </script>
 
 
-
-
 <script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/imglazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
 <script src="/js/main.js"></script>
 	</body>	
 </html>

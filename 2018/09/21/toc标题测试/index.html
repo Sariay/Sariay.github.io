@@ -1,7 +1,7 @@
 <!--
 	作者：Sariay
-	时间：2018-09-25
-	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+	时间：2018-08-26
+	描述：There may be a bug, but don't worry, Qiling(器灵) says that it can work normally! aha!
 -->
 <!DOCTYPE html>
 <html class="html-loading">
@@ -26,26 +26,43 @@
   <link rel="stylesheet" href="/css/Annie.css">
   
   <!-- jquery -->
-	<script src="/js/jquery.min.js"></script>
+	<script src="/plugin/jquery/jquery.min.js"></script>
 
 <script>
-    var CONFIG_BGIMAGE = {
+    const CONFIG_BGIMAGE = {
       mode: 'normal',
-      normalSrc: '/img/random/6.jpg',
-      randomMax: 110,
-      randomSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/'
+      normalSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+      randomYouMax: 110,
+      randomYouSrc: 'https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/',
+	  randomOtherSrc: 'https://api.berryapi.net/?service=App.Bing.Images&day=-0',
+	  preloaderEnable: true
     }
-    var CONFIG_LEACLOUD_COUNT = {
-      enable: 'true'
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: true,
+	  appId: 'AU87cOou2gQvagmdb0qIteOF-MdYXbMMI',
+	  appKey: '4cUgTiHKDlfYOAFa5PHwHcfF',
+	  serverURLs: 'hhtt' || ' '
     }
   </script>
 </head>
 	<body>
 		<!-- Preloader -->
 
+	<div id="preloader">
+		<div class="pre-container">
+			
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+						
+		</div>
+	</div>
+
 
 <!-- header -->
-<header class="fixbackground bg-pan-bl">
+<header class="fixbackground bg-pan-br">
 	<div class="mask">
 		<!-- motto -->
 		<div class="h-body">	
@@ -53,7 +70,7 @@
 				<div class="motto text-shadow-pop-left">
 					<p class="content" id="motto-content">获取中...</p>
 					<p>-</p><p>
-					</p><p class="author" id="motto-author"></p>
+					</p><p class="author" id="motto-author">Just a minute...</p>
 				</div>
 			
 		</div>
@@ -65,7 +82,6 @@
 			</a>
 		</div>
 	</div>
-	
 </header>
 
 <div id="navigation-hide">
@@ -99,9 +115,7 @@
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<span class="logo"> 
-
-			<img src="/img/logo5.png">
-	
+			<img src="/img/logo.png">
 		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
@@ -221,7 +235,6 @@
 			</div>
 		</div>
 
-		
 		<script src="/plugin/toc/katelog.min.js"></script>
 
 		
@@ -229,19 +242,19 @@
 
 <div class="layout-post">
 	<div id="layout-post">
-	<div class="article-title">
-		
+		<div class="article-title">
+			
 	<a href="/2018/09/21/toc标题测试/" itemprop="url">
 		toc标题测试
 	</a>
 
-	</div>
+		</div>
 
-	<div class="article-meta">
-		<span>
-			<i class="icon-calendar1"></i>
-			
-			
+		<div class="article-meta">
+			<span>
+				<i class="icon-calendar1"></i>
+				
+				
 
 
 
@@ -256,12 +269,12 @@
 
 
 
-		</span>
-		<span>
-					
-		</span>
-		
-		
+			</span>
+			<span>
+						
+			</span>
+			
+			
 
 	
     <span class="leancloud_visitors" id="/2018/09/21/toc标题测试/_visitors" data-url="/2018/09/21/toc标题测试/" data-title="toc标题测试">
@@ -269,8 +282,7 @@
        	热度
         
             <i class="leancloud_visitors_count" id="leancloud_visitors_count">1</i>
-        
-                
+                   
     </span>
     
 
@@ -284,26 +296,26 @@
     </span>
 	
 
-	</div>
+		</div>
 
-	<div class="article-content" id="article-content">
-		<h1 id="h1标题：的霍华德和很多很多和很多很多和很多很多"><a href="#h1标题：的霍华德和很多很多和很多很多和很多很多" class="headerlink" title="h1标题：的霍华德和很多很多和很多很多和很多很多"></a>h1标题：的霍华德和很多很多和很多很多和很多很多</h1><h2 id="h2标题好的话的霍华德和和和好的话的霍华德和好的话"><a href="#h2标题好的话的霍华德和和和好的话的霍华德和好的话" class="headerlink" title="h2标题好的话的霍华德和和和好的话的霍华德和好的话"></a>h2标题好的话的霍华德和和和好的话的霍华德和好的话</h2><h2 id="h2标题"><a href="#h2标题" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题"><a href="#h3标题" class="headerlink" title="h3标题"></a>h3标题</h3><h3 id="h3标题-1"><a href="#h3标题-1" class="headerlink" title="h3标题"></a>h3标题</h3><h2 id="h2标题-1"><a href="#h2标题-1" class="headerlink" title="h2标题"></a>h2标题</h2><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><h6 id="h6-1"><a href="#h6-1" class="headerlink" title="h6"></a>h6</h6><h1 id="h1标题"><a href="#h1标题" class="headerlink" title="h1标题"></a>h1标题</h1><h2 id="h2标题-2"><a href="#h2标题-2" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-2"><a href="#h3标题-2" class="headerlink" title="h3标题"></a>h3标题</h3><h4 id="h4标题"><a href="#h4标题" class="headerlink" title="h4标题"></a>h4标题</h4><h1 id="h1标题：的霍华德和很多很多和很多很多和很多很多-1"><a href="#h1标题：的霍华德和很多很多和很多很多和很多很多-1" class="headerlink" title="h1标题：的霍华德和很多很多和很多很多和很多很多"></a>h1标题：的霍华德和很多很多和很多很多和很多很多</h1><h2 id="h2标题好的话的霍华德和和和好的话的霍华德和好的话-1"><a href="#h2标题好的话的霍华德和和和好的话的霍华德和好的话-1" class="headerlink" title="h2标题好的话的霍华德和和和好的话的霍华德和好的话"></a>h2标题好的话的霍华德和和和好的话的霍华德和好的话</h2><h2 id="h2标题-3"><a href="#h2标题-3" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-3"><a href="#h3标题-3" class="headerlink" title="h3标题"></a>h3标题</h3><h3 id="h3标题-4"><a href="#h3标题-4" class="headerlink" title="h3标题"></a>h3标题</h3><h2 id="h2标题-4"><a href="#h2标题-4" class="headerlink" title="h2标题"></a>h2标题</h2><h1 id="h1标题-1"><a href="#h1标题-1" class="headerlink" title="h1标题"></a>h1标题</h1><h2 id="h2标题-5"><a href="#h2标题-5" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-5"><a href="#h3标题-5" class="headerlink" title="h3标题"></a>h3标题</h3><h4 id="h4标题-1"><a href="#h4标题-1" class="headerlink" title="h4标题"></a>h4标题</h4><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-1"><a href="#h1-1" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-2"><a href="#h1-2" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-3"><a href="#h1-3" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-4"><a href="#h1-4" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-5"><a href="#h1-5" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-6"><a href="#h1-6" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-7"><a href="#h1-7" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-8"><a href="#h1-8" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-9"><a href="#h1-9" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-10"><a href="#h1-10" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-11"><a href="#h1-11" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-12"><a href="#h1-12" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-13"><a href="#h1-13" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-14"><a href="#h1-14" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-15"><a href="#h1-15" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-16"><a href="#h1-16" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-17"><a href="#h1-17" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-18"><a href="#h1-18" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-19"><a href="#h1-19" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-20"><a href="#h1-20" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-21"><a href="#h1-21" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-22"><a href="#h1-22" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-23"><a href="#h1-23" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-24"><a href="#h1-24" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-25"><a href="#h1-25" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-26"><a href="#h1-26" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-27"><a href="#h1-27" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-28"><a href="#h1-28" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-29"><a href="#h1-29" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-30"><a href="#h1-30" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-31"><a href="#h1-31" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-32"><a href="#h1-32" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-33"><a href="#h1-33" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-34"><a href="#h1-34" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-35"><a href="#h1-35" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-36"><a href="#h1-36" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-37"><a href="#h1-37" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-38"><a href="#h1-38" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-39"><a href="#h1-39" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-40"><a href="#h1-40" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-41"><a href="#h1-41" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-42"><a href="#h1-42" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-43"><a href="#h1-43" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-44"><a href="#h1-44" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-45"><a href="#h1-45" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-46"><a href="#h1-46" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-47"><a href="#h1-47" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-48"><a href="#h1-48" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-49"><a href="#h1-49" class="headerlink" title="h1"></a>h1</h1>	
-	</div>
-	
-	<div id="current-post-cover" data-scr="/img/post-cover/72.jpg"></div>
+		<div class="article-content" id="article-content">
+			<h1 id="h1标题：的霍华德和很多很多和很多很多和很多很多"><a href="#h1标题：的霍华德和很多很多和很多很多和很多很多" class="headerlink" title="h1标题：的霍华德和很多很多和很多很多和很多很多"></a>h1标题：的霍华德和很多很多和很多很多和很多很多</h1><h2 id="h2标题好的话的霍华德和和和好的话的霍华德和好的话"><a href="#h2标题好的话的霍华德和和和好的话的霍华德和好的话" class="headerlink" title="h2标题好的话的霍华德和和和好的话的霍华德和好的话"></a>h2标题好的话的霍华德和和和好的话的霍华德和好的话</h2><h2 id="h2标题"><a href="#h2标题" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题"><a href="#h3标题" class="headerlink" title="h3标题"></a>h3标题</h3><h3 id="h3标题-1"><a href="#h3标题-1" class="headerlink" title="h3标题"></a>h3标题</h3><h2 id="h2标题-1"><a href="#h2标题-1" class="headerlink" title="h2标题"></a>h2标题</h2><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h6 id="h6"><a href="#h6" class="headerlink" title="h6"></a>h6</h6><h6 id="h6-1"><a href="#h6-1" class="headerlink" title="h6"></a>h6</h6><h1 id="h1标题"><a href="#h1标题" class="headerlink" title="h1标题"></a>h1标题</h1><h2 id="h2标题-2"><a href="#h2标题-2" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-2"><a href="#h3标题-2" class="headerlink" title="h3标题"></a>h3标题</h3><h4 id="h4标题"><a href="#h4标题" class="headerlink" title="h4标题"></a>h4标题</h4><h1 id="h1标题：的霍华德和很多很多和很多很多和很多很多-1"><a href="#h1标题：的霍华德和很多很多和很多很多和很多很多-1" class="headerlink" title="h1标题：的霍华德和很多很多和很多很多和很多很多"></a>h1标题：的霍华德和很多很多和很多很多和很多很多</h1><h2 id="h2标题好的话的霍华德和和和好的话的霍华德和好的话-1"><a href="#h2标题好的话的霍华德和和和好的话的霍华德和好的话-1" class="headerlink" title="h2标题好的话的霍华德和和和好的话的霍华德和好的话"></a>h2标题好的话的霍华德和和和好的话的霍华德和好的话</h2><h2 id="h2标题-3"><a href="#h2标题-3" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-3"><a href="#h3标题-3" class="headerlink" title="h3标题"></a>h3标题</h3><h3 id="h3标题-4"><a href="#h3标题-4" class="headerlink" title="h3标题"></a>h3标题</h3><h2 id="h2标题-4"><a href="#h2标题-4" class="headerlink" title="h2标题"></a>h2标题</h2><h1 id="h1标题-1"><a href="#h1标题-1" class="headerlink" title="h1标题"></a>h1标题</h1><h2 id="h2标题-5"><a href="#h2标题-5" class="headerlink" title="h2标题"></a>h2标题</h2><h3 id="h3标题-5"><a href="#h3标题-5" class="headerlink" title="h3标题"></a>h3标题</h3><h4 id="h4标题-1"><a href="#h4标题-1" class="headerlink" title="h4标题"></a>h4标题</h4><h1 id="h1"><a href="#h1" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-1"><a href="#h1-1" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-2"><a href="#h1-2" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-3"><a href="#h1-3" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-4"><a href="#h1-4" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-5"><a href="#h1-5" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-6"><a href="#h1-6" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-7"><a href="#h1-7" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-8"><a href="#h1-8" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-9"><a href="#h1-9" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-10"><a href="#h1-10" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-11"><a href="#h1-11" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-12"><a href="#h1-12" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-13"><a href="#h1-13" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-14"><a href="#h1-14" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-15"><a href="#h1-15" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-16"><a href="#h1-16" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-17"><a href="#h1-17" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-18"><a href="#h1-18" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-19"><a href="#h1-19" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-20"><a href="#h1-20" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-21"><a href="#h1-21" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-22"><a href="#h1-22" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-23"><a href="#h1-23" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-24"><a href="#h1-24" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-25"><a href="#h1-25" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-26"><a href="#h1-26" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-27"><a href="#h1-27" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-28"><a href="#h1-28" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-29"><a href="#h1-29" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-30"><a href="#h1-30" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-31"><a href="#h1-31" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-32"><a href="#h1-32" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-33"><a href="#h1-33" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-34"><a href="#h1-34" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-35"><a href="#h1-35" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-36"><a href="#h1-36" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-37"><a href="#h1-37" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-38"><a href="#h1-38" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-39"><a href="#h1-39" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-40"><a href="#h1-40" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-41"><a href="#h1-41" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-42"><a href="#h1-42" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-43"><a href="#h1-43" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-44"><a href="#h1-44" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-45"><a href="#h1-45" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-46"><a href="#h1-46" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-47"><a href="#h1-47" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-48"><a href="#h1-48" class="headerlink" title="h1"></a>h1</h1><h1 id="h1-49"><a href="#h1-49" class="headerlink" title="h1"></a>h1</h1>	
+		</div>
+		
+		<div id="current-post-cover" data-scr="/img/post-cover/72.jpg"></div>
 
-	<!-- relate post, comment...-->
-	<div class="investment-container">
-		<div class="investment-header">
-			<div class="investment-title-1">
-				<div class="on">相关文章</div>
-				<div>评论</div>
-				<div>分享</div>
-			</div>
-			<div class="investment-title-2">	            
-				
+		<!-- relate post, comment...-->
+		<div class="investment-container">
+			<div class="investment-header">
+				<div class="investment-title-1">
+					<div class="on">相关文章</div>
+					<div>评论</div>
+					<div>分享</div>
+				</div>
+				<div class="investment-title-2">	            
+					
 	<span>
-		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
+		<a id="totop-post-page">返回顶部</a>
 		
 			<a href="/2018/09/25/Annie主题更新日志/" title="Annie主题更新日志" rel="prev">
 				&laquo;上一篇
@@ -318,12 +330,12 @@
 
 
       		
-			</div>	
-		</div>
-		
-		<div class="investment-content">
-			<div class="investment-content-list">
-				
+				</div>	
+			</div>
+			
+			<div class="investment-content">
+				<div class="investment-content-list">
+					
 
 <div class="relate-post">
 	
@@ -351,8 +363,7 @@
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/74.jpg" alt="银字笙调，奈何初冬">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -375,8 +386,7 @@
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/45.jpg" alt="秦时明月">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -398,8 +408,7 @@
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/42.jpg" alt="选调和选韵">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -424,8 +433,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/77.jpg" alt="QiXi（七夕）：一些诗句">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -448,8 +456,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Hexo-Tag-Plugins">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -472,8 +479,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/76.jpg" alt="webpack网站开发入门">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -497,8 +503,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/75.jpg" alt="相册主题Dream介绍">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -523,8 +528,7 @@ Between the moon and the snow, lies the beauty of yo...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/31.jpg" alt="《人间失格》抄录1">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -548,8 +552,7 @@ Gitalk使用方法一新建仓库
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/72.jpg" alt="Annie主题使用Gitalk">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 					<li>
 						<div class="relate-post-text">
@@ -581,15 +584,14 @@ I...
 								<img class="lazy" src="/img/lazy.gif" data-src="/img/post-cover/34.jpg" alt="山鬼情书之零">
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			
 		</ul>
 	
 </div>	
-			</div>
-			<div class="investment-content-list">
-				<div class="layout-comment">
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-comment">
 
 	
 
@@ -606,60 +608,63 @@ I...
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
 <script type="text/javascript">
-	//Thanks O-R
-	//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
-	//去除尾部匹配正则数组的字符串  
-	//Remove redundant characters
-	String.prototype.trimEnd = function(regStr) {
-		var result = this;
-		if(regStr == undefined || regStr == null || regStr == "") {
-			return result;
-		}
-		var array = regStr.split(',');
 
-		if(array.length > 0) {
-
-			var c = array.shift();
-			var str = this;
-			var i = str.length;
-			var rg = new RegExp(c);
-			var matchArr = str.match(rg);
-
-			if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
-				var matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
-					.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
-					.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
-					.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
-					.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
-					.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
-					.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
-					.replace(/\./g, "\\.").replace(/\&/g, "\\&");
-				matchStr = matchStr + '$';
-				result = str.replace(new RegExp(matchStr), "");
-			}
-
-			if(array.length > 0) {
-				return result.trimEnd(array.join())
-			} else {
+	(function gitalkComment(){
+		//Thanks O-R
+		//https://github.com/gitalk/gitalk/issues/102#issuecomment-382970552
+		//去除尾部匹配正则数组的字符串  
+		//Remove redundant characters
+		String.prototype.trimEnd = function(regStr) {
+			let result = this;
+			if(regStr == undefined || regStr == null || regStr == "") {
 				return result;
 			}
-		}
-	};
+			let array = regStr.split(',');
 
-	//Create gitalk
-	var gitalk = new Gitalk({
-		clientID: 'bf19f33d43d567dce87e',
-		clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
-		//id: window.location.pathname,
-		//id: decodeURI(window.location.pathname),
-		//id: (window.location.pathname).split("/").pop().substring(0, 49),
-		id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
-		repo: 'annie-gitalk',
-		owner: 'Sariay',
-		admin: 'Sariay',
-		distractionFreeMode: 'true',
-	})
-	gitalk.render('gitalk-container');
+			if(array.length > 0) {
+
+				let c = array.shift(), 
+					str = this,
+					i = str.length,
+					rg = new RegExp(c),
+					matchArr = str.match(rg);
+
+				if(matchArr != undefined && matchArr != null && matchArr.length > 0) {
+					let matchStr = matchArr[0].replace(/\\/g, "\\\\").replace(/\*/g, "\\*")
+						.replace(/\+/g, "\\+").replace(/\|/g, "\\|")
+						.replace(/\{/g, "\\{").replace(/\}/g, "\\}")
+						.replace(/\(/g, "\\(").replace(/\)/g, "\\)")
+						.replace(/\^/g, "\\^").replace(/\$/g, "\\$")
+						.replace(/\[/g, "\\[").replace(/\]/g, "\\]")
+						.replace(/\?/g, "\\?").replace(/\,/g, "\\,")
+						.replace(/\./g, "\\.").replace(/\&/g, "\\&");
+					matchStr = matchStr + '$';
+					result = str.replace(new RegExp(matchStr), "");
+				}
+
+				if(array.length > 0) {
+					return result.trimEnd(array.join())
+				} else {
+					return result;
+				}
+			}
+		};
+
+		//Create gitalk
+		let gitalk = new Gitalk({
+			clientID: 'bf19f33d43d567dce87e',
+			clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f',
+			//id: window.location.pathname,
+			//id: decodeURI(window.location.pathname),
+			//id: (window.location.pathname).split("/").pop().substring(0, 49),
+			id: decodeURI( md5( location.href.trimEnd('#.*$,\\?.*$,index.html$') ) ),
+			repo: 'annie-gitalk',
+			owner: 'Sariay',
+			admin: 'Sariay',
+			distractionFreeMode: 'true',
+		})
+		gitalk.render('gitalk-container');		
+	})();
 </script>
 
 		
@@ -667,9 +672,9 @@ I...
 	
 
 </div>
-			</div>
-			<div class="investment-content-list">
-				<div class="layout-share">
+				</div>
+				<div class="investment-content-list">
+					<div class="layout-share">
 	
 	
 
@@ -688,9 +693,9 @@ I...
 </div>
 
 
-			</div>
-		</div>	
-	</div>
+				</div>
+			</div>	
+		</div>
 	</div>
 </div>
 
@@ -702,43 +707,36 @@ I...
 	<script src="/plugin/clipboard/clipboard.js"></script>
 	<script>
 		// Copy code !
-	    function codePreprocessing() {
+	    function preprocessing() {
 	        $("#article-content .highlight").each(function() {
-
 	            $(this).wrap('<div id="post-code"></div>');
-
 	        })
 
 	        $("#article-content #post-code").each(function() {
-
 	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
-
 	        })
 
 	        $("#article-content .copy-nav").each(function() {
-	            var temp = $(this).next().attr('class'),
-	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
 
 	            $(this).find('.code-language').text(language);
-
 	            $(this).append('<span class="copy-btn icon-paste"></span>');
-
 	        });
 	    }
 
-		function codeCopy() {
+		function copy() {
 		    $('#article-content #post-code').each(function(i) {
-		        var codeCopyId = 'codeCopy-' + i;
+		        let codeCopyId = 'codeCopy-' + i;
 
-		        var codeNode = $(this).find('.code'),
+		        let codeNode = $(this).find('.code'),
 		            copyButton = $(this).find('.copy-btn');
 
 		        codeNode.attr('id', codeCopyId);
 		        copyButton.attr('data-clipboard-target-id', codeCopyId);
 		    })
-
-		    
-			var clipboard = new ClipboardJS('.copy-btn', {
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
 					target: function(trigger) {
 						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
 					}
@@ -757,21 +755,21 @@ I...
 			    e.clearSelection();
 			    console.info('Action:', e.action);		   
 			    console.info('Trigger:', e.trigger);
-			    showTooltip(e.trigger, 'Copied!');
-			    
+			    showTooltip(e.trigger, 'Copied!');   
 			});
+			
 			clipboard.on('error', function(e) {
 			    console.error('Action:', e.action);
 			    console.error('Trigger:', e.trigger);
 			});
-		
-
 		}
-
-		if ($('.layout-post').length) {
-		    codePreprocessing();
-		    codeCopy();
-		} 
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
 	</script>
 
 
@@ -782,50 +780,53 @@ I...
 <script src="/plugin/fancybox/jquery.fancybox.js"></script>
 
 <script type="text/javascript">
-	var titleID = $('.article-title a'),
-		imageID = $('.article-content img'),
-		videoID = $('.article-content video');
-
-	var postTitle = titleID.text() ? titleID.text() : "No post title!";
-
-	imageID.each(function() {
-		var imgPath = $(this).attr('src'),
-			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
-
-		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
-	});
-
-	videoID.each(function() {
-		var videoPath = $(this).attr('src');
-
-		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
-	});
-	//TODO：支持html5 video
-
-	if($('#layout-post').length) {
-		$('[data-fancybox="gallery"]').fancybox({
-			loop: true,
-			buttons: [
-				"zoom",
-				"share",
-				"slideShow",
-				"fullScreen",
-				//"download",
-				"thumbs",
-				"close"
-			],
-			protect: false
+	(function gallerySet(){
+		let titleID = $('.article-title a'),
+			imageID = $('.article-content img'),
+			videoID = $('.article-content video');
+		
+		let postTitle = titleID.text() ? titleID.text() : "No post title!";
+		
+		imageID.each(function() {
+			let imgPath = $(this).attr('src'),
+				imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox="gallery" data-caption="《 ' + postTitle + ' 》' + imgTitle + '"href="' + imgPath + '"> </a>');
 		});
-	}
+		
+		videoID.each(function() {
+			let videoPath = $(this).attr('src');
+		
+			//给每个匹配的<img>元素打包, 即添加父元素<a>
+			$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		});
+		
+		//TODO：支持html5 video
+
+		if($('#layout-post').length) {
+			$('[data-fancybox="gallery"]').fancybox({
+				loop: true,
+				buttons: [
+					"zoom",
+					"share",
+					"slideShow",
+					"fullScreen",
+					//"download",
+					"thumbs",
+					"close"
+				],
+				protect: true
+			});
+		}
+	})();
 </script>
 		</main>
 
 		<!--footer-->
 		<footer>
-			<div id="navigation-show">
-				<ul id="global-nav">
+	<div id="navigation-show">
+		<ul id="global-nav">
 	
 		<li class="menu-home">
 			<a href="/" class="menu-item-home" target="_blank">主页</a>
@@ -864,20 +865,19 @@ I...
 		</li>
 	
 </ul>
-			</div>
+	</div>
 
-	
 	<div class="copyright">
 		<p>
 			 
 				&copy;2017 - 2020, content by Sariay. All Rights Reserved.
 			
 			
-						<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
+				<a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> Theme <a href="https://github.com/Sariay/hexo-theme-Annie" title="Annie" target="_blank" rel="noopener">Annie</a> by Sariay.
 			
 		</p>
 		<p>
-
+			
 
 	<!-- busuanzi -->
 	<!-- busuanzi -->
@@ -890,23 +890,23 @@ I...
 	</div>		
 </footer>
 		
-	<!-- set '1' to show motto in all pages! -->
+	<!-- Local or hitokoto! -->
 
 	<script src="/plugin/motto/motto.js"></script>
 	
 	<script type="text/javascript">
-		
-		let mottoText = getMingYanContent().split('</br> - </br>'),
-		
+		(function motto(){
+			let mottoText = getMingYanContent().split('</br> - </br>'),
+			
 			mottoTextContent = mottoText[0]?mottoText[0]:'请刷新...',
 			
 			mottoTextFrom = mottoText[1]?mottoText[1]:'one/一个';
 			
 			mottoTextContent = mottoTextContent.trim().substring(0, 100);
 		
-		$("#motto-content").html( mottoTextContent);
-		$("#motto-author").html( mottoTextFrom  );
-		
+			$("#motto-content").html( mottoTextContent);
+			$("#motto-author").html( mottoTextFrom  );
+		})();	
 	</script>	
 
 
@@ -916,11 +916,9 @@ I...
 
 <!-- back to top -->
 
-	
 	<div id="totop">
-		<span class="icon-circle-up"></span>
-	</div>
-
+	<span class="icon-circle-up"></span>
+</div>
 
 
 
@@ -937,7 +935,6 @@ I...
 
 <!-- leancloud -->
 
-	
 
 	<!-- leancloud -->
 	<!--
@@ -959,11 +956,10 @@ I...
 -->
 
 
-  <script src="/js/av-min.js"></script>
-<script src="/js/annie-leancloud.js"></script>
+  <script src="/plugin/leancloud/av-min.js"></script>
+<script src="/js/leancloud-count.js"></script>
 
 	
-
 
   
 
@@ -974,7 +970,7 @@ I...
 		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
 		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
 -->
-<div class="popup search-popup local-search-popup">
+<div class="popup search-popup local-search-popup scrollbar">
 	<div class="local-search-container">
 		<span class="popup-btn-close">
       		ESC
@@ -1001,8 +997,7 @@ I...
         if( $('#topN').length ){
             setTimeout(function() {
                 topNPost(limitCount);
-}, 5000);
-            
+			}, 3000);
         }
     </script>
    
@@ -1013,7 +1008,7 @@ I...
 </div>
 
 <script src="/plugin/search/ziploader.js"></script>
-<script src="/plugin/search/search.js"></script>
+<script src="/js/search.js"></script>
 
 <script type="text/javascript">
 	var search_path = 'search.json',
@@ -1032,13 +1027,11 @@ I...
 </script>
 
 
-
-
 <script src="/plugin/chinese/chinese.js"></script>
-<script src="/plugin/imgLazyLoader/yall.min.js"></script>
-<script src="/plugin/imageLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="/plugin/imglazyloader/yall.min.js"></script>
+<script src="/plugin/imageloaded/imagesloaded.pkgd.min.js"></script>
 <script src="/plugin/nicescroll/jquery.nicescroll.js"></script>
-<script src="/js/resizediv.js"></script>
+<script src="/plugin/resizediv/resizediv.js"></script>
 <script src="/js/main.js"></script>
 	</body>	
 </html>
